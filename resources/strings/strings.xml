@@ -1,0 +1,12 @@
+<strings>
+    <string id="AppName">SailInfo</string>
+
+    <string id="prompt">Menu!</string>
+
+    <string id="menu_label_1">Menu Option 1</string>
+    <string id="menu_label_2">Menu Option 2</string>
+
+    <string id="menu_sm_resume">Resume</string>
+    <string id="menu_sm_save">Save</string>
+    <string id="menu_sm_discard">Discard</string>
+</strings>

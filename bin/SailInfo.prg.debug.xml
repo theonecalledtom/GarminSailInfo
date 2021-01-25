@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+    <manifest filename="C:\Projects\Garmin\manifest.xml"/>
+    <pcToLineNum>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoSessionRunningMenuDelegate.mc" id="3" lineNum="9" pc="268435456" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoSessionRunningMenuDelegate.mc" id="3" lineNum="10" pc="268435460" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoSessionRunningMenuDelegate.mc" id="3" lineNum="11" pc="268435478" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoSessionRunningMenuDelegate.mc" id="3" lineNum="12" pc="268435499" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoSessionRunningMenuDelegate.mc" id="4" lineNum="15" pc="268435510" symbol="onMenuItem"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoSessionRunningMenuDelegate.mc" id="4" lineNum="16" pc="268435514" symbol="onMenuItem"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoSessionRunningMenuDelegate.mc" id="4" lineNum="17" pc="268435535" symbol="onMenuItem"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoSessionRunningMenuDelegate.mc" id="4" lineNum="18" pc="268435546" symbol="onMenuItem"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoSessionRunningMenuDelegate.mc" id="4" lineNum="20" pc="268435570" symbol="onMenuItem"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoSessionRunningMenuDelegate.mc" id="4" lineNum="21" pc="268435581" symbol="onMenuItem"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoSessionRunningMenuDelegate.mc" id="4" lineNum="22" pc="268435602" symbol="onMenuItem"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoSessionRunningMenuDelegate.mc" id="4" lineNum="24" pc="268435623" symbol="onMenuItem"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoSessionRunningMenuDelegate.mc" id="4" lineNum="25" pc="268435634" symbol="onMenuItem"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoSessionRunningMenuDelegate.mc" id="4" lineNum="26" pc="268435655" symbol="onMenuItem"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoApp.mc" id="6" lineNum="7" pc="268435677" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoApp.mc" id="6" lineNum="8" pc="268435681" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoApp.mc" id="6" lineNum="9" pc="268435702" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoApp.mc" id="7" lineNum="14" pc="268435721" symbol="onStart"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoApp.mc" id="7" lineNum="15" pc="268435725" symbol="onStart"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoApp.mc" id="8" lineNum="19" pc="268435747" symbol="onStop"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoApp.mc" id="8" lineNum="20" pc="268435751" symbol="onStop"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoApp.mc" id="9" lineNum="24" pc="268435773" symbol="getInitialView"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoApp.mc" id="9" lineNum="25" pc="268435777" symbol="getInitialView"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="11" lineNum="10" pc="268435845" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="11" lineNum="11" pc="268435849" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="12" lineNum="15" pc="268435871" symbol="hasActiveSession"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="12" lineNum="16" pc="268435875" symbol="hasActiveSession"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="12" lineNum="17" pc="268435888" symbol="hasActiveSession"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="12" lineNum="19" pc="268435894" symbol="hasActiveSession"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="13" lineNum="22" pc="268435898" symbol="isRecording"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="13" lineNum="23" pc="268435902" symbol="isRecording"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="14" lineNum="27" pc="268435938" symbol="onStart"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="14" lineNum="28" pc="268435942" symbol="onStart"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="14" lineNum="29" pc="268435963" symbol="onStart"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="14" lineNum="30" pc="268435974" symbol="onStart"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="14" lineNum="31" pc="268435987" symbol="onStart"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="14" lineNum="32" pc="268436008" symbol="onStart"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="14" lineNum="37" pc="268436090" symbol="onStart"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="14" lineNum="39" pc="268436111" symbol="onStart"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="14" lineNum="40" pc="268436132" symbol="onStart"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="14" lineNum="41" pc="268436153" symbol="onStart"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="14" lineNum="45" pc="268436177" symbol="onStart"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="14" lineNum="47" pc="268436198" symbol="onStart"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="15" lineNum="50" pc="268436202" symbol="onStop"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="15" lineNum="51" pc="268436206" symbol="onStop"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="15" lineNum="52" pc="268436227" symbol="onStop"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="15" lineNum="53" pc="268436245" symbol="onStop"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="16" lineNum="57" pc="268436255" symbol="onSave"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="16" lineNum="58" pc="268436259" symbol="onSave"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="16" lineNum="59" pc="268436280" symbol="onSave"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="16" lineNum="60" pc="268436298" symbol="onSave"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="16" lineNum="61" pc="268436316" symbol="onSave"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="17" lineNum="64" pc="268436326" symbol="onDiscard"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="17" lineNum="65" pc="268436330" symbol="onDiscard"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="17" lineNum="66" pc="268436351" symbol="onDiscard"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="17" lineNum="67" pc="268436369" symbol="onDiscard"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="19" lineNum="25" pc="268436379" symbol="hasGPS"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="19" lineNum="26" pc="268436383" symbol="hasGPS"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="20" lineNum="29" pc="268436387" symbol="onStart"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="21" lineNum="33" pc="268436392" symbol="addToHistory"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="21" lineNum="34" pc="268436396" symbol="addToHistory"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="21" lineNum="35" pc="268436417" symbol="addToHistory"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="21" lineNum="37" pc="268436458" symbol="addToHistory"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="22" lineNum="40" pc="268436475" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="22" lineNum="41" pc="268436479" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="22" lineNum="42" pc="268436493" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="22" lineNum="43" pc="268436512" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="22" lineNum="44" pc="268436525" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="22" lineNum="47" pc="268436573" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="22" lineNum="48" pc="268436600" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="22" lineNum="50" pc="268436669" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="22" lineNum="51" pc="268436685" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="23" lineNum="54" pc="268436696" symbol="onStop"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="23" lineNum="11" pc="268439294" symbol="&lt;init&gt;"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoMenuDelegate.mc" id="25" lineNum="6" pc="268436704" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoMenuDelegate.mc" id="25" lineNum="7" pc="268436708" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoMenuDelegate.mc" id="25" lineNum="8" pc="268436726" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoMenuDelegate.mc" id="26" lineNum="11" pc="268436748" symbol="onMenuItem"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoMenuDelegate.mc" id="26" lineNum="12" pc="268436752" symbol="onMenuItem"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoMenuDelegate.mc" id="26" lineNum="13" pc="268436773" symbol="onMenuItem"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoMenuDelegate.mc" id="26" lineNum="14" pc="268436784" symbol="onMenuItem"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoMenuDelegate.mc" id="26" lineNum="15" pc="268436808" symbol="onMenuItem"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoMenuDelegate.mc" id="26" lineNum="16" pc="268436819" symbol="onMenuItem"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="28" lineNum="7" pc="268436844" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="28" lineNum="8" pc="268436848" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="29" lineNum="11" pc="268436867" symbol="compute"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="29" lineNum="12" pc="268436871" symbol="compute"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="30" lineNum="16" pc="268436888" symbol="onLayout"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="30" lineNum="17" pc="268436892" symbol="onLayout"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="31" lineNum="23" pc="268436930" symbol="onShow"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="31" lineNum="24" pc="268436934" symbol="onShow"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="32" lineNum="27" pc="268436958" symbol="drawArc"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="32" lineNum="28" pc="268436962" symbol="drawArc"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="32" lineNum="29" pc="268436979" symbol="drawArc"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="32" lineNum="30" pc="268436992" symbol="drawArc"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="32" lineNum="31" pc="268437002" symbol="drawArc"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="32" lineNum="32" pc="268437015" symbol="drawArc"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="32" lineNum="34" pc="268437025" symbol="drawArc"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="32" lineNum="35" pc="268437032" symbol="drawArc"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="32" lineNum="36" pc="268437046" symbol="drawArc"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="32" lineNum="37" pc="268437086" symbol="drawArc"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="32" lineNum="38" pc="268437137" symbol="drawArc"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="32" lineNum="39" pc="268437177" symbol="drawArc"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="43" pc="268437229" symbol="drawGrid"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="44" pc="268437233" symbol="drawGrid"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="45" pc="268437273" symbol="drawGrid"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="46" pc="268437290" symbol="drawGrid"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="47" pc="268437303" symbol="drawGrid"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="48" pc="268437313" symbol="drawGrid"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="49" pc="268437320" symbol="drawGrid"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="50" pc="268437330" symbol="drawGrid"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="51" pc="268437343" symbol="drawGrid"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="52" pc="268437353" symbol="drawGrid"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="53" pc="268437360" symbol="drawGrid"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="55" pc="268437370" symbol="drawGrid"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="56" pc="268437390" symbol="drawGrid"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="57" pc="268437410" symbol="drawGrid"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="34" lineNum="60" pc="268437428" symbol="drawText"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="34" lineNum="61" pc="268437432" symbol="drawText"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="34" lineNum="62" pc="268437445" symbol="drawText"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="34" lineNum="63" pc="268437455" symbol="drawText"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="34" lineNum="64" pc="268437468" symbol="drawText"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="34" lineNum="65" pc="268437478" symbol="drawText"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="35" lineNum="69" pc="268437528" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="35" lineNum="71" pc="268437532" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="35" lineNum="75" pc="268437552" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="35" lineNum="76" pc="268437566" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="35" lineNum="77" pc="268437580" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="36" lineNum="83" pc="268437595" symbol="onHide"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="38" lineNum="12" pc="268437600" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="38" lineNum="13" pc="268437604" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="38" lineNum="14" pc="268437625" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="38" lineNum="15" pc="268437643" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="38" lineNum="16" pc="268437673" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="38" lineNum="17" pc="268437703" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="39" lineNum="20" pc="268437748" symbol="onPosition"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="39" lineNum="21" pc="268437752" symbol="onPosition"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="40" lineNum="24" pc="268437773" symbol="onMenu"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="40" lineNum="25" pc="268437777" symbol="onMenu"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="40" lineNum="26" pc="268437798" symbol="onMenu"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="40" lineNum="27" pc="268437882" symbol="onMenu"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="41" lineNum="31" pc="268437886" symbol="onSelect"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="41" lineNum="32" pc="268437890" symbol="onSelect"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="41" lineNum="33" pc="268437911" symbol="onSelect"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="41" lineNum="34" pc="268437932" symbol="onSelect"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="41" lineNum="38" pc="268437961" symbol="onSelect"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="41" lineNum="39" pc="268437982" symbol="onSelect"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="41" lineNum="41" pc="268438074" symbol="onSelect"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="42" lineNum="44" pc="268438078" symbol="onKey"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="42" lineNum="46" pc="268438082" symbol="onKey"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="42" lineNum="47" pc="268438103" symbol="onKey"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="42" lineNum="48" pc="268438126" symbol="onKey"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="42" lineNum="50" pc="268438150" symbol="onKey"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="42" lineNum="51" pc="268438173" symbol="onKey"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="42" lineNum="52" pc="268438194" symbol="onKey"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="42" lineNum="54" pc="268438209" symbol="onKey"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="42" lineNum="55" pc="268438232" symbol="onKey"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="42" lineNum="58" pc="268438256" symbol="onKey"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="42" lineNum="59" pc="268438279" symbol="onKey"/>
+        <entry filename="Rez" id="48" lineNum="16" pc="268438304" symbol="MainLayout"/>
+        <entry filename="Rez" id="48" lineNum="18" pc="268438316" symbol="MainLayout"/>
+        <entry filename="Rez" id="48" lineNum="20" pc="268438329" symbol="MainLayout"/>
+        <entry filename="Rez" id="48" lineNum="21" pc="268438448" symbol="MainLayout"/>
+        <entry filename="Rez" id="48" lineNum="22" pc="268438503" symbol="MainLayout"/>
+        <entry filename="Rez" id="48" lineNum="24" pc="268438658" symbol="MainLayout"/>
+        <entry filename="Rez" id="51" lineNum="37" pc="268438686" symbol="initialize"/>
+        <entry filename="Rez" id="51" lineNum="38" pc="268438690" symbol="initialize"/>
+        <entry filename="Rez" id="51" lineNum="39" pc="268438708" symbol="initialize"/>
+        <entry filename="Rez" id="51" lineNum="40" pc="268438764" symbol="initialize"/>
+        <entry filename="Rez" id="53" lineNum="52" pc="268438821" symbol="initialize"/>
+        <entry filename="Rez" id="53" lineNum="53" pc="268438825" symbol="initialize"/>
+        <entry filename="Rez" id="53" lineNum="54" pc="268438843" symbol="initialize"/>
+        <entry filename="Rez" id="53" lineNum="55" pc="268438899" symbol="initialize"/>
+        <entry filename="Rez" id="53" lineNum="56" pc="268438955" symbol="initialize"/>
+    </pcToLineNum>
+    <symbolTable>
+        <entry id="8388639" module="true" symbol="Graphics"/>
+        <entry id="8389346" symbol="text"/>
+        <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
+        <entry id="4" module="true" symbol="globals/Rez/Menus"/>
+        <entry id="9" object="true" symbol="SailInfoSessionRunningMenuDelegate"/>
+        <entry id="8388638" module="true" symbol="ActivityRecording"/>
+        <entry id="33" method="true" symbol="MainLayout"/>
+        <entry field="true" id="35" symbol="menu_sm_save"/>
+        <entry field="true" id="8388890" symbol="sport"/>
+        <entry id="26" method="true" symbol="addToHistory"/>
+        <entry id="46" symbol="resume"/>
+        <entry id="43" method="true" symbol="onPosition"/>
+        <entry field="true" id="8388611" module="true" symbol="Toybox"/>
+        <entry field="true" id="40" symbol="AppName"/>
+        <entry id="8" module="true" symbol="globals/Rez/Strings"/>
+        <entry id="8389080" method="true" symbol="onMenu"/>
+        <entry id="8388772" module="true" object="true" symbol="Fonts"/>
+        <entry id="8389345" symbol="rezId"/>
+        <entry field="true" id="21" symbol="LastSpeed"/>
+        <entry id="8388648" module="true" symbol="WatchUi"/>
+        <entry id="2" module="true" symbol="globals/Rez"/>
+        <entry field="true" id="39" symbol="prompt"/>
+        <entry field="true" id="29" symbol="id_monkey"/>
+        <entry id="8388883" method="true" symbol="discard"/>
+        <entry id="8389124" method="true" symbol="onUpdate"/>
+        <entry field="true" id="8389065" symbol="locY"/>
+        <entry field="true" id="8389064" symbol="locX"/>
+        <entry id="8389687" method="true" symbol="drawArc"/>
+        <entry id="25" method="true" symbol="hasGPS"/>
+        <entry field="true" id="34" symbol="menu_sm_discard"/>
+        <entry id="8388771" module="true" object="true" symbol="Drawables"/>
+        <entry field="true" id="24" symbol="HistoricalData"/>
+        <entry id="8389348" symbol="font"/>
+        <entry id="48" symbol="item_2"/>
+        <entry id="47" symbol="item_1"/>
+        <entry id="28" module="true" symbol="Menus"/>
+        <entry id="6" module="true" symbol="globals/Rez/Layouts"/>
+        <entry id="8389122" method="true" symbol="onLayout"/>
+        <entry field="true" id="8389063" symbol="identifier"/>
+        <entry id="10" object="true" symbol="SailInfoApp"/>
+        <entry field="true" id="41" symbol="ActivityManager"/>
+        <entry id="8389349" symbol="justification"/>
+        <entry id="17" method="true" symbol="hasActiveSession"/>
+        <entry id="8389137" method="true" symbol="compute"/>
+        <entry id="8388882" method="true" symbol="save"/>
+        <entry id="7" module="true" symbol="globals/Rez/JsonData"/>
+        <entry id="32" object="true" symbol="SelectMenu"/>
+        <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
+        <entry id="31" object="true" symbol="MainMenu"/>
+        <entry field="true" id="42" symbol="DataTracker"/>
+        <entry id="8388644" module="true" symbol="System"/>
+        <entry field="true" id="45" symbol="Result"/>
+        <entry id="8389619" method="true" symbol="onSelect"/>
+        <entry id="8388645" module="true" symbol="Time"/>
+        <entry id="8388769" module="true" object="true" symbol="Rez"/>
+        <entry field="true" id="20" symbol="HISTORY_COUNT"/>
+        <entry id="11" object="true" symbol="ActivitySessionManager"/>
+        <entry id="8388881" method="true" symbol="isRecording"/>
+        <entry id="8390088" module="true" object="true" symbol="JsonData"/>
+        <entry field="true" id="30" symbol="LauncherIcon"/>
+        <entry id="8388610" symbol="statics"/>
+        <entry id="15" object="true" symbol="SailInfoDelegate"/>
+        <entry id="8389123" method="true" symbol="onShow"/>
+        <entry id="8389350" module="true" symbol="globals"/>
+        <entry field="true" id="8388958" symbol="speed"/>
+        <entry id="8388770" module="true" object="true" symbol="Strings"/>
+        <entry field="true" id="22" symbol="LastData"/>
+        <entry id="8388702" method="true" symbol="initialize"/>
+        <entry id="18" method="true" symbol="onSave"/>
+        <entry id="8389279" method="true" symbol="onStart"/>
+        <entry field="true" id="8388891" symbol="subSport"/>
+        <entry id="8389780" module="true" symbol="FitContributor"/>
+        <entry id="13" object="true" symbol="SailInfoMenuDelegate"/>
+        <entry id="19" method="true" symbol="onDiscard"/>
+        <entry field="true" id="8388892" symbol="name"/>
+        <entry id="8389190" method="true" symbol="drawText"/>
+        <entry id="8389280" method="true" symbol="getInitialView"/>
+        <entry id="8389281" method="true" symbol="onStop"/>
+        <entry id="8389109" method="true" symbol="onMenuItem"/>
+        <entry id="8389347" symbol="color"/>
+        <entry id="8389097" method="true" symbol="onKey"/>
+        <entry id="14" object="true" symbol="SailInfoView"/>
+        <entry id="12" object="true" symbol="SailingDataTracker"/>
+        <entry id="27" module="true" symbol="Layouts"/>
+        <entry id="44" method="true" symbol="drawGrid"/>
+        <entry id="8388642" module="true" symbol="Position"/>
+        <entry id="5" module="true" symbol="globals/Rez/Fonts"/>
+        <entry field="true" id="23" symbol="LastTime"/>
+        <entry field="true" id="36" symbol="menu_sm_resume"/>
+        <entry id="8389125" method="true" symbol="onHide"/>
+        <entry field="true" id="16" symbol="session"/>
+        <entry id="8388635" module="true" symbol="Application"/>
+        <entry field="true" id="38" symbol="menu_label_2"/>
+        <entry field="true" id="37" symbol="menu_label_1"/>
+    </symbolTable>
+    <localVars>
+        <entry arg="true" endPc="268435510" name="ActivityManager_in" stackId="1" startPc="268435456"/>
+        <entry arg="true" endPc="268435677" name="item" stackId="1" startPc="268435510"/>
+        <entry arg="true" endPc="268435747" name="state" stackId="1" startPc="268435721"/>
+        <entry arg="true" endPc="268435773" name="state" stackId="1" startPc="268435747"/>
+        <entry arg="true" endPc="268436202" name="ToyboxIn" stackId="1" startPc="268435938"/>
+        <entry endPc="268436458" name="iHistory" stackId="2" startPc="268436417"/>
+        <entry arg="true" endPc="268436475" name="info" stackId="1" startPc="268436392"/>
+        <entry endPc="268436669" name="_duration" stackId="3" startPc="268436573"/>
+        <entry endPc="268436695" name="myLocation" stackId="2" startPc="268436479"/>
+        <entry arg="true" endPc="268436696" name="info" stackId="1" startPc="268436475"/>
+        <entry arg="true" endPc="268436844" name="item" stackId="1" startPc="268436748"/>
+        <entry arg="true" endPc="268436888" name="info" stackId="1" startPc="268436867"/>
+        <entry arg="true" endPc="268436930" name="dc" stackId="1" startPc="268436888"/>
+        <entry endPc="268437228" name="height" stackId="4" startPc="268436962"/>
+        <entry endPc="268437228" name="linewidth" stackId="6" startPc="268436962"/>
+        <entry endPc="268437228" name="width" stackId="2" startPc="268436962"/>
+        <entry endPc="268437228" name="xc" stackId="3" startPc="268436962"/>
+        <entry endPc="268437228" name="yc" stackId="5" startPc="268436962"/>
+        <entry arg="true" endPc="268437229" name="dc" stackId="1" startPc="268436958"/>
+        <entry endPc="268437427" name="height" stackId="6" startPc="268437233"/>
+        <entry endPc="268437427" name="x2" stackId="4" startPc="268437233"/>
+        <entry endPc="268437427" name="x1" stackId="3" startPc="268437233"/>
+        <entry endPc="268437427" name="y2" stackId="8" startPc="268437233"/>
+        <entry endPc="268437427" name="y1" stackId="7" startPc="268437233"/>
+        <entry endPc="268437427" name="width" stackId="2" startPc="268437233"/>
+        <entry endPc="268437427" name="xc" stackId="5" startPc="268437233"/>
+        <entry endPc="268437427" name="yc" stackId="9" startPc="268437233"/>
+        <entry arg="true" endPc="268437428" name="dc" stackId="1" startPc="268437229"/>
+        <entry endPc="268437527" name="height" stackId="4" startPc="268437432"/>
+        <entry endPc="268437527" name="width" stackId="2" startPc="268437432"/>
+        <entry endPc="268437527" name="xc" stackId="3" startPc="268437432"/>
+        <entry endPc="268437527" name="yc" stackId="5" startPc="268437432"/>
+        <entry arg="true" endPc="268437528" name="dc" stackId="1" startPc="268437428"/>
+        <entry arg="true" endPc="268437595" name="dc" stackId="1" startPc="268437528"/>
+        <entry arg="true" endPc="268437773" name="info" stackId="1" startPc="268437748"/>
+        <entry arg="true" endPc="268438304" name="evt" stackId="1" startPc="268438078"/>
+        <entry endPc="268438685" name="rez_cmp_local_text_2806812915" stackId="4" startPc="268438316"/>
+        <entry endPc="268438685" name="rez_cmp_local_var_dc_getWidth" stackId="2" startPc="268438316"/>
+        <entry endPc="268438685" name="rez_cmp_local_bitmap_id_monkey" stackId="3" startPc="268438316"/>
+        <entry arg="true" endPc="268438686" name="dc" stackId="1" startPc="268438304"/>
+    </localVars>
+    <annotations/>
+    <dataEntryOffsetMappings>
+        <dataEntry offset="87" parentId="" symbolId="globals" type="module"/>
+        <dataEntry offset="190" parentId="globals" symbolId="ActivitySessionManager" type="class"/>
+        <dataEntry offset="293" parentId="globals" symbolId="SailingDataTracker" type="class"/>
+        <dataEntry offset="420" parentId="globals" symbolId="Rez" type="module"/>
+        <dataEntry offset="499" parentId="Rez" symbolId="Drawables" type="module"/>
+        <dataEntry offset="546" parentId="Rez" symbolId="Menus" type="module"/>
+        <dataEntry offset="593" parentId="Menus" symbolId="SelectMenu" type="class"/>
+        <dataEntry offset="640" parentId="Menus" symbolId="MainMenu" type="class"/>
+        <dataEntry offset="687" parentId="Rez" symbolId="Fonts" type="module"/>
+        <dataEntry offset="718" parentId="Rez" symbolId="Layouts" type="module"/>
+        <dataEntry offset="757" parentId="Rez" symbolId="JsonData" type="module"/>
+        <dataEntry offset="788" parentId="Rez" symbolId="Strings" type="module"/>
+        <dataEntry offset="875" parentId="globals" symbolId="SailInfoDelegate" type="class"/>
+        <dataEntry offset="970" parentId="globals" symbolId="SailInfoView" type="class"/>
+        <dataEntry offset="1089" parentId="globals" symbolId="SailInfoMenuDelegate" type="class"/>
+        <dataEntry offset="1144" parentId="globals" symbolId="SailInfoSessionRunningMenuDelegate" type="class"/>
+        <dataEntry offset="1215" parentId="globals" symbolId="SailInfoApp" type="class"/>
+    </dataEntryOffsetMappings>
+    <functions>
+        <functionEntry accessMode="public" name="initialize" parent="SailInfoSessionRunningMenuDelegate">
+            <param id="ActivityManager_in"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onMenuItem" parent="SailInfoSessionRunningMenuDelegate">
+            <param id="item"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="SailInfoApp">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onStart" parent="SailInfoApp">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onStop" parent="SailInfoApp">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="getInitialView" parent="SailInfoApp">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="ActivitySessionManager">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="hasActiveSession" parent="ActivitySessionManager">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="isRecording" parent="ActivitySessionManager">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onStart" parent="ActivitySessionManager">
+            <param id="ToyboxIn"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onStop" parent="ActivitySessionManager">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onSave" parent="ActivitySessionManager">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onDiscard" parent="ActivitySessionManager">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="hasGPS" parent="SailingDataTracker">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onStart" parent="SailingDataTracker">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="addToHistory" parent="SailingDataTracker">
+            <param id="info"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onUpdate" parent="SailingDataTracker">
+            <param id="info"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onStop" parent="SailingDataTracker">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="SailInfoMenuDelegate">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onMenuItem" parent="SailInfoMenuDelegate">
+            <param id="item"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="SailInfoView">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="compute" parent="SailInfoView">
+            <param id="info"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onLayout" parent="SailInfoView">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onShow" parent="SailInfoView">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="drawArc" parent="SailInfoView">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="drawGrid" parent="SailInfoView">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="drawText" parent="SailInfoView">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onUpdate" parent="SailInfoView">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onHide" parent="SailInfoView">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="SailInfoDelegate">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onPosition" parent="SailInfoDelegate">
+            <param id="info"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onMenu" parent="SailInfoDelegate">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onSelect" parent="SailInfoDelegate">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onKey" parent="SailInfoDelegate">
+            <param id="evt"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="MainLayout" parent="Layouts">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="MainMenu">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="SelectMenu">
+            <documentation/>
+        </functionEntry>
+    </functions>
+</debugInfo>

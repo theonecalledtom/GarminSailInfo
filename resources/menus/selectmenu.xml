@@ -1,0 +1,5 @@
+<menu id="SelectMenu">
+	<menu-item id="resume" label="@Strings.menu_sm_resume"></menu-item>
+	<menu-item id="save" label="@Strings.menu_sm_save"></menu-item>
+	<menu-item id="discard" label="@Strings.menu_sm_discard"></menu-item>
+</menu>
