@@ -6,20 +6,21 @@ using Toybox.Position;
 
 
 class SailInfoDelegate extends WatchUi.BehaviorDelegate {
-	var ActivityManager = null;                                             // set up session variable
-	var DataTracker = null;
+	var activityManager = null;                                             // set up session variable
+	var dataTracker = null;
 	
     function initialize() {
 	    System.println("SailInfoDelegate.initialize");
         BehaviorDelegate.initialize();
-        ActivityManager = new ActivitySessionManager();
-        DataTracker = new SailingDataTracker();
+        activityManager = new ActivitySessionManager();
+        dataTracker = new SailingDataTracker();
         Position.enableLocationEvents(Position.LOCATION_CONTINUOUS, method(:onPosition));
     }
 
 	function onPosition(info) {
 		System.println("SailInfoDelegate.onPosition");
-		DataTracker.onUpdate(info);
+		dataTracker.onUpdate(info);
+		WatchUi.requestUpdate();
 	}
 	
     function onMenu() {
@@ -32,7 +33,7 @@ class SailInfoDelegate extends WatchUi.BehaviorDelegate {
 	function onSelect() {
 	   System.println("SailInfoDelegate.onSelect");
 	   if (!ActivityManager.hasActiveSession()) {
-		   ActivityManager.onStart(Toybox);
+		   activityManager.onStart(Toybox);
 		   //TODO: UI Indicator!
 	   }
 	   else {

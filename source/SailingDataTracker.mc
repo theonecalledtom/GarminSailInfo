@@ -19,8 +19,8 @@ class SailingDataTracker {
 	var LastBearing = 0.0;
 	var LastSpeed = 0.0;
 	var LastData = null;
-	var LastTime = null;
-	var FirstTime = null;
+	var LastTime = 0.0;
+	var FirstTime = 0.0;
 	
 	var HistoricalData = 
 	[ 
@@ -54,13 +54,14 @@ class SailingDataTracker {
 	function onUpdate(info){
 		addToHistory(info);
 		var myLocation = info.position.toDegrees();
+		var time = System.getTimer() * 0.001;
 		if (LastData == null) {
-			FirstTime =info.when;
+			FirstTime = time;
+			LastTime = FirstTime;
 		    System.println("first Lat,Lon:" + myLocation[0] + ", " + myLocation[1]);
 		}
 		else {
-			var _duration = info.when.subtract(LastTime);
-			var _offset = info.when.subtract(FirstTime);
+			var _duration = time - LastTime;
 			var lastLocation = LastData.position.toDegrees();
 			
 			LastBearing = LocationMath.BearingBetweenCoords(
@@ -70,12 +71,12 @@ class SailingDataTracker {
 			LastSpeed = LocationMath.DistanceBetweenCoords(
 				lastLocation[0], lastLocation[1],
 				myLocation[0], myLocation[1]); 
-			LastSpeed *= 1.94384 / _duration.value();
+			LastSpeed *= 1.94384 / _duration;
 			var lastOtherSpeed = 1.94384 * info.speed;
 			System.println("Lat,Lon:" + myLocation[0] + ", " + myLocation[1]);
-			System.println(" -> bearing[" + LastBearing + "] speed[" + LastSpeed + "/" + lastOtherSpeed +"] {@" + _offset.value() + "}");	
+			System.println(" -> bearing[" + LastBearing + "] speed[" + LastSpeed + "/" + lastOtherSpeed +"] {@" + (time - FirstTime) + "}");	
 		}
-		LastTime = info.when;
+		LastTime = time;
 		LastData = info;
 	}
 

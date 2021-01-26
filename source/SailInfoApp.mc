@@ -22,7 +22,9 @@ class SailInfoApp extends Application.AppBase {
 
     // Return the initial view of your application here
     function getInitialView() {
-        return [ new SailInfoView(), new SailInfoDelegate() ];
+    	var dele = new SailInfoDelegate();
+    	var view = new SailInfoView(dele.dataTracker);
+        return [ view, dele ];
     }
 
 }

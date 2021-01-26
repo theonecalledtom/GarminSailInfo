@@ -2,14 +2,11 @@ using Toybox.WatchUi;
 
 class SailInfoView extends WatchUi.View {
 
-	hidden var speed = 0.0;
+	hidden var dataTracker;
 
-    function initialize() {
+    function initialize(dataTrackerIn) {
         View.initialize();
-    }
-
-	function compute(info) {
-    	speed = info.currentSpeed;
+        dataTracker = dataTrackerIn;
     }
     
     // Load your resources here
@@ -62,11 +59,15 @@ class SailInfoView extends WatchUi.View {
         var xc = width * 0.5;
         var height = dc.getHeight();
 		var yc = height * 0.5;
-        dc.drawText(xc,yc,Graphics.FONT_MEDIUM, "test text", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_BLACK);
+        dc.drawText(xc,yc-35,Graphics.FONT_SYSTEM_LARGE, dataTracker.LastSpeed, Graphics.TEXT_JUSTIFY_CENTER);
+        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
+        dc.drawText(xc,yc+15,Graphics.FONT_MEDIUM, dataTracker.LastBearing, Graphics.TEXT_JUSTIFY_CENTER);
 	}
     
     // Update the view
     function onUpdate(dc) {
+    //System.println("SailInfoView.onUpdate");
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
         
