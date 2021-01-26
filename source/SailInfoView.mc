@@ -59,9 +59,9 @@ class SailInfoView extends WatchUi.View {
         var xc = width * 0.5;
         var height = dc.getHeight();
 		var yc = height * 0.5;
-        dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_BLACK);
+        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
         dc.drawText(xc,yc-35,Graphics.FONT_SYSTEM_LARGE, dataTracker.LastSpeed, Graphics.TEXT_JUSTIFY_CENTER);
-        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
+        dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
         dc.drawText(xc,yc+15,Graphics.FONT_MEDIUM, dataTracker.LastBearing, Graphics.TEXT_JUSTIFY_CENTER);
 	}
     

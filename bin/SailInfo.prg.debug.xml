@@ -86,7 +86,7 @@
         <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="23" lineNum="79" pc="268436960" symbol="onUpdate"/>
         <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="23" lineNum="80" pc="268436970" symbol="onUpdate"/>
         <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="24" lineNum="83" pc="268436981" symbol="onStop"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="24" lineNum="25" pc="268440743" symbol="&lt;init&gt;"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="24" lineNum="25" pc="268440393" symbol="&lt;init&gt;"/>
         <entry filename="C:\\Projects\\Garmin\\source\\SailInfoMenuDelegate.mc" id="26" lineNum="6" pc="268436989" symbol="initialize"/>
         <entry filename="C:\\Projects\\Garmin\\source\\SailInfoMenuDelegate.mc" id="26" lineNum="7" pc="268436993" symbol="initialize"/>
         <entry filename="C:\\Projects\\Garmin\\source\\SailInfoMenuDelegate.mc" id="26" lineNum="8" pc="268437011" symbol="initialize"/>
@@ -171,8 +171,8 @@
         <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="43" lineNum="54" pc="268438283" symbol="ContainAngleMinus180To180"/>
         <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="43" lineNum="55" pc="268438294" symbol="ContainAngleMinus180To180"/>
         <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="43" lineNum="57" pc="268438307" symbol="ContainAngleMinus180To180"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="43" lineNum="6" pc="268440439" symbol="&lt;init&gt;"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="43" lineNum="7" pc="268440461" symbol="&lt;init&gt;"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="43" lineNum="6" pc="268440089" symbol="&lt;init&gt;"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="43" lineNum="7" pc="268440111" symbol="&lt;init&gt;"/>
         <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="46" lineNum="67" pc="268438314" symbol="BearingBetweenCoords"/>
         <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="46" lineNum="69" pc="268438318" symbol="BearingBetweenCoords"/>
         <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="46" lineNum="71" pc="268438325" symbol="BearingBetweenCoords"/>
@@ -226,107 +226,95 @@
         <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="53" lineNum="57" pc="268439505" symbol="onKey"/>
         <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="53" lineNum="60" pc="268439529" symbol="onKey"/>
         <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="53" lineNum="61" pc="268439552" symbol="onKey"/>
-        <entry filename="Rez" id="59" lineNum="16" pc="268439577" symbol="MainLayout"/>
-        <entry filename="Rez" id="59" lineNum="18" pc="268439589" symbol="MainLayout"/>
-        <entry filename="Rez" id="59" lineNum="19" pc="268439708" symbol="MainLayout"/>
-        <entry filename="Rez" id="59" lineNum="20" pc="268439760" symbol="MainLayout"/>
-        <entry filename="Rez" id="59" lineNum="22" pc="268439912" symbol="MainLayout"/>
-        <entry filename="Rez" id="62" lineNum="35" pc="268439940" symbol="initialize"/>
-        <entry filename="Rez" id="62" lineNum="36" pc="268439944" symbol="initialize"/>
-        <entry filename="Rez" id="62" lineNum="37" pc="268439962" symbol="initialize"/>
-        <entry filename="Rez" id="62" lineNum="38" pc="268440018" symbol="initialize"/>
-        <entry filename="Rez" id="64" lineNum="50" pc="268440075" symbol="initialize"/>
-        <entry filename="Rez" id="64" lineNum="51" pc="268440079" symbol="initialize"/>
-        <entry filename="Rez" id="64" lineNum="52" pc="268440097" symbol="initialize"/>
-        <entry filename="Rez" id="64" lineNum="53" pc="268440153" symbol="initialize"/>
-        <entry filename="Rez" id="64" lineNum="54" pc="268440209" symbol="initialize"/>
+        <entry filename="Rez" id="59" lineNum="15" pc="268439577" symbol="MainLayout"/>
+        <entry filename="Rez" id="62" lineNum="26" pc="268439590" symbol="initialize"/>
+        <entry filename="Rez" id="62" lineNum="27" pc="268439594" symbol="initialize"/>
+        <entry filename="Rez" id="62" lineNum="28" pc="268439612" symbol="initialize"/>
+        <entry filename="Rez" id="62" lineNum="29" pc="268439668" symbol="initialize"/>
+        <entry filename="Rez" id="64" lineNum="41" pc="268439725" symbol="initialize"/>
+        <entry filename="Rez" id="64" lineNum="42" pc="268439729" symbol="initialize"/>
+        <entry filename="Rez" id="64" lineNum="43" pc="268439747" symbol="initialize"/>
+        <entry filename="Rez" id="64" lineNum="44" pc="268439803" symbol="initialize"/>
+        <entry filename="Rez" id="64" lineNum="45" pc="268439859" symbol="initialize"/>
     </pcToLineNum>
     <symbolTable>
         <entry id="8388639" module="true" symbol="Graphics"/>
-        <entry id="8389346" symbol="text"/>
-        <entry field="true" id="68" symbol="activityManager"/>
+        <entry field="true" id="67" symbol="activityManager"/>
         <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
         <entry id="4" module="true" symbol="globals/Rez/Menus"/>
         <entry id="11" object="true" symbol="SailInfoSessionRunningMenuDelegate"/>
         <entry id="8388638" module="true" symbol="ActivityRecording"/>
-        <entry id="41" method="true" symbol="MainLayout"/>
-        <entry field="true" id="43" symbol="menu_sm_save"/>
+        <entry id="40" method="true" symbol="MainLayout"/>
+        <entry field="true" id="42" symbol="menu_sm_save"/>
         <entry id="9" module="true" symbol="globals/AngleUtil"/>
         <entry field="true" id="8388890" symbol="sport"/>
         <entry id="14" object="true" symbol="SegmentDelta"/>
-        <entry id="67" method="true" symbol="DistanceBetweenCoords"/>
+        <entry id="66" method="true" symbol="DistanceBetweenCoords"/>
         <entry id="18" object="true" symbol="AngleUtil"/>
-        <entry id="64" method="true" symbol="addToHistory"/>
+        <entry id="63" method="true" symbol="addToHistory"/>
         <entry field="true" id="33" symbol="bearingDelta"/>
-        <entry id="72" symbol="resume"/>
-        <entry id="69" method="true" symbol="onPosition"/>
-        <entry id="55" method="true" symbol="ContainAngleMinus180To180"/>
+        <entry id="71" symbol="resume"/>
+        <entry id="68" method="true" symbol="onPosition"/>
+        <entry id="54" method="true" symbol="ContainAngleMinus180To180"/>
         <entry field="true" id="8388611" module="true" symbol="Toybox"/>
-        <entry field="true" id="48" symbol="AppName"/>
-        <entry field="true" id="50" symbol="RadToDeg"/>
+        <entry field="true" id="47" symbol="AppName"/>
+        <entry field="true" id="49" symbol="RadToDeg"/>
         <entry id="8" module="true" symbol="globals/Rez/Strings"/>
         <entry id="8389080" method="true" symbol="onMenu"/>
         <entry id="8388772" module="true" object="true" symbol="Fonts"/>
-        <entry id="8389345" symbol="rezId"/>
-        <entry field="true" id="58" symbol="LastSpeed"/>
+        <entry field="true" id="57" symbol="LastSpeed"/>
         <entry id="8388648" module="true" symbol="WatchUi"/>
         <entry id="2" module="true" symbol="globals/Rez"/>
-        <entry field="true" id="47" symbol="prompt"/>
-        <entry field="true" id="37" symbol="id_monkey"/>
+        <entry field="true" id="46" symbol="prompt"/>
         <entry id="19" object="true" symbol="LocationMath"/>
         <entry id="8388883" method="true" symbol="discard"/>
         <entry id="8389124" method="true" symbol="onUpdate"/>
-        <entry field="true" id="8389065" symbol="locY"/>
-        <entry field="true" id="8389064" symbol="locX"/>
         <entry id="10" module="true" symbol="globals/LocationMath"/>
         <entry id="8389687" method="true" symbol="drawArc"/>
         <entry field="true" id="27" symbol="isSet"/>
-        <entry id="63" method="true" symbol="hasGPS"/>
-        <entry field="true" id="42" symbol="menu_sm_discard"/>
+        <entry id="62" method="true" symbol="hasGPS"/>
+        <entry field="true" id="41" symbol="menu_sm_discard"/>
         <entry id="8388771" module="true" object="true" symbol="Drawables"/>
-        <entry field="true" id="62" symbol="HistoricalData"/>
-        <entry id="8389348" symbol="font"/>
-        <entry id="74" symbol="item_2"/>
-        <entry id="73" symbol="item_1"/>
+        <entry field="true" id="61" symbol="HistoricalData"/>
+        <entry id="73" symbol="item_2"/>
+        <entry id="72" symbol="item_1"/>
         <entry id="36" module="true" symbol="Menus"/>
         <entry id="6" module="true" symbol="globals/Rez/Layouts"/>
         <entry id="8389122" method="true" symbol="onLayout"/>
-        <entry field="true" id="8389063" symbol="identifier"/>
         <entry id="12" object="true" symbol="SailInfoApp"/>
-        <entry field="true" id="71" symbol="ActivityManager"/>
-        <entry id="8389349" symbol="justification"/>
+        <entry field="true" id="70" symbol="ActivityManager"/>
         <entry id="22" method="true" symbol="hasActiveSession"/>
-        <entry field="true" id="49" symbol="DegToRad"/>
+        <entry field="true" id="48" symbol="DegToRad"/>
         <entry field="true" id="31" symbol="lat2"/>
         <entry field="true" id="29" symbol="lat1"/>
         <entry id="8388882" method="true" symbol="save"/>
         <entry id="7" module="true" symbol="globals/Rez/JsonData"/>
-        <entry id="40" object="true" symbol="SelectMenu"/>
+        <entry id="39" object="true" symbol="SelectMenu"/>
         <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
         <entry field="true" id="30" symbol="long2"/>
         <entry field="true" id="28" symbol="long1"/>
         <entry field="true" id="25" symbol="dataTracker"/>
-        <entry id="39" object="true" symbol="MainMenu"/>
+        <entry id="38" object="true" symbol="MainMenu"/>
         <entry field="true" id="8388893" symbol="PI"/>
         <entry field="true" id="34" symbol="distanceDelta"/>
         <entry id="8388644" module="true" symbol="System"/>
-        <entry field="true" id="70" symbol="Result"/>
+        <entry field="true" id="69" symbol="Result"/>
         <entry id="8389619" method="true" symbol="onSelect"/>
-        <entry id="53" method="true" symbol="Anchor"/>
+        <entry id="52" method="true" symbol="Anchor"/>
         <entry id="8388645" module="true" symbol="Time"/>
         <entry id="8388769" module="true" object="true" symbol="Rez"/>
-        <entry field="true" id="56" symbol="HISTORY_COUNT"/>
+        <entry field="true" id="55" symbol="HISTORY_COUNT"/>
         <entry id="13" object="true" symbol="ActivitySessionManager"/>
         <entry id="8388881" method="true" symbol="isRecording"/>
         <entry id="8390088" module="true" object="true" symbol="JsonData"/>
-        <entry field="true" id="38" symbol="LauncherIcon"/>
+        <entry field="true" id="37" symbol="LauncherIcon"/>
         <entry id="8388610" symbol="statics"/>
         <entry id="20" object="true" symbol="SailInfoDelegate"/>
         <entry id="8389123" method="true" symbol="onShow"/>
         <entry id="8389350" module="true" symbol="globals"/>
-        <entry id="51" method="true" symbol="ShortAngle"/>
+        <entry id="50" method="true" symbol="ShortAngle"/>
         <entry id="8388770" module="true" object="true" symbol="Strings"/>
-        <entry field="true" id="59" symbol="LastData"/>
+        <entry field="true" id="58" symbol="LastData"/>
         <entry id="8388702" method="true" symbol="initialize"/>
         <entry id="23" method="true" symbol="onSave"/>
         <entry id="8389279" method="true" symbol="onStart"/>
@@ -340,27 +328,26 @@
         <entry id="8389280" method="true" symbol="getInitialView"/>
         <entry id="8389281" method="true" symbol="onStop"/>
         <entry id="8389109" method="true" symbol="onMenuItem"/>
-        <entry id="8389347" symbol="color"/>
         <entry id="8389097" method="true" symbol="onKey"/>
         <entry id="17" object="true" symbol="SailInfoView"/>
         <entry id="15" object="true" symbol="SailingDataTracker"/>
-        <entry id="66" method="true" symbol="BearingBetweenCoords"/>
-        <entry id="52" method="true" symbol="CalculateAverage"/>
+        <entry id="65" method="true" symbol="BearingBetweenCoords"/>
+        <entry id="51" method="true" symbol="CalculateAverage"/>
         <entry id="35" module="true" symbol="Layouts"/>
         <entry id="26" method="true" symbol="drawGrid"/>
         <entry id="8388642" module="true" symbol="Position"/>
         <entry id="5" module="true" symbol="globals/Rez/Fonts"/>
-        <entry field="true" id="60" symbol="LastTime"/>
-        <entry field="true" id="44" symbol="menu_sm_resume"/>
-        <entry id="54" method="true" symbol="ContainAngle0To360"/>
+        <entry field="true" id="59" symbol="LastTime"/>
+        <entry field="true" id="43" symbol="menu_sm_resume"/>
+        <entry id="53" method="true" symbol="ContainAngle0To360"/>
         <entry id="8389125" method="true" symbol="onHide"/>
         <entry field="true" id="21" symbol="session"/>
         <entry id="8388635" module="true" symbol="Application"/>
-        <entry field="true" id="61" symbol="FirstTime"/>
-        <entry field="true" id="65" symbol="R"/>
-        <entry field="true" id="57" symbol="LastBearing"/>
-        <entry field="true" id="46" symbol="menu_label_2"/>
-        <entry field="true" id="45" symbol="menu_label_1"/>
+        <entry field="true" id="60" symbol="FirstTime"/>
+        <entry field="true" id="64" symbol="R"/>
+        <entry field="true" id="56" symbol="LastBearing"/>
+        <entry field="true" id="45" symbol="menu_label_2"/>
+        <entry field="true" id="44" symbol="menu_label_1"/>
         <entry field="true" id="32" symbol="timeDelta"/>
     </symbolTable>
     <localVars>
@@ -435,9 +422,7 @@
         <entry arg="true" endPc="268438833" name="fToLat" stackId="3" startPc="268438534"/>
         <entry arg="true" endPc="268439046" name="info" stackId="1" startPc="268438984"/>
         <entry arg="true" endPc="268439577" name="evt" stackId="1" startPc="268439351"/>
-        <entry endPc="268439939" name="rez_cmp_local_text_1811088610" stackId="3" startPc="268439589"/>
-        <entry endPc="268439939" name="rez_cmp_local_bitmap_id_monkey" stackId="2" startPc="268439589"/>
-        <entry arg="true" endPc="268439940" name="dc" stackId="1" startPc="268439577"/>
+        <entry arg="true" endPc="268439590" name="dc" stackId="1" startPc="268439577"/>
     </localVars>
     <annotations/>
     <dataEntryOffsetMappings>
@@ -447,20 +432,20 @@
         <dataEntry offset="444" parentId="globals" symbolId="SegmentDelta" type="class"/>
         <dataEntry offset="555" parentId="globals" symbolId="Rez" type="module"/>
         <dataEntry offset="634" parentId="Rez" symbolId="Drawables" type="module"/>
-        <dataEntry offset="681" parentId="Rez" symbolId="Menus" type="module"/>
-        <dataEntry offset="728" parentId="Menus" symbolId="SelectMenu" type="class"/>
-        <dataEntry offset="775" parentId="Menus" symbolId="MainMenu" type="class"/>
-        <dataEntry offset="822" parentId="Rez" symbolId="Fonts" type="module"/>
-        <dataEntry offset="853" parentId="Rez" symbolId="Layouts" type="module"/>
-        <dataEntry offset="892" parentId="Rez" symbolId="JsonData" type="module"/>
-        <dataEntry offset="923" parentId="Rez" symbolId="Strings" type="module"/>
-        <dataEntry offset="1010" parentId="globals" symbolId="AngleUtil" type="class"/>
-        <dataEntry offset="1152" parentId="globals" symbolId="SailInfoMenuDelegate" type="class"/>
-        <dataEntry offset="1207" parentId="globals" symbolId="SailingDataTracker" type="class"/>
-        <dataEntry offset="1350" parentId="globals" symbolId="LocationMath" type="class"/>
-        <dataEntry offset="1452" parentId="globals" symbolId="SailInfoDelegate" type="class"/>
-        <dataEntry offset="1547" parentId="globals" symbolId="SailInfoApp" type="class"/>
-        <dataEntry offset="1618" parentId="globals" symbolId="SailInfoSessionRunningMenuDelegate" type="class"/>
+        <dataEntry offset="673" parentId="Rez" symbolId="Menus" type="module"/>
+        <dataEntry offset="720" parentId="Menus" symbolId="SelectMenu" type="class"/>
+        <dataEntry offset="767" parentId="Menus" symbolId="MainMenu" type="class"/>
+        <dataEntry offset="814" parentId="Rez" symbolId="Fonts" type="module"/>
+        <dataEntry offset="845" parentId="Rez" symbolId="Layouts" type="module"/>
+        <dataEntry offset="884" parentId="Rez" symbolId="JsonData" type="module"/>
+        <dataEntry offset="915" parentId="Rez" symbolId="Strings" type="module"/>
+        <dataEntry offset="1002" parentId="globals" symbolId="AngleUtil" type="class"/>
+        <dataEntry offset="1144" parentId="globals" symbolId="SailInfoMenuDelegate" type="class"/>
+        <dataEntry offset="1199" parentId="globals" symbolId="SailingDataTracker" type="class"/>
+        <dataEntry offset="1342" parentId="globals" symbolId="LocationMath" type="class"/>
+        <dataEntry offset="1444" parentId="globals" symbolId="SailInfoDelegate" type="class"/>
+        <dataEntry offset="1539" parentId="globals" symbolId="SailInfoApp" type="class"/>
+        <dataEntry offset="1610" parentId="globals" symbolId="SailInfoSessionRunningMenuDelegate" type="class"/>
     </dataEntryOffsetMappings>
     <functions>
         <functionEntry accessMode="public" name="initialize" parent="SailInfoSessionRunningMenuDelegate">
