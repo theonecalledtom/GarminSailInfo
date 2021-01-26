@@ -36,8 +36,8 @@ class SailInfoDelegate extends WatchUi.BehaviorDelegate {
 		   //TODO: UI Indicator!
 	   }
 	   else {
-	           System.println("Activity active, pushing menu");
- 			   WatchUi.pushView(new Rez.Menus.SelectMenu(), new SailInfoSessionRunningMenuDelegate(ActivityManager), WatchUi.SLIDE_UP);
+	      	System.println("Activity active, pushing menu");
+ 			WatchUi.pushView(new Rez.Menus.SelectMenu(), new SailInfoSessionRunningMenuDelegate(ActivityManager), WatchUi.SLIDE_UP);
 	   }
 	   return true;                                                 // return true for onSelect function
 	}
@@ -47,7 +47,7 @@ class SailInfoDelegate extends WatchUi.BehaviorDelegate {
 		System.println("SailInfoApp.onKey");
 		if (evt.getKey() == KEY_MENU) {
 			System.println("-> KEY_MENU");
-		}
+		}																`
 		else if (evt.getKey() == KEY_ENTER) {
 			System.println("-> KEY_ENTER");
 			onSelect();

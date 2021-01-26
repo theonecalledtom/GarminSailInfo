@@ -1,10 +1,13 @@
+using Toybox.Math;
+
+
 class AngleUtil {
-	 	const PI = 3.141592653589793;
-        const DegToRad = (2.0 * PI / 360.0);
-        const RadToDeg = 1.0f / DegToRad;
+	 	static const PI = 3.141592653589793;
+        static const DegToRad = (2.0 * PI / 360.0);
+        static const RadToDeg = 1.0f / DegToRad;
 
 
-        function ShortAngle(fAngle1, fAngle2)
+        static function ShortAngle(fAngle1, fAngle2)
         {
             var fDelta = fAngle2 - fAngle1;
             while (fDelta > 180.0f) {
@@ -16,12 +19,12 @@ class AngleUtil {
             return fDelta;
         }
 
-        function CalculateAverage(angle1, angle2)
+        static function CalculateAverage(angle1, angle2)
         {
             return ContainAngle0To360((angle1 + Anchor(angle2, angle1)) * 0.5);
         }
 
-        function Anchor(fValue, fAnchor)
+        static function Anchor(fValue, fAnchor)
         {
             while (fValue - fAnchor > 180.0f) {
             	fValue -= 360.0f;
@@ -32,7 +35,7 @@ class AngleUtil {
             return fValue;
         }
 
-        function ContainAngle0To360(fAngle)
+        static function ContainAngle0To360(fAngle)
         {
             while (fAngle > 360.0f) {
             	fAngle -= 360.0f;
@@ -43,7 +46,7 @@ class AngleUtil {
             return fAngle;
         }
 
-        function ContainAngleMinus180To180(fAngle)
+        static function ContainAngleMinus180To180(fAngle)
         {
             while (fAngle > 180.0f) {
             	fAngle -= 360.0f;
@@ -54,12 +57,14 @@ class AngleUtil {
             return fAngle;
         }
 }
+
+
 class LocationMath {
 		//http://www.movable-type.co.uk/scripts/latlong.html?from=49.243824,-121.887340&to=49.227648,-121.89631
 		
- 		const R = 6371.0 * 1000.0;    // m
+ 		static const R = 6371.0 * 1000.0;    // m
  
- 		function BearingBetweenCoords(long1, lat1, long2, lat2)
+ 		static function BearingBetweenCoords(lat1, long1, lat2, long2)
  		{
 	 		var dLon = (long2 - long1);
 
@@ -70,14 +75,16 @@ class LocationMath {
 		    var brng = Math.atan2(y, x);
 		
 		    brng = Math.toDegrees(brng);
-		    brng = (brng + 360) % 360;
-		    brng = 360 - brng; // count degrees counter-clockwise - remove to make clockwise
+		    brng = AngleUtil.ContainAngle0To360(brng + 360.0);
+		    brng = 360.0 - brng; // count degrees counter-clockwise - remove to make clockwise
  			return brng;
  		}
  
-		function DistanceBetweenCoords(fFromLong, fFromLat, fToLong, fToLat)
+		static function DistanceBetweenCoords(fFromLat, fFromLong, fToLat, fToLong)
         {
-	        var dLat = (fFromLat - fToLat) * AngleUtil.DegToRad;
+	        //var dLat = (fFromLat - fToLat) * AngleUtil.DegToRad;
+            var dLat = (fFromLat - fToLat);
+            dLat *= AngleUtil.DegToRad;
             var dLon = (fFromLong - fToLong) * AngleUtil.DegToRad;
             var lat1 = fToLat * AngleUtil.DegToRad;
             var lat2 = fFromLat * AngleUtil.DegToRad;
@@ -86,7 +93,6 @@ class LocationMath {
 	        var a = Math.sin(fDLatOver2) * Math.sin(fDLatOver2) +
 		        Math.sin(fDLongOver2) * Math.sin(fDLongOver2) * Math.cos(lat1) * Math.cos(lat2);
 	        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-
 	        var d = R * c;
 	        return d;
         }

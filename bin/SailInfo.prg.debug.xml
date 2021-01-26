@@ -58,284 +58,305 @@
         <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="17" lineNum="65" pc="268436330" symbol="onDiscard"/>
         <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="17" lineNum="66" pc="268436351" symbol="onDiscard"/>
         <entry filename="C:\\Projects\\Garmin\\source\\ActivitySessionManager.mc" id="17" lineNum="67" pc="268436369" symbol="onDiscard"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="19" lineNum="25" pc="268436379" symbol="hasGPS"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="19" lineNum="26" pc="268436383" symbol="hasGPS"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="20" lineNum="29" pc="268436387" symbol="onStart"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="21" lineNum="33" pc="268436392" symbol="addToHistory"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="21" lineNum="34" pc="268436396" symbol="addToHistory"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="21" lineNum="35" pc="268436417" symbol="addToHistory"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="21" lineNum="37" pc="268436458" symbol="addToHistory"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="22" lineNum="40" pc="268436475" symbol="onUpdate"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="22" lineNum="41" pc="268436479" symbol="onUpdate"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="22" lineNum="42" pc="268436493" symbol="onUpdate"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="22" lineNum="43" pc="268436512" symbol="onUpdate"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="22" lineNum="44" pc="268436525" symbol="onUpdate"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="22" lineNum="47" pc="268436573" symbol="onUpdate"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="22" lineNum="48" pc="268436600" symbol="onUpdate"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="22" lineNum="49" pc="268436625" symbol="onUpdate"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="22" lineNum="52" pc="268436676" symbol="onUpdate"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="22" lineNum="54" pc="268436754" symbol="onUpdate"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="22" lineNum="55" pc="268436770" symbol="onUpdate"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="23" lineNum="58" pc="268436781" symbol="onStop"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="23" lineNum="11" pc="268440380" symbol="&lt;init&gt;"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoMenuDelegate.mc" id="25" lineNum="6" pc="268436789" symbol="initialize"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoMenuDelegate.mc" id="25" lineNum="7" pc="268436793" symbol="initialize"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoMenuDelegate.mc" id="25" lineNum="8" pc="268436811" symbol="initialize"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoMenuDelegate.mc" id="26" lineNum="11" pc="268436833" symbol="onMenuItem"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoMenuDelegate.mc" id="26" lineNum="12" pc="268436837" symbol="onMenuItem"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoMenuDelegate.mc" id="26" lineNum="13" pc="268436858" symbol="onMenuItem"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoMenuDelegate.mc" id="26" lineNum="14" pc="268436869" symbol="onMenuItem"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoMenuDelegate.mc" id="26" lineNum="15" pc="268436893" symbol="onMenuItem"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoMenuDelegate.mc" id="26" lineNum="16" pc="268436904" symbol="onMenuItem"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="28" lineNum="7" pc="268436929" symbol="initialize"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="28" lineNum="8" pc="268436933" symbol="initialize"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="29" lineNum="11" pc="268436952" symbol="compute"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="29" lineNum="12" pc="268436956" symbol="compute"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="30" lineNum="16" pc="268436973" symbol="onLayout"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="30" lineNum="17" pc="268436977" symbol="onLayout"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="31" lineNum="23" pc="268437015" symbol="onShow"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="31" lineNum="24" pc="268437019" symbol="onShow"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="32" lineNum="27" pc="268437043" symbol="drawArc"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="32" lineNum="28" pc="268437047" symbol="drawArc"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="32" lineNum="29" pc="268437064" symbol="drawArc"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="32" lineNum="30" pc="268437077" symbol="drawArc"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="32" lineNum="31" pc="268437087" symbol="drawArc"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="32" lineNum="32" pc="268437100" symbol="drawArc"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="32" lineNum="34" pc="268437110" symbol="drawArc"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="32" lineNum="35" pc="268437117" symbol="drawArc"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="32" lineNum="36" pc="268437131" symbol="drawArc"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="32" lineNum="37" pc="268437171" symbol="drawArc"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="32" lineNum="38" pc="268437222" symbol="drawArc"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="32" lineNum="39" pc="268437262" symbol="drawArc"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="43" pc="268437314" symbol="drawGrid"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="44" pc="268437318" symbol="drawGrid"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="45" pc="268437358" symbol="drawGrid"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="46" pc="268437375" symbol="drawGrid"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="47" pc="268437388" symbol="drawGrid"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="48" pc="268437398" symbol="drawGrid"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="49" pc="268437405" symbol="drawGrid"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="50" pc="268437415" symbol="drawGrid"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="51" pc="268437428" symbol="drawGrid"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="52" pc="268437438" symbol="drawGrid"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="53" pc="268437445" symbol="drawGrid"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="55" pc="268437455" symbol="drawGrid"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="56" pc="268437475" symbol="drawGrid"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="57" pc="268437495" symbol="drawGrid"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="34" lineNum="60" pc="268437513" symbol="drawText"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="34" lineNum="61" pc="268437517" symbol="drawText"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="34" lineNum="62" pc="268437530" symbol="drawText"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="34" lineNum="63" pc="268437540" symbol="drawText"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="34" lineNum="64" pc="268437553" symbol="drawText"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="34" lineNum="65" pc="268437563" symbol="drawText"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="35" lineNum="69" pc="268437613" symbol="onUpdate"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="35" lineNum="71" pc="268437617" symbol="onUpdate"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="35" lineNum="75" pc="268437637" symbol="onUpdate"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="35" lineNum="76" pc="268437651" symbol="onUpdate"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="35" lineNum="77" pc="268437665" symbol="onUpdate"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="36" lineNum="83" pc="268437680" symbol="onHide"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="38" lineNum="7" pc="268437685" symbol="ShortAngle"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="38" lineNum="9" pc="268437689" symbol="ShortAngle"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="38" lineNum="10" pc="268437696" symbol="ShortAngle"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="38" lineNum="11" pc="268437707" symbol="ShortAngle"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="38" lineNum="13" pc="268437720" symbol="ShortAngle"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="38" lineNum="14" pc="268437731" symbol="ShortAngle"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="38" lineNum="16" pc="268437744" symbol="ShortAngle"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="39" lineNum="19" pc="268437748" symbol="CalculateAverage"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="39" lineNum="21" pc="268437752" symbol="CalculateAverage"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="40" lineNum="24" pc="268437789" symbol="Anchor"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="40" lineNum="26" pc="268437793" symbol="Anchor"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="40" lineNum="27" pc="268437807" symbol="Anchor"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="40" lineNum="29" pc="268437820" symbol="Anchor"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="40" lineNum="30" pc="268437834" symbol="Anchor"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="40" lineNum="32" pc="268437847" symbol="Anchor"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="41" lineNum="35" pc="268437851" symbol="ContainAngle0To360"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="41" lineNum="37" pc="268437855" symbol="ContainAngle0To360"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="41" lineNum="38" pc="268437866" symbol="ContainAngle0To360"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="41" lineNum="40" pc="268437879" symbol="ContainAngle0To360"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="41" lineNum="41" pc="268437890" symbol="ContainAngle0To360"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="41" lineNum="43" pc="268437903" symbol="ContainAngle0To360"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="42" lineNum="46" pc="268437907" symbol="ContainAngleMinus180To180"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="42" lineNum="48" pc="268437911" symbol="ContainAngleMinus180To180"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="42" lineNum="49" pc="268437922" symbol="ContainAngleMinus180To180"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="42" lineNum="51" pc="268437935" symbol="ContainAngleMinus180To180"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="42" lineNum="52" pc="268437946" symbol="ContainAngleMinus180To180"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="42" lineNum="54" pc="268437959" symbol="ContainAngleMinus180To180"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="42" lineNum="3" pc="268440076" symbol="&lt;init&gt;"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="42" lineNum="4" pc="268440098" symbol="&lt;init&gt;"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="44" lineNum="62" pc="268437966" symbol="BearingBetweenCoords"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="44" lineNum="64" pc="268437970" symbol="BearingBetweenCoords"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="44" lineNum="66" pc="268437977" symbol="BearingBetweenCoords"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="44" lineNum="67" pc="268438018" symbol="BearingBetweenCoords"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="44" lineNum="70" pc="268438119" symbol="BearingBetweenCoords"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="44" lineNum="72" pc="268438142" symbol="BearingBetweenCoords"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="44" lineNum="73" pc="268438163" symbol="BearingBetweenCoords"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="44" lineNum="74" pc="268438179" symbol="BearingBetweenCoords"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="44" lineNum="75" pc="268438189" symbol="BearingBetweenCoords"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="45" lineNum="78" pc="268438193" symbol="DistanceBetweenCoords"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="45" lineNum="80" pc="268438197" symbol="DistanceBetweenCoords"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="45" lineNum="81" pc="268438219" symbol="DistanceBetweenCoords"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="45" lineNum="82" pc="268438241" symbol="DistanceBetweenCoords"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="45" lineNum="83" pc="268438260" symbol="DistanceBetweenCoords"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="45" lineNum="84" pc="268438279" symbol="DistanceBetweenCoords"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="45" lineNum="85" pc="268438289" symbol="DistanceBetweenCoords"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="45" lineNum="86" pc="268438299" symbol="DistanceBetweenCoords"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="45" lineNum="88" pc="268438420" symbol="DistanceBetweenCoords"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="45" lineNum="90" pc="268438489" symbol="DistanceBetweenCoords"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="45" lineNum="91" pc="268438502" symbol="DistanceBetweenCoords"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="47" lineNum="12" pc="268438509" symbol="initialize"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="47" lineNum="13" pc="268438513" symbol="initialize"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="47" lineNum="14" pc="268438534" symbol="initialize"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="47" lineNum="15" pc="268438552" symbol="initialize"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="47" lineNum="16" pc="268438582" symbol="initialize"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="47" lineNum="17" pc="268438612" symbol="initialize"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="48" lineNum="20" pc="268438657" symbol="onPosition"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="48" lineNum="21" pc="268438661" symbol="onPosition"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="48" lineNum="22" pc="268438682" symbol="onPosition"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="49" lineNum="25" pc="268438703" symbol="onMenu"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="49" lineNum="26" pc="268438707" symbol="onMenu"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="49" lineNum="27" pc="268438728" symbol="onMenu"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="49" lineNum="28" pc="268438812" symbol="onMenu"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="50" lineNum="32" pc="268438816" symbol="onSelect"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="50" lineNum="33" pc="268438820" symbol="onSelect"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="50" lineNum="34" pc="268438841" symbol="onSelect"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="50" lineNum="35" pc="268438862" symbol="onSelect"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="50" lineNum="39" pc="268438891" symbol="onSelect"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="50" lineNum="40" pc="268438912" symbol="onSelect"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="50" lineNum="42" pc="268439004" symbol="onSelect"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="51" lineNum="45" pc="268439008" symbol="onKey"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="51" lineNum="47" pc="268439012" symbol="onKey"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="51" lineNum="48" pc="268439033" symbol="onKey"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="51" lineNum="49" pc="268439056" symbol="onKey"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="51" lineNum="51" pc="268439080" symbol="onKey"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="51" lineNum="52" pc="268439103" symbol="onKey"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="51" lineNum="53" pc="268439124" symbol="onKey"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="51" lineNum="55" pc="268439139" symbol="onKey"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="51" lineNum="56" pc="268439162" symbol="onKey"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="51" lineNum="59" pc="268439186" symbol="onKey"/>
-        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="51" lineNum="60" pc="268439209" symbol="onKey"/>
-        <entry filename="Rez" id="57" lineNum="16" pc="268439234" symbol="MainLayout"/>
-        <entry filename="Rez" id="57" lineNum="18" pc="268439246" symbol="MainLayout"/>
-        <entry filename="Rez" id="57" lineNum="19" pc="268439365" symbol="MainLayout"/>
-        <entry filename="Rez" id="57" lineNum="20" pc="268439417" symbol="MainLayout"/>
-        <entry filename="Rez" id="57" lineNum="22" pc="268439569" symbol="MainLayout"/>
-        <entry filename="Rez" id="60" lineNum="35" pc="268439597" symbol="initialize"/>
-        <entry filename="Rez" id="60" lineNum="36" pc="268439601" symbol="initialize"/>
-        <entry filename="Rez" id="60" lineNum="37" pc="268439619" symbol="initialize"/>
-        <entry filename="Rez" id="60" lineNum="38" pc="268439675" symbol="initialize"/>
-        <entry filename="Rez" id="62" lineNum="50" pc="268439732" symbol="initialize"/>
-        <entry filename="Rez" id="62" lineNum="51" pc="268439736" symbol="initialize"/>
-        <entry filename="Rez" id="62" lineNum="52" pc="268439754" symbol="initialize"/>
-        <entry filename="Rez" id="62" lineNum="53" pc="268439810" symbol="initialize"/>
-        <entry filename="Rez" id="62" lineNum="54" pc="268439866" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="20" lineNum="39" pc="268436382" symbol="hasGPS"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="20" lineNum="40" pc="268436386" symbol="hasGPS"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="21" lineNum="43" pc="268436390" symbol="onStart"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="22" lineNum="47" pc="268436395" symbol="addToHistory"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="22" lineNum="48" pc="268436399" symbol="addToHistory"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="22" lineNum="49" pc="268436426" symbol="addToHistory"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="22" lineNum="51" pc="268436467" symbol="addToHistory"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="23" lineNum="54" pc="268436484" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="23" lineNum="55" pc="268436488" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="23" lineNum="56" pc="268436502" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="23" lineNum="57" pc="268436521" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="23" lineNum="58" pc="268436534" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="23" lineNum="59" pc="268436550" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="23" lineNum="62" pc="268436598" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="23" lineNum="63" pc="268436625" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="23" lineNum="64" pc="268436652" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="23" lineNum="66" pc="268436677" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="23" lineNum="70" pc="268436734" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="23" lineNum="73" pc="268436791" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="23" lineNum="74" pc="268436822" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="23" lineNum="75" pc="268436838" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="23" lineNum="76" pc="268436883" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="23" lineNum="78" pc="268436961" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="23" lineNum="79" pc="268436977" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="24" lineNum="82" pc="268436988" symbol="onStop"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailingDataTracker.mc" id="24" lineNum="25" pc="268440586" symbol="&lt;init&gt;"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoMenuDelegate.mc" id="26" lineNum="6" pc="268436996" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoMenuDelegate.mc" id="26" lineNum="7" pc="268437000" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoMenuDelegate.mc" id="26" lineNum="8" pc="268437018" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoMenuDelegate.mc" id="27" lineNum="11" pc="268437040" symbol="onMenuItem"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoMenuDelegate.mc" id="27" lineNum="12" pc="268437044" symbol="onMenuItem"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoMenuDelegate.mc" id="27" lineNum="13" pc="268437065" symbol="onMenuItem"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoMenuDelegate.mc" id="27" lineNum="14" pc="268437076" symbol="onMenuItem"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoMenuDelegate.mc" id="27" lineNum="15" pc="268437100" symbol="onMenuItem"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoMenuDelegate.mc" id="27" lineNum="16" pc="268437111" symbol="onMenuItem"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="29" lineNum="7" pc="268437136" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="29" lineNum="8" pc="268437140" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="30" lineNum="11" pc="268437159" symbol="compute"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="30" lineNum="12" pc="268437163" symbol="compute"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="31" lineNum="16" pc="268437180" symbol="onLayout"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="31" lineNum="17" pc="268437184" symbol="onLayout"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="32" lineNum="23" pc="268437222" symbol="onShow"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="32" lineNum="24" pc="268437226" symbol="onShow"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="27" pc="268437250" symbol="drawArc"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="28" pc="268437254" symbol="drawArc"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="29" pc="268437271" symbol="drawArc"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="30" pc="268437284" symbol="drawArc"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="31" pc="268437294" symbol="drawArc"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="32" pc="268437307" symbol="drawArc"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="34" pc="268437317" symbol="drawArc"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="35" pc="268437324" symbol="drawArc"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="36" pc="268437338" symbol="drawArc"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="37" pc="268437378" symbol="drawArc"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="38" pc="268437429" symbol="drawArc"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="33" lineNum="39" pc="268437469" symbol="drawArc"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="34" lineNum="43" pc="268437521" symbol="drawGrid"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="34" lineNum="44" pc="268437525" symbol="drawGrid"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="34" lineNum="45" pc="268437565" symbol="drawGrid"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="34" lineNum="46" pc="268437582" symbol="drawGrid"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="34" lineNum="47" pc="268437595" symbol="drawGrid"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="34" lineNum="48" pc="268437605" symbol="drawGrid"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="34" lineNum="49" pc="268437612" symbol="drawGrid"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="34" lineNum="50" pc="268437622" symbol="drawGrid"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="34" lineNum="51" pc="268437635" symbol="drawGrid"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="34" lineNum="52" pc="268437645" symbol="drawGrid"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="34" lineNum="53" pc="268437652" symbol="drawGrid"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="34" lineNum="55" pc="268437662" symbol="drawGrid"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="34" lineNum="56" pc="268437682" symbol="drawGrid"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="34" lineNum="57" pc="268437702" symbol="drawGrid"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="35" lineNum="60" pc="268437720" symbol="drawText"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="35" lineNum="61" pc="268437724" symbol="drawText"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="35" lineNum="62" pc="268437737" symbol="drawText"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="35" lineNum="63" pc="268437747" symbol="drawText"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="35" lineNum="64" pc="268437760" symbol="drawText"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="35" lineNum="65" pc="268437770" symbol="drawText"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="36" lineNum="69" pc="268437820" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="36" lineNum="71" pc="268437824" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="36" lineNum="75" pc="268437844" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="36" lineNum="76" pc="268437858" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="36" lineNum="77" pc="268437872" symbol="onUpdate"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoView.mc" id="37" lineNum="83" pc="268437887" symbol="onHide"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="40" lineNum="10" pc="268437892" symbol="ShortAngle"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="40" lineNum="12" pc="268437896" symbol="ShortAngle"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="40" lineNum="13" pc="268437903" symbol="ShortAngle"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="40" lineNum="14" pc="268437914" symbol="ShortAngle"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="40" lineNum="16" pc="268437927" symbol="ShortAngle"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="40" lineNum="17" pc="268437938" symbol="ShortAngle"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="40" lineNum="19" pc="268437951" symbol="ShortAngle"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="41" lineNum="22" pc="268437955" symbol="CalculateAverage"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="41" lineNum="24" pc="268437959" symbol="CalculateAverage"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="42" lineNum="27" pc="268437996" symbol="Anchor"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="42" lineNum="29" pc="268438000" symbol="Anchor"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="42" lineNum="30" pc="268438014" symbol="Anchor"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="42" lineNum="32" pc="268438027" symbol="Anchor"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="42" lineNum="33" pc="268438041" symbol="Anchor"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="42" lineNum="35" pc="268438054" symbol="Anchor"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="43" lineNum="38" pc="268438058" symbol="ContainAngle0To360"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="43" lineNum="40" pc="268438062" symbol="ContainAngle0To360"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="43" lineNum="41" pc="268438073" symbol="ContainAngle0To360"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="43" lineNum="43" pc="268438086" symbol="ContainAngle0To360"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="43" lineNum="44" pc="268438097" symbol="ContainAngle0To360"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="43" lineNum="46" pc="268438110" symbol="ContainAngle0To360"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="44" lineNum="49" pc="268438114" symbol="ContainAngleMinus180To180"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="44" lineNum="51" pc="268438118" symbol="ContainAngleMinus180To180"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="44" lineNum="52" pc="268438129" symbol="ContainAngleMinus180To180"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="44" lineNum="54" pc="268438142" symbol="ContainAngleMinus180To180"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="44" lineNum="55" pc="268438153" symbol="ContainAngleMinus180To180"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="44" lineNum="57" pc="268438166" symbol="ContainAngleMinus180To180"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="44" lineNum="6" pc="268440282" symbol="&lt;init&gt;"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="44" lineNum="7" pc="268440304" symbol="&lt;init&gt;"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="47" lineNum="67" pc="268438173" symbol="BearingBetweenCoords"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="47" lineNum="69" pc="268438177" symbol="BearingBetweenCoords"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="47" lineNum="71" pc="268438184" symbol="BearingBetweenCoords"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="47" lineNum="72" pc="268438221" symbol="BearingBetweenCoords"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="47" lineNum="75" pc="268438312" symbol="BearingBetweenCoords"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="47" lineNum="77" pc="268438333" symbol="BearingBetweenCoords"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="47" lineNum="78" pc="268438352" symbol="BearingBetweenCoords"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="47" lineNum="79" pc="268438379" symbol="BearingBetweenCoords"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="47" lineNum="80" pc="268438389" symbol="BearingBetweenCoords"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="48" lineNum="83" pc="268438393" symbol="DistanceBetweenCoords"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="48" lineNum="86" pc="268438397" symbol="DistanceBetweenCoords"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="48" lineNum="87" pc="268438404" symbol="DistanceBetweenCoords"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="48" lineNum="88" pc="268438423" symbol="DistanceBetweenCoords"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="48" lineNum="89" pc="268438445" symbol="DistanceBetweenCoords"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="48" lineNum="90" pc="268438464" symbol="DistanceBetweenCoords"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="48" lineNum="91" pc="268438483" symbol="DistanceBetweenCoords"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="48" lineNum="92" pc="268438493" symbol="DistanceBetweenCoords"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="48" lineNum="93" pc="268438503" symbol="DistanceBetweenCoords"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="48" lineNum="95" pc="268438612" symbol="DistanceBetweenCoords"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="48" lineNum="96" pc="268438675" symbol="DistanceBetweenCoords"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\LocationMath.mc" id="48" lineNum="97" pc="268438688" symbol="DistanceBetweenCoords"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="50" lineNum="12" pc="268438695" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="50" lineNum="13" pc="268438699" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="50" lineNum="14" pc="268438720" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="50" lineNum="15" pc="268438738" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="50" lineNum="16" pc="268438768" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="50" lineNum="17" pc="268438798" symbol="initialize"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="51" lineNum="20" pc="268438843" symbol="onPosition"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="51" lineNum="21" pc="268438847" symbol="onPosition"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="51" lineNum="22" pc="268438868" symbol="onPosition"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="52" lineNum="25" pc="268438889" symbol="onMenu"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="52" lineNum="26" pc="268438893" symbol="onMenu"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="52" lineNum="27" pc="268438914" symbol="onMenu"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="52" lineNum="28" pc="268438998" symbol="onMenu"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="53" lineNum="32" pc="268439002" symbol="onSelect"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="53" lineNum="33" pc="268439006" symbol="onSelect"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="53" lineNum="34" pc="268439027" symbol="onSelect"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="53" lineNum="35" pc="268439048" symbol="onSelect"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="53" lineNum="39" pc="268439077" symbol="onSelect"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="53" lineNum="40" pc="268439098" symbol="onSelect"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="53" lineNum="42" pc="268439190" symbol="onSelect"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="54" lineNum="45" pc="268439194" symbol="onKey"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="54" lineNum="47" pc="268439198" symbol="onKey"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="54" lineNum="48" pc="268439219" symbol="onKey"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="54" lineNum="49" pc="268439242" symbol="onKey"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="54" lineNum="51" pc="268439266" symbol="onKey"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="54" lineNum="52" pc="268439289" symbol="onKey"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="54" lineNum="53" pc="268439310" symbol="onKey"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="54" lineNum="55" pc="268439325" symbol="onKey"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="54" lineNum="56" pc="268439348" symbol="onKey"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="54" lineNum="59" pc="268439372" symbol="onKey"/>
+        <entry filename="C:\\Projects\\Garmin\\source\\SailInfoDelegate.mc" id="54" lineNum="60" pc="268439395" symbol="onKey"/>
+        <entry filename="Rez" id="60" lineNum="16" pc="268439420" symbol="MainLayout"/>
+        <entry filename="Rez" id="60" lineNum="18" pc="268439432" symbol="MainLayout"/>
+        <entry filename="Rez" id="60" lineNum="19" pc="268439551" symbol="MainLayout"/>
+        <entry filename="Rez" id="60" lineNum="20" pc="268439603" symbol="MainLayout"/>
+        <entry filename="Rez" id="60" lineNum="22" pc="268439755" symbol="MainLayout"/>
+        <entry filename="Rez" id="63" lineNum="35" pc="268439783" symbol="initialize"/>
+        <entry filename="Rez" id="63" lineNum="36" pc="268439787" symbol="initialize"/>
+        <entry filename="Rez" id="63" lineNum="37" pc="268439805" symbol="initialize"/>
+        <entry filename="Rez" id="63" lineNum="38" pc="268439861" symbol="initialize"/>
+        <entry filename="Rez" id="65" lineNum="50" pc="268439918" symbol="initialize"/>
+        <entry filename="Rez" id="65" lineNum="51" pc="268439922" symbol="initialize"/>
+        <entry filename="Rez" id="65" lineNum="52" pc="268439940" symbol="initialize"/>
+        <entry filename="Rez" id="65" lineNum="53" pc="268439996" symbol="initialize"/>
+        <entry filename="Rez" id="65" lineNum="54" pc="268440052" symbol="initialize"/>
     </pcToLineNum>
     <symbolTable>
         <entry id="8388639" module="true" symbol="Graphics"/>
         <entry id="8389346" symbol="text"/>
         <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
         <entry id="4" module="true" symbol="globals/Rez/Menus"/>
-        <entry id="9" object="true" symbol="SailInfoSessionRunningMenuDelegate"/>
+        <entry id="11" object="true" symbol="SailInfoSessionRunningMenuDelegate"/>
         <entry id="8388638" module="true" symbol="ActivityRecording"/>
-        <entry id="29" method="true" symbol="MainLayout"/>
-        <entry field="true" id="31" symbol="menu_sm_save"/>
+        <entry id="40" method="true" symbol="MainLayout"/>
+        <entry field="true" id="42" symbol="menu_sm_save"/>
+        <entry id="9" module="true" symbol="globals/AngleUtil"/>
         <entry field="true" id="8388890" symbol="sport"/>
-        <entry id="53" method="true" symbol="DistanceBetweenCoords"/>
-        <entry id="15" object="true" symbol="AngleUtil"/>
-        <entry id="50" method="true" symbol="addToHistory"/>
-        <entry id="58" symbol="resume"/>
-        <entry id="56" method="true" symbol="onPosition"/>
-        <entry id="43" method="true" symbol="ContainAngleMinus180To180"/>
+        <entry id="14" object="true" symbol="SegmentDelta"/>
+        <entry id="66" method="true" symbol="DistanceBetweenCoords"/>
+        <entry id="18" object="true" symbol="AngleUtil"/>
+        <entry id="63" method="true" symbol="addToHistory"/>
+        <entry field="true" id="32" symbol="bearingDelta"/>
+        <entry id="71" symbol="resume"/>
+        <entry id="69" method="true" symbol="onPosition"/>
+        <entry id="54" method="true" symbol="ContainAngleMinus180To180"/>
         <entry field="true" id="8388611" module="true" symbol="Toybox"/>
-        <entry field="true" id="36" symbol="AppName"/>
-        <entry field="true" id="38" symbol="RadToDeg"/>
+        <entry field="true" id="47" symbol="AppName"/>
+        <entry field="true" id="49" symbol="RadToDeg"/>
         <entry id="8" module="true" symbol="globals/Rez/Strings"/>
         <entry id="8389080" method="true" symbol="onMenu"/>
         <entry id="8388772" module="true" object="true" symbol="Fonts"/>
         <entry id="8389345" symbol="rezId"/>
-        <entry field="true" id="45" symbol="LastSpeed"/>
+        <entry field="true" id="57" symbol="LastSpeed"/>
         <entry id="8388648" module="true" symbol="WatchUi"/>
         <entry id="2" module="true" symbol="globals/Rez"/>
-        <entry field="true" id="35" symbol="prompt"/>
-        <entry field="true" id="25" symbol="id_monkey"/>
-        <entry id="16" object="true" symbol="LocationMath"/>
+        <entry field="true" id="46" symbol="prompt"/>
+        <entry field="true" id="36" symbol="id_monkey"/>
+        <entry id="19" object="true" symbol="LocationMath"/>
         <entry id="8388883" method="true" symbol="discard"/>
         <entry id="8389124" method="true" symbol="onUpdate"/>
         <entry field="true" id="8389065" symbol="locY"/>
         <entry field="true" id="8389064" symbol="locX"/>
+        <entry id="10" module="true" symbol="globals/LocationMath"/>
         <entry id="8389687" method="true" symbol="drawArc"/>
-        <entry id="49" method="true" symbol="hasGPS"/>
-        <entry field="true" id="30" symbol="menu_sm_discard"/>
+        <entry field="true" id="26" symbol="isSet"/>
+        <entry id="62" method="true" symbol="hasGPS"/>
+        <entry field="true" id="41" symbol="menu_sm_discard"/>
         <entry id="8388771" module="true" object="true" symbol="Drawables"/>
-        <entry field="true" id="48" symbol="HistoricalData"/>
+        <entry field="true" id="61" symbol="HistoricalData"/>
         <entry id="8389348" symbol="font"/>
-        <entry id="60" symbol="item_2"/>
-        <entry id="59" symbol="item_1"/>
-        <entry id="24" module="true" symbol="Menus"/>
+        <entry id="73" symbol="item_2"/>
+        <entry id="72" symbol="item_1"/>
+        <entry id="35" module="true" symbol="Menus"/>
         <entry id="6" module="true" symbol="globals/Rez/Layouts"/>
         <entry id="8389122" method="true" symbol="onLayout"/>
         <entry field="true" id="8389063" symbol="identifier"/>
-        <entry id="10" object="true" symbol="SailInfoApp"/>
-        <entry field="true" id="54" symbol="ActivityManager"/>
+        <entry id="12" object="true" symbol="SailInfoApp"/>
+        <entry field="true" id="67" symbol="ActivityManager"/>
         <entry id="8389349" symbol="justification"/>
-        <entry id="19" method="true" symbol="hasActiveSession"/>
+        <entry id="22" method="true" symbol="hasActiveSession"/>
         <entry id="8389137" method="true" symbol="compute"/>
-        <entry field="true" id="37" symbol="DegToRad"/>
+        <entry field="true" id="48" symbol="DegToRad"/>
+        <entry field="true" id="30" symbol="lat2"/>
+        <entry field="true" id="28" symbol="lat1"/>
         <entry id="8388882" method="true" symbol="save"/>
         <entry id="7" module="true" symbol="globals/Rez/JsonData"/>
-        <entry id="28" object="true" symbol="SelectMenu"/>
+        <entry id="39" object="true" symbol="SelectMenu"/>
         <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
-        <entry id="27" object="true" symbol="MainMenu"/>
+        <entry field="true" id="29" symbol="long2"/>
+        <entry field="true" id="27" symbol="long1"/>
+        <entry id="38" object="true" symbol="MainMenu"/>
         <entry field="true" id="8388893" symbol="PI"/>
-        <entry field="true" id="55" symbol="DataTracker"/>
+        <entry field="true" id="68" symbol="DataTracker"/>
+        <entry field="true" id="33" symbol="distanceDelta"/>
         <entry id="8388644" module="true" symbol="System"/>
-        <entry field="true" id="57" symbol="Result"/>
+        <entry field="true" id="70" symbol="Result"/>
         <entry id="8389619" method="true" symbol="onSelect"/>
-        <entry id="41" method="true" symbol="Anchor"/>
+        <entry id="52" method="true" symbol="Anchor"/>
         <entry id="8388645" module="true" symbol="Time"/>
         <entry id="8388769" module="true" object="true" symbol="Rez"/>
-        <entry field="true" id="44" symbol="HISTORY_COUNT"/>
-        <entry id="11" object="true" symbol="ActivitySessionManager"/>
+        <entry field="true" id="55" symbol="HISTORY_COUNT"/>
+        <entry id="13" object="true" symbol="ActivitySessionManager"/>
         <entry id="8388881" method="true" symbol="isRecording"/>
         <entry id="8390088" module="true" object="true" symbol="JsonData"/>
-        <entry field="true" id="26" symbol="LauncherIcon"/>
+        <entry field="true" id="37" symbol="LauncherIcon"/>
         <entry id="8388610" symbol="statics"/>
-        <entry id="17" object="true" symbol="SailInfoDelegate"/>
+        <entry id="20" object="true" symbol="SailInfoDelegate"/>
         <entry id="8389123" method="true" symbol="onShow"/>
         <entry id="8389350" module="true" symbol="globals"/>
         <entry field="true" id="8388958" symbol="speed"/>
-        <entry id="39" method="true" symbol="ShortAngle"/>
+        <entry id="50" method="true" symbol="ShortAngle"/>
         <entry id="8388770" module="true" object="true" symbol="Strings"/>
-        <entry field="true" id="46" symbol="LastData"/>
+        <entry field="true" id="58" symbol="LastData"/>
         <entry id="8388702" method="true" symbol="initialize"/>
-        <entry id="20" method="true" symbol="onSave"/>
+        <entry id="23" method="true" symbol="onSave"/>
         <entry id="8389279" method="true" symbol="onStart"/>
         <entry field="true" id="8388891" symbol="subSport"/>
         <entry id="8389780" module="true" symbol="FitContributor"/>
-        <entry id="13" object="true" symbol="SailInfoMenuDelegate"/>
-        <entry id="21" method="true" symbol="onDiscard"/>
+        <entry id="16" object="true" symbol="SailInfoMenuDelegate"/>
+        <entry id="24" method="true" symbol="onDiscard"/>
         <entry field="true" id="8388892" symbol="name"/>
+        <entry id="8388641" module="true" symbol="Math"/>
         <entry id="8389190" method="true" symbol="drawText"/>
         <entry id="8389280" method="true" symbol="getInitialView"/>
         <entry id="8389281" method="true" symbol="onStop"/>
         <entry id="8389109" method="true" symbol="onMenuItem"/>
         <entry id="8389347" symbol="color"/>
         <entry id="8389097" method="true" symbol="onKey"/>
-        <entry id="14" object="true" symbol="SailInfoView"/>
-        <entry id="12" object="true" symbol="SailingDataTracker"/>
-        <entry id="52" method="true" symbol="BearingBetweenCoords"/>
-        <entry id="40" method="true" symbol="CalculateAverage"/>
-        <entry id="23" module="true" symbol="Layouts"/>
-        <entry id="22" method="true" symbol="drawGrid"/>
+        <entry id="17" object="true" symbol="SailInfoView"/>
+        <entry id="15" object="true" symbol="SailingDataTracker"/>
+        <entry id="65" method="true" symbol="BearingBetweenCoords"/>
+        <entry id="51" method="true" symbol="CalculateAverage"/>
+        <entry id="34" module="true" symbol="Layouts"/>
+        <entry id="25" method="true" symbol="drawGrid"/>
         <entry id="8388642" module="true" symbol="Position"/>
         <entry id="5" module="true" symbol="globals/Rez/Fonts"/>
-        <entry field="true" id="47" symbol="LastTime"/>
-        <entry field="true" id="32" symbol="menu_sm_resume"/>
-        <entry id="42" method="true" symbol="ContainAngle0To360"/>
+        <entry field="true" id="59" symbol="LastTime"/>
+        <entry field="true" id="43" symbol="menu_sm_resume"/>
+        <entry id="53" method="true" symbol="ContainAngle0To360"/>
         <entry id="8389125" method="true" symbol="onHide"/>
-        <entry field="true" id="18" symbol="session"/>
+        <entry field="true" id="21" symbol="session"/>
         <entry id="8388635" module="true" symbol="Application"/>
-        <entry field="true" id="51" symbol="R"/>
-        <entry field="true" id="34" symbol="menu_label_2"/>
-        <entry field="true" id="33" symbol="menu_label_1"/>
+        <entry field="true" id="60" symbol="FirstTime"/>
+        <entry field="true" id="64" symbol="R"/>
+        <entry field="true" id="56" symbol="LastBearing"/>
+        <entry field="true" id="45" symbol="menu_label_2"/>
+        <entry field="true" id="44" symbol="menu_label_1"/>
+        <entry field="true" id="31" symbol="timeDelta"/>
     </symbolTable>
     <localVars>
         <entry arg="true" endPc="268435510" name="ActivityManager_in" stackId="1" startPc="268435456"/>
@@ -343,94 +364,96 @@
         <entry arg="true" endPc="268435747" name="state" stackId="1" startPc="268435721"/>
         <entry arg="true" endPc="268435773" name="state" stackId="1" startPc="268435747"/>
         <entry arg="true" endPc="268436202" name="ToyboxIn" stackId="1" startPc="268435938"/>
-        <entry endPc="268436458" name="iHistory" stackId="2" startPc="268436417"/>
-        <entry arg="true" endPc="268436475" name="info" stackId="1" startPc="268436392"/>
-        <entry endPc="268436754" name="bearing" stackId="5" startPc="268436573"/>
-        <entry endPc="268436754" name="lastLocation" stackId="4" startPc="268436573"/>
-        <entry endPc="268436754" name="_duration" stackId="3" startPc="268436573"/>
-        <entry endPc="268436780" name="myLocation" stackId="2" startPc="268436479"/>
-        <entry arg="true" endPc="268436781" name="info" stackId="1" startPc="268436475"/>
-        <entry arg="true" endPc="268436929" name="item" stackId="1" startPc="268436833"/>
-        <entry arg="true" endPc="268436973" name="info" stackId="1" startPc="268436952"/>
-        <entry arg="true" endPc="268437015" name="dc" stackId="1" startPc="268436973"/>
-        <entry endPc="268437313" name="height" stackId="4" startPc="268437047"/>
-        <entry endPc="268437313" name="linewidth" stackId="6" startPc="268437047"/>
-        <entry endPc="268437313" name="width" stackId="2" startPc="268437047"/>
-        <entry endPc="268437313" name="xc" stackId="3" startPc="268437047"/>
-        <entry endPc="268437313" name="yc" stackId="5" startPc="268437047"/>
-        <entry arg="true" endPc="268437314" name="dc" stackId="1" startPc="268437043"/>
-        <entry endPc="268437512" name="height" stackId="6" startPc="268437318"/>
-        <entry endPc="268437512" name="x2" stackId="4" startPc="268437318"/>
-        <entry endPc="268437512" name="x1" stackId="3" startPc="268437318"/>
-        <entry endPc="268437512" name="y2" stackId="8" startPc="268437318"/>
-        <entry endPc="268437512" name="y1" stackId="7" startPc="268437318"/>
-        <entry endPc="268437512" name="width" stackId="2" startPc="268437318"/>
-        <entry endPc="268437512" name="xc" stackId="5" startPc="268437318"/>
-        <entry endPc="268437512" name="yc" stackId="9" startPc="268437318"/>
-        <entry arg="true" endPc="268437513" name="dc" stackId="1" startPc="268437314"/>
-        <entry endPc="268437612" name="height" stackId="4" startPc="268437517"/>
-        <entry endPc="268437612" name="width" stackId="2" startPc="268437517"/>
-        <entry endPc="268437612" name="xc" stackId="3" startPc="268437517"/>
-        <entry endPc="268437612" name="yc" stackId="5" startPc="268437517"/>
-        <entry arg="true" endPc="268437613" name="dc" stackId="1" startPc="268437513"/>
-        <entry arg="true" endPc="268437680" name="dc" stackId="1" startPc="268437613"/>
-        <entry endPc="268437747" name="fDelta" stackId="3" startPc="268437689"/>
-        <entry arg="true" endPc="268437748" name="fAngle2" stackId="2" startPc="268437685"/>
-        <entry arg="true" endPc="268437748" name="fAngle1" stackId="1" startPc="268437685"/>
-        <entry arg="true" endPc="268437789" name="angle2" stackId="2" startPc="268437748"/>
-        <entry arg="true" endPc="268437789" name="angle1" stackId="1" startPc="268437748"/>
-        <entry arg="true" endPc="268437851" name="fValue" stackId="1" startPc="268437789"/>
-        <entry arg="true" endPc="268437851" name="fAnchor" stackId="2" startPc="268437789"/>
-        <entry arg="true" endPc="268437907" name="fAngle" stackId="1" startPc="268437851"/>
-        <entry arg="true" endPc="268437963" name="fAngle" stackId="1" startPc="268437907"/>
-        <entry endPc="268438192" name="x" stackId="7" startPc="268437970"/>
-        <entry endPc="268438192" name="dLon" stackId="5" startPc="268437970"/>
-        <entry endPc="268438192" name="brng" stackId="8" startPc="268437970"/>
-        <entry endPc="268438192" name="y" stackId="6" startPc="268437970"/>
-        <entry arg="true" endPc="268438193" name="lat2" stackId="4" startPc="268437966"/>
-        <entry arg="true" endPc="268438193" name="long2" stackId="3" startPc="268437966"/>
-        <entry arg="true" endPc="268438193" name="lat1" stackId="2" startPc="268437966"/>
-        <entry arg="true" endPc="268438193" name="long1" stackId="1" startPc="268437966"/>
-        <entry endPc="268438505" name="dLon" stackId="6" startPc="268438197"/>
-        <entry endPc="268438505" name="fDLatOver2" stackId="9" startPc="268438197"/>
-        <entry endPc="268438505" name="lat2" stackId="8" startPc="268438197"/>
-        <entry endPc="268438505" name="lat1" stackId="7" startPc="268438197"/>
-        <entry endPc="268438505" name="d" stackId="13" startPc="268438197"/>
-        <entry endPc="268438505" name="dLat" stackId="5" startPc="268438197"/>
-        <entry endPc="268438505" name="c" stackId="12" startPc="268438197"/>
-        <entry endPc="268438505" name="a" stackId="11" startPc="268438197"/>
-        <entry endPc="268438505" name="fDLongOver2" stackId="10" startPc="268438197"/>
-        <entry arg="true" endPc="268438506" name="fFromLat" stackId="2" startPc="268438193"/>
-        <entry arg="true" endPc="268438506" name="fFromLong" stackId="1" startPc="268438193"/>
-        <entry arg="true" endPc="268438506" name="fToLong" stackId="3" startPc="268438193"/>
-        <entry arg="true" endPc="268438506" name="fToLat" stackId="4" startPc="268438193"/>
-        <entry arg="true" endPc="268438703" name="info" stackId="1" startPc="268438657"/>
-        <entry arg="true" endPc="268439234" name="evt" stackId="1" startPc="268439008"/>
-        <entry endPc="268439596" name="rez_cmp_local_bitmap_id_monkey" stackId="2" startPc="268439246"/>
-        <entry endPc="268439596" name="rez_cmp_local_text_9731726151" stackId="3" startPc="268439246"/>
-        <entry arg="true" endPc="268439597" name="dc" stackId="1" startPc="268439234"/>
+        <entry endPc="268436467" name="iHistory" stackId="2" startPc="268436426"/>
+        <entry arg="true" endPc="268436484" name="info" stackId="1" startPc="268436395"/>
+        <entry endPc="268436961" name="lastOtherSpeed" stackId="6" startPc="268436598"/>
+        <entry endPc="268436961" name="_offset" stackId="4" startPc="268436598"/>
+        <entry endPc="268436961" name="lastLocation" stackId="5" startPc="268436598"/>
+        <entry endPc="268436961" name="_duration" stackId="3" startPc="268436598"/>
+        <entry endPc="268436987" name="myLocation" stackId="2" startPc="268436488"/>
+        <entry arg="true" endPc="268436988" name="info" stackId="1" startPc="268436484"/>
+        <entry arg="true" endPc="268437136" name="item" stackId="1" startPc="268437040"/>
+        <entry arg="true" endPc="268437180" name="info" stackId="1" startPc="268437159"/>
+        <entry arg="true" endPc="268437222" name="dc" stackId="1" startPc="268437180"/>
+        <entry endPc="268437520" name="height" stackId="4" startPc="268437254"/>
+        <entry endPc="268437520" name="linewidth" stackId="6" startPc="268437254"/>
+        <entry endPc="268437520" name="width" stackId="2" startPc="268437254"/>
+        <entry endPc="268437520" name="xc" stackId="3" startPc="268437254"/>
+        <entry endPc="268437520" name="yc" stackId="5" startPc="268437254"/>
+        <entry arg="true" endPc="268437521" name="dc" stackId="1" startPc="268437250"/>
+        <entry endPc="268437719" name="height" stackId="6" startPc="268437525"/>
+        <entry endPc="268437719" name="x2" stackId="4" startPc="268437525"/>
+        <entry endPc="268437719" name="x1" stackId="3" startPc="268437525"/>
+        <entry endPc="268437719" name="y2" stackId="8" startPc="268437525"/>
+        <entry endPc="268437719" name="y1" stackId="7" startPc="268437525"/>
+        <entry endPc="268437719" name="width" stackId="2" startPc="268437525"/>
+        <entry endPc="268437719" name="xc" stackId="5" startPc="268437525"/>
+        <entry endPc="268437719" name="yc" stackId="9" startPc="268437525"/>
+        <entry arg="true" endPc="268437720" name="dc" stackId="1" startPc="268437521"/>
+        <entry endPc="268437819" name="height" stackId="4" startPc="268437724"/>
+        <entry endPc="268437819" name="width" stackId="2" startPc="268437724"/>
+        <entry endPc="268437819" name="xc" stackId="3" startPc="268437724"/>
+        <entry endPc="268437819" name="yc" stackId="5" startPc="268437724"/>
+        <entry arg="true" endPc="268437820" name="dc" stackId="1" startPc="268437720"/>
+        <entry arg="true" endPc="268437887" name="dc" stackId="1" startPc="268437820"/>
+        <entry endPc="268437954" name="fDelta" stackId="3" startPc="268437896"/>
+        <entry arg="true" endPc="268437955" name="fAngle2" stackId="2" startPc="268437892"/>
+        <entry arg="true" endPc="268437955" name="fAngle1" stackId="1" startPc="268437892"/>
+        <entry arg="true" endPc="268437996" name="angle2" stackId="2" startPc="268437955"/>
+        <entry arg="true" endPc="268437996" name="angle1" stackId="1" startPc="268437955"/>
+        <entry arg="true" endPc="268438058" name="fValue" stackId="1" startPc="268437996"/>
+        <entry arg="true" endPc="268438058" name="fAnchor" stackId="2" startPc="268437996"/>
+        <entry arg="true" endPc="268438114" name="fAngle" stackId="1" startPc="268438058"/>
+        <entry arg="true" endPc="268438170" name="fAngle" stackId="1" startPc="268438114"/>
+        <entry endPc="268438392" name="x" stackId="7" startPc="268438177"/>
+        <entry endPc="268438392" name="dLon" stackId="5" startPc="268438177"/>
+        <entry endPc="268438392" name="brng" stackId="8" startPc="268438177"/>
+        <entry endPc="268438392" name="y" stackId="6" startPc="268438177"/>
+        <entry arg="true" endPc="268438393" name="long2" stackId="4" startPc="268438173"/>
+        <entry arg="true" endPc="268438393" name="lat2" stackId="3" startPc="268438173"/>
+        <entry arg="true" endPc="268438393" name="long1" stackId="2" startPc="268438173"/>
+        <entry arg="true" endPc="268438393" name="lat1" stackId="1" startPc="268438173"/>
+        <entry endPc="268438691" name="dLon" stackId="6" startPc="268438397"/>
+        <entry endPc="268438691" name="fDLatOver2" stackId="9" startPc="268438397"/>
+        <entry endPc="268438691" name="lat2" stackId="8" startPc="268438397"/>
+        <entry endPc="268438691" name="lat1" stackId="7" startPc="268438397"/>
+        <entry endPc="268438691" name="d" stackId="13" startPc="268438397"/>
+        <entry endPc="268438691" name="dLat" stackId="5" startPc="268438397"/>
+        <entry endPc="268438691" name="c" stackId="12" startPc="268438397"/>
+        <entry endPc="268438691" name="a" stackId="11" startPc="268438397"/>
+        <entry endPc="268438691" name="fDLongOver2" stackId="10" startPc="268438397"/>
+        <entry arg="true" endPc="268438692" name="fFromLong" stackId="2" startPc="268438393"/>
+        <entry arg="true" endPc="268438692" name="fFromLat" stackId="1" startPc="268438393"/>
+        <entry arg="true" endPc="268438692" name="fToLong" stackId="4" startPc="268438393"/>
+        <entry arg="true" endPc="268438692" name="fToLat" stackId="3" startPc="268438393"/>
+        <entry arg="true" endPc="268438889" name="info" stackId="1" startPc="268438843"/>
+        <entry arg="true" endPc="268439420" name="evt" stackId="1" startPc="268439194"/>
+        <entry endPc="268439782" name="rez_cmp_local_text_5176410485" stackId="3" startPc="268439432"/>
+        <entry endPc="268439782" name="rez_cmp_local_bitmap_id_monkey" stackId="2" startPc="268439432"/>
+        <entry arg="true" endPc="268439783" name="dc" stackId="1" startPc="268439420"/>
     </localVars>
     <annotations/>
     <dataEntryOffsetMappings>
-        <dataEntry offset="87" parentId="" symbolId="globals" type="module"/>
-        <dataEntry offset="206" parentId="globals" symbolId="ActivitySessionManager" type="class"/>
-        <dataEntry offset="309" parentId="globals" symbolId="SailInfoView" type="class"/>
-        <dataEntry offset="428" parentId="globals" symbolId="Rez" type="module"/>
-        <dataEntry offset="507" parentId="Rez" symbolId="Drawables" type="module"/>
-        <dataEntry offset="554" parentId="Rez" symbolId="Menus" type="module"/>
-        <dataEntry offset="601" parentId="Menus" symbolId="SelectMenu" type="class"/>
-        <dataEntry offset="648" parentId="Menus" symbolId="MainMenu" type="class"/>
-        <dataEntry offset="695" parentId="Rez" symbolId="Fonts" type="module"/>
-        <dataEntry offset="726" parentId="Rez" symbolId="Layouts" type="module"/>
-        <dataEntry offset="765" parentId="Rez" symbolId="JsonData" type="module"/>
-        <dataEntry offset="796" parentId="Rez" symbolId="Strings" type="module"/>
-        <dataEntry offset="883" parentId="globals" symbolId="AngleUtil" type="class"/>
-        <dataEntry offset="994" parentId="globals" symbolId="SailInfoMenuDelegate" type="class"/>
-        <dataEntry offset="1049" parentId="globals" symbolId="SailingDataTracker" type="class"/>
-        <dataEntry offset="1176" parentId="globals" symbolId="LocationMath" type="class"/>
-        <dataEntry offset="1247" parentId="globals" symbolId="SailInfoDelegate" type="class"/>
-        <dataEntry offset="1342" parentId="globals" symbolId="SailInfoApp" type="class"/>
-        <dataEntry offset="1413" parentId="globals" symbolId="SailInfoSessionRunningMenuDelegate" type="class"/>
+        <dataEntry offset="103" parentId="" symbolId="globals" type="module"/>
+        <dataEntry offset="230" parentId="globals" symbolId="ActivitySessionManager" type="class"/>
+        <dataEntry offset="333" parentId="globals" symbolId="SailInfoView" type="class"/>
+        <dataEntry offset="452" parentId="globals" symbolId="SegmentDelta" type="class"/>
+        <dataEntry offset="563" parentId="globals" symbolId="Rez" type="module"/>
+        <dataEntry offset="642" parentId="Rez" symbolId="Drawables" type="module"/>
+        <dataEntry offset="689" parentId="Rez" symbolId="Menus" type="module"/>
+        <dataEntry offset="736" parentId="Menus" symbolId="SelectMenu" type="class"/>
+        <dataEntry offset="783" parentId="Menus" symbolId="MainMenu" type="class"/>
+        <dataEntry offset="830" parentId="Rez" symbolId="Fonts" type="module"/>
+        <dataEntry offset="861" parentId="Rez" symbolId="Layouts" type="module"/>
+        <dataEntry offset="900" parentId="Rez" symbolId="JsonData" type="module"/>
+        <dataEntry offset="931" parentId="Rez" symbolId="Strings" type="module"/>
+        <dataEntry offset="1018" parentId="globals" symbolId="AngleUtil" type="class"/>
+        <dataEntry offset="1160" parentId="globals" symbolId="SailInfoMenuDelegate" type="class"/>
+        <dataEntry offset="1215" parentId="globals" symbolId="SailingDataTracker" type="class"/>
+        <dataEntry offset="1358" parentId="globals" symbolId="LocationMath" type="class"/>
+        <dataEntry offset="1460" parentId="globals" symbolId="SailInfoDelegate" type="class"/>
+        <dataEntry offset="1555" parentId="globals" symbolId="SailInfoApp" type="class"/>
+        <dataEntry offset="1626" parentId="globals" symbolId="SailInfoSessionRunningMenuDelegate" type="class"/>
     </dataEntryOffsetMappings>
     <functions>
         <functionEntry accessMode="public" name="initialize" parent="SailInfoSessionRunningMenuDelegate">
@@ -558,17 +581,17 @@
             <documentation/>
         </functionEntry>
         <functionEntry accessMode="public" name="BearingBetweenCoords" parent="LocationMath">
-            <param id="long1"/>
             <param id="lat1"/>
-            <param id="long2"/>
+            <param id="long1"/>
             <param id="lat2"/>
+            <param id="long2"/>
             <documentation/>
         </functionEntry>
         <functionEntry accessMode="public" name="DistanceBetweenCoords" parent="LocationMath">
-            <param id="fFromLong"/>
             <param id="fFromLat"/>
-            <param id="fToLong"/>
+            <param id="fFromLong"/>
             <param id="fToLat"/>
+            <param id="fToLong"/>
             <documentation/>
         </functionEntry>
         <functionEntry accessMode="public" name="initialize" parent="SailInfoDelegate">
