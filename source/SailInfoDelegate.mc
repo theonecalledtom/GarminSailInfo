@@ -18,6 +18,7 @@ class SailInfoDelegate extends WatchUi.BehaviorDelegate {
     }
 
 	function onPosition(info) {
+		System.println("SailInfoDelegate.onPosition");
 		DataTracker.onUpdate(info);
 	}
 	

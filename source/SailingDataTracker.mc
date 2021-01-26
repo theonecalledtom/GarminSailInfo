@@ -45,7 +45,11 @@ class SailingDataTracker {
 		}
 		else {
 			var _duration = info.when.subtract(LastTime);
-			System.println("first Lat,Lon:" + myLocation[0] + ", " + myLocation[1] + " {@" + _duration.value() + "}");	
+			var lastLocation = LastData.position.toDegrees();
+			var bearing = LocationMath.BearingBetweenCoords(
+				lastLocation[0], lastLocation[1],
+				myLocation[0], myLocation[1]); 
+			System.println("first Lat,Lon:" + myLocation[0] + ", " + myLocation[1] + " bearing(" + bearing + ") {@" + _duration.value() + "}");	
 		}
 		LastTime = info.when;
 		LastData = info;
