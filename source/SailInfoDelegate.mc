@@ -32,13 +32,13 @@ class SailInfoDelegate extends WatchUi.BehaviorDelegate {
 	// use the select Start/Stop or touch for recording
 	function onSelect() {
 	   System.println("SailInfoDelegate.onSelect");
-	   if (!ActivityManager.hasActiveSession()) {
+	   if (!activityManager.hasActiveSession()) {
 		   activityManager.onStart(Toybox);
 		   //TODO: UI Indicator!
 	   }
 	   else {
 	      	System.println("Activity active, pushing menu");
- 			WatchUi.pushView(new Rez.Menus.SelectMenu(), new SailInfoSessionRunningMenuDelegate(ActivityManager), WatchUi.SLIDE_UP);
+ 			WatchUi.pushView(new Rez.Menus.SelectMenu(), new SailInfoSessionRunningMenuDelegate(activityManager), WatchUi.SLIDE_UP);
 	   }
 	   return true;                                                 // return true for onSelect function
 	}
@@ -46,7 +46,10 @@ class SailInfoDelegate extends WatchUi.BehaviorDelegate {
 	function onKey(evt)
 	{
 		System.println("SailInfoApp.onKey");
-		if (evt.getKey() == KEY_MENU) {
+		System.println(" ->" + evt.getKey());  // e.g. KEY_MENU = 7
+        System.println(" ->" + evt.getType()); // e.g. PRESS_TYPE_DOWN = 0
+        
+        if (evt.getKey() == KEY_MENU) {
 			System.println("-> KEY_MENU");
 		}																`
 		else if (evt.getKey() == KEY_ENTER) {
@@ -61,5 +64,6 @@ class SailInfoDelegate extends WatchUi.BehaviorDelegate {
 			System.println("-> KEY_LIGHT");
 			// do whatever
 		}
+		return true;
 	}
 }
