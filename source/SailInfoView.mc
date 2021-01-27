@@ -3,10 +3,12 @@ using Toybox.WatchUi;
 class SailInfoView extends WatchUi.View {
 
 	hidden var dataTracker;
+	hidden var courseTracker;
 
-    function initialize(dataTrackerIn) {
+    function initialize(dataTrackerIn, courseTrackerIn) {
         View.initialize();
         dataTracker = dataTrackerIn;
+        courseTracker = courseTrackerIn;
     }
     
     // Load your resources here
@@ -33,40 +35,25 @@ class SailInfoView extends WatchUi.View {
         dc.drawArc(xc, yc, xc-linewidth*(0.5 + segmentLayer), Graphics.ARC_CLOCKWISE, 90-min, 90-max);
 	}
 
-	function drawArc(dc) {
-
-		drawPolarSegment(dc, 90, 180, 0, Graphics.COLOR_GREEN);
-		drawPolarSegment(dc, 315, 85, 1, Graphics.COLOR_PINK);
-		drawPolarSegment(dc, -30, 30, 2, Graphics.COLOR_RED);
+	function drawCourseSelection(dc) {
+		var suggestedCourse = courseTracker.getSuggestedCourseAsAngle();
+		var currentCourse = courseTracker.getCurrentCourseAsAngle();
+		drawPolarSegment(dc, currentCourse-20, currentCourse+20, 0, Graphics.COLOR_GREEN);
+		drawPolarSegment(dc, suggestedCourse-10, suggestedCourse+10, 1, Graphics.COLOR_PINK);
     }
     
-	function drawGrid(dc) {
-        dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_BLACK);
-        dc.setPenWidth(2);
-        var width = dc.getWidth();
-        var x1 = width*0.125;
-        var x2 = width - x1;
-        var xc = width * 0.5;
-        var height = dc.getHeight();
-        var y1 = height*0.125;
-        var y2 = height - y1;
-		var yc = height * 0.5;
-		dc.drawRectangle(x1,y1,width*0.75, height * 0.375);
-        //dc.drawLine(x1, yc, x2, yc);
-        //dc.drawLine(xc, y1, xc, y2);
-        dc.setPenWidth(1);    
-    }
-
 	function drawText(dc) {
         var width = dc.getWidth();
         var xc = width * 0.5;
         var height = dc.getHeight();
 		var yc = height * 0.5;
-		var fontHeight = dc.getFontHeight(Graphics.FONT_SYSTEM_LARGE);
+		var largeFontHeight = dc.getFontHeight(Graphics.FONT_SYSTEM_LARGE);
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(xc,yc-fontHeight,Graphics.FONT_SYSTEM_LARGE, dataTracker.LastSpeed.format("%.2f"), Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(xc,yc-largeFontHeight,Graphics.FONT_SYSTEM_LARGE, dataTracker.LastSpeed.format("%.2f"), Graphics.TEXT_JUSTIFY_CENTER);
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
+        var mediunmFontHeight = dc.getFontHeight(Graphics.FONT_MEDIUM);
         dc.drawText(xc,yc,Graphics.FONT_MEDIUM, dataTracker.LastBearing.format("%.1f"), Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(xc,yc+mediunmFontHeight,Graphics.FONT_MEDIUM, courseTracker.getCourseAsText(), Graphics.TEXT_JUSTIFY_CENTER);
 	}
     
     // Update the view
@@ -75,10 +62,7 @@ class SailInfoView extends WatchUi.View {
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
         
-  		
-        
-        drawGrid(dc);
-        drawArc(dc);
+        drawCourseSelection(dc);
         drawText(dc);
     }
 
