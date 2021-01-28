@@ -51,9 +51,21 @@ class SailInfoView extends WatchUi.View {
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
         dc.drawText(xc,yc-largeFontHeight,Graphics.FONT_SYSTEM_LARGE, dataTracker.LastSpeed.format("%.2f"), Graphics.TEXT_JUSTIFY_CENTER);
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-        var mediunmFontHeight = dc.getFontHeight(Graphics.FONT_MEDIUM);
+        var mediumFontHeight = dc.getFontHeight(Graphics.FONT_MEDIUM);
         dc.drawText(xc,yc,Graphics.FONT_MEDIUM, dataTracker.LastBearing.format("%.1f"), Graphics.TEXT_JUSTIFY_CENTER);
-        dc.drawText(xc,yc+mediunmFontHeight,Graphics.FONT_MEDIUM, courseTracker.getCourseAsText(), Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(xc,yc+mediumFontHeight,Graphics.FONT_MEDIUM, courseTracker.getCourseAsText(), Graphics.TEXT_JUSTIFY_CENTER);
+	}
+	
+	function drawStart(dc) {
+       var width = dc.getWidth();
+        var xc = width * 0.5;
+        var height = dc.getHeight();
+		var yc = height * 0.5;
+		var largeFontHeight = dc.getFontHeight(Graphics.FONT_SYSTEM_LARGE);
+        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(xc,yc-largeFontHeight*0.5,Graphics.FONT_SYSTEM_LARGE, "START", Graphics.TEXT_JUSTIFY_CENTER);
+        
+        drawPolarSegment(dc, 50, 70, 0, Graphics.COLOR_GREEN);
 	}
     
     // Update the view
@@ -61,9 +73,15 @@ class SailInfoView extends WatchUi.View {
     //System.println("SailInfoView.onUpdate");
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
-        
-        drawCourseSelection(dc);
-        drawText(dc);
+        if (dataTracker.currentlyTracking)
+        {
+        	drawCourseSelection(dc);
+ 	        drawText(dc);
+        }
+        else
+        {
+        	drawStart(dc);
+        }
     }
 
     // Called when this View is removed from the screen. Save the

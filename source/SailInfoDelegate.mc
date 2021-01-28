@@ -3,7 +3,7 @@ using Toybox.System;
 using Toybox.FitContributor;
 using Toybox.ActivityRecording;
 using Toybox.Position;
-
+using Toybox.Attention;
 
 class SailInfoDelegate extends WatchUi.BehaviorDelegate {
 	var activityManager = null;                                             // set up session variable
@@ -13,9 +13,9 @@ class SailInfoDelegate extends WatchUi.BehaviorDelegate {
     function initialize() {
 	    System.println("SailInfoDelegate.initialize");
         BehaviorDelegate.initialize();
-        activityManager = new ActivitySessionManager();
         dataTracker = new SailingDataTracker();
-        courseTracker = new CourseTracker();
+        activityManager = new ActivitySessionManager(dataTracker);
+        courseTracker = new CourseTracker(dataTracker);
         Position.enableLocationEvents(Position.LOCATION_CONTINUOUS, method(:onPosition));
     }
 
@@ -32,20 +32,6 @@ class SailInfoDelegate extends WatchUi.BehaviorDelegate {
         return true;
     }
 	
-	// use the select Start/Stop or touch for recording
-	function onActivitySelect() {
-	   System.println("SailInfoDelegate.onSelect");
-	   if (!activityManager.hasActiveSession()) {
-		   activityManager.onStart(Toybox);
-		   //TODO: UI Indicator!
-	   }
-	   else {
-	      	System.println("Activity active, pushing menu");
- 			WatchUi.pushView(new Rez.Menus.SelectMenu(), new SailInfoSessionRunningMenuDelegate(activityManager), WatchUi.SLIDE_UP);
-	   }
-	   return true;                                                 // return true for onSelect function
-	}
-
 	function onKey(evt)
 	{
 		System.println("SailInfoApp.onKey");
@@ -55,31 +41,44 @@ class SailInfoDelegate extends WatchUi.BehaviorDelegate {
         if (evt.getKey() == KEY_MENU) {
 			System.println("-> KEY_MENU");
 		}																`
-		else if (evt.getKey() == KEY_ENTER) {
-			System.println("-> KEY_ENTER");
-			onActivitySelect();
+		else
+		{
+			if (!activityManager.hasActiveSession()) {
+				if (evt.getKey() == KEY_ENTER) {
+					System.println("-> KEY_ENTER");
+					activityManager.onStart(Toybox);
+				 	WatchUi.requestUpdate();
+				}
+			}
+			else {
+				if (evt.getKey() == KEY_ESC) {
+					System.println("-> KEY_ESC");
+					WatchUi.pushView(new Rez.Menus.SelectMenu(), new SailInfoSessionRunningMenuDelegate(activityManager), WatchUi.SLIDE_UP);
+				}
+				else if (evt.getKey() == KEY_DOWN) {
+					System.println("-> KEY_DOWN");
+					Toybox.Attention.playTone(Attention.TONE_KEY);
+					courseTracker.changeSuggestedCourse(-1);
+					WatchUi.requestUpdate();
+				}
+				else if (evt.getKey() == KEY_UP) {
+					System.println("-> KEY_UP");
+					Toybox.Attention.playTone(Attention.TONE_KEY);
+					courseTracker.changeSuggestedCourse(+1);
+					WatchUi.requestUpdate();
+				}
+				else if (evt.getKey() == KEY_ENTER) {
+					System.println("-> KEY_ENTER");
+					if (courseTracker.selectSuggestCourse()) {
+						Toybox.Attention.playTone(Attention.TONE_LAP);
+						WatchUi.requestUpdate();
+					}
+					else {
+						Toybox.Attention.playTone(Attention.TONE_INTERVAL_ALERT);
+					}
+				}
+			}
 		}
-		else if (evt.getKey() == KEY_ESC) {
-			System.println("-> KEY_ESC");
-			// do whatever
-		}
-		else if (evt.getKey() == KEY_DOWN) {
-			System.println("-> KEY_DOWN");
-			courseTracker.changeSuggestedCourse(-1);
-			WatchUi.requestUpdate();
-		}
-		else if (evt.getKey() == KEY_UP) {
-			System.println("-> KEY_UP");
-			courseTracker.changeSuggestedCourse(+1);
-			WatchUi.requestUpdate();
-		}
-		//Long hold on KEY_DOWN
-		else if (evt.getKey() == KEY_CLOCK) {
-			System.println("-> KEY_CLOCK");
-			courseTracker.selectSuggestCourse();
-			WatchUi.requestUpdate();
-		}
-		
 		return true;
 	}
 }

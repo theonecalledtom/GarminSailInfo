@@ -6,9 +6,11 @@ using Toybox.ActivityRecording;
 
 class ActivitySessionManager {
 	hidden var session = null;                                             // set up session variable
+	hidden var dataTracker = null;
 
-    function initialize() {
+    function initialize(dataTrackerIn) {
 	    System.println("ActivitySessionManager.initialize");
+	    dataTracker = dataTrackerIn;
     }
 
 
@@ -40,6 +42,7 @@ class ActivitySessionManager {
 	           System.println("-> Activity Session Restart");
  			   session.start();
 	       }
+	       dataTracker.currentlyTracking = true;
 	   }
 	   else {
            System.println("NO ACTIVITY RECORDING");
@@ -50,6 +53,7 @@ class ActivitySessionManager {
 	function onStop(){
         System.println("ActivitySessionManager.onStop");
         session.stop();
+	    dataTracker.currentlyTracking = false;
         session = null;
     }
   
@@ -57,6 +61,7 @@ class ActivitySessionManager {
 	function onSave(){
         System.println("ActivitySessionManager.onSave");
         session.stop();
+	    dataTracker.currentlyTracking = false;
         session.save();
         session = null;
 	}
@@ -64,6 +69,7 @@ class ActivitySessionManager {
 	function onDiscard(){
         System.println("ActivitySessionManager.onStop");
         session.stop();
+	    dataTracker.currentlyTracking = false;
         session = null;
 	}
 }

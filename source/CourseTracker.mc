@@ -14,9 +14,22 @@ class CourseTracker
 	}
 	
 	var CurrentWindEstimate = 0.0;
+	var LastWindEstimate = 0.0;
+	var LastBearing = 0.0;
+	var LastCapturedBearing = 0.0;
+	
 	var CurrentCourse = CourseType_Stbd_Up;
 	var SuggestedCourse = CourseType_Stbd_Up;
 	var LastCourseSuggestionTime = 0.0;
+	var HasWindEstimate = false;
+	
+	var dataTracker = null;
+	
+	function initialize(dataTrackerIn)
+	{
+		dataTracker = dataTrackerIn;
+	}
+	
 	function changeSuggestedCourse(dir)
 	{
 		SuggestedCourse = (SuggestedCourse + dir);
@@ -31,7 +44,20 @@ class CourseTracker
 	
 	function selectSuggestCourse()
 	{
-		CurrentCourse = SuggestedCourse;
+		if (CurrentCourse != SuggestedCourse) {
+			CurrentCourse = SuggestedCourse;
+			if (dataTracker.hasBearing()) {
+				var AngleOffWind = getCourseAsAngle(CurrentCourse);
+				LastCapturedBearing = dataTracker.LastBearing;
+				CurrentWindEstimate = dataTracker.LastBearing - AngleOffWind;
+				HasWindEstimate = true;
+			}
+			return true;
+		}
+		else {
+			//Consider fixing up the "on the wind" idea
+		}
+		return false;
 	}
 
 	function getCourseAsText()
@@ -59,19 +85,19 @@ class CourseTracker
 		switch(course)
 		{
 			case CourseType_Stbd_Up:
-				return 45;
+				return 45.0;
 			case CourseType_Stbd_Reach:
-				return 90;
+				return 90.0;
 			case CourseType_Stbd_Dwn:
-				return 135;
+				return 135.0;
 			case CourseType_Prt_Dwn:
-				return 225;
+				return 225.0;
 			case CourseType_Prt_Reach:
-				return 270;
+				return 270.0;
 			case CourseType_Prt_Up:
-				return 315;
+				return 315.0;
 		}
-		return 0;
+		return 0.0;
 	}
 	
 	function getSuggestedCourseAsAngle()
@@ -84,9 +110,21 @@ class CourseTracker
 		return getCourseAsAngle(CurrentCourse);
 	}
 	
-	function onUpdate(dataTracker)
+		
+	function onUpdate()
 	{
 		//Update estimate of the wind, different rules depending on
 		//point of sail
+		if (HasWindEstimate) {
+			if (dataTracker.hasBearing()) {
+				var delta = dataTracker.LastBearing - LastCapturedBearing;
+				
+				//TODO: Not really whats needed, need to track lifts and downs while in upwind mode
+				LastWindEstimate = CurrentWindEstimate + delta;
+			}
+		}
+		else {
+			
+		}
 	}
 }

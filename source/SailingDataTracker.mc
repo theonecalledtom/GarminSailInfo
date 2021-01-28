@@ -21,6 +21,8 @@ class SailingDataTracker {
 	var LastData = null;
 	var LastTime = 0.0;
 	var FirstTime = 0.0;
+	var HasBearing = false;
+	var currentlyTracking = false;
 	
 	var HistoricalData = 
 	[ 
@@ -38,6 +40,10 @@ class SailingDataTracker {
 	
 	function hasGPS() {
 		return false;
+	}
+
+	function hasBearing() {
+		return HasBearing;
 	}
 	
 	function onStart(){
@@ -75,6 +81,7 @@ class SailingDataTracker {
 			var lastOtherSpeed = 1.94384 * info.speed;
 			System.println("Lat,Lon:" + myLocation[0] + ", " + myLocation[1]);
 			System.println(" -> bearing[" + LastBearing + "] speed[" + LastSpeed + "/" + lastOtherSpeed +"] {@" + (time - FirstTime) + "}");	
+			HasBearing = true;
 		}
 		LastTime = time;
 		LastData = info;
