@@ -17,6 +17,7 @@ class CourseTracker
 	var LastWindEstimate = 0.0;
 	var LastBearing = 0.0;
 	var LastCapturedBearing = 0.0;
+	var AngleOffWind = 0.0;
 	
 	var CurrentCourse = CourseType_Stbd_Up;
 	var SuggestedCourse = CourseType_Stbd_Up;
@@ -28,6 +29,11 @@ class CourseTracker
 	function initialize(dataTrackerIn)
 	{
 		dataTracker = dataTrackerIn;
+	}
+	
+	function hasSuggestedCourse()
+	{
+		return CurrentCourse != SuggestedCourse;
 	}
 	
 	function changeSuggestedCourse(dir)
@@ -47,7 +53,7 @@ class CourseTracker
 		if (CurrentCourse != SuggestedCourse) {
 			CurrentCourse = SuggestedCourse;
 			if (dataTracker.hasBearing()) {
-				var AngleOffWind = getCourseAsAngle(CurrentCourse);
+				AngleOffWind = getCourseAsAngle(CurrentCourse);
 				LastCapturedBearing = dataTracker.LastBearing;
 				CurrentWindEstimate = dataTracker.LastBearing - AngleOffWind;
 				HasWindEstimate = true;

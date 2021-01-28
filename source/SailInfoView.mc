@@ -38,8 +38,12 @@ class SailInfoView extends WatchUi.View {
 	function drawCourseSelection(dc) {
 		var suggestedCourse = courseTracker.getSuggestedCourseAsAngle();
 		var currentCourse = courseTracker.getCurrentCourseAsAngle();
-		drawPolarSegment(dc, currentCourse-20, currentCourse+20, 0, Graphics.COLOR_GREEN);
-		drawPolarSegment(dc, suggestedCourse-10, suggestedCourse+10, 1, Graphics.COLOR_PINK);
+		drawPolarSegment(dc, currentCourse-20, currentCourse+20, 0, Graphics.COLOR_WHITE);
+		//if (courseTracker.hasSuggestedCourse()) {
+			drawPolarSegment(dc, suggestedCourse-10, suggestedCourse+10, 1, Graphics.COLOR_BLUE);
+    	//}
+		var estimatedCourse = courseTracker.AngleOffWind;
+		drawPolarSegment(dc, estimatedCourse-3, estimatedCourse+3, 1, Graphics.COLOR_RED);
     }
     
 	function drawText(dc) {
