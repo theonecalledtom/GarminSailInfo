@@ -49,6 +49,10 @@ class SailInfoDelegate extends WatchUi.BehaviorDelegate {
 					activityManager.onStart(Toybox);
 				 	WatchUi.requestUpdate();
 				}
+				else if (evt.getKey() == KEY_ESC) {
+					System.println("-> KEY_ESC == exit!");
+					WatchUi.popView(WatchUi.SLIDE_IMMEDIATE);
+				}
 			}
 			else {
 				if (evt.getKey() == KEY_ESC) {
