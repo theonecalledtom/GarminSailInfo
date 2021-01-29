@@ -49,6 +49,13 @@ class SailingDataTracker {
 	function onStart(){
 		
 	}
+
+	function hasLocation() {
+		if ( LastData != null ) {
+			return true;
+		}
+		return false;
+	}
 		
 	function addToHistory(info){
 		for (var iHistory = HISTORY_COUNT-1 ; iHistory > 0 ; iHistory--) {
@@ -58,13 +65,21 @@ class SailingDataTracker {
 	}
 		
 	function onUpdate(info){
+		if (info == null || info.accuracy == null) {
+			return;
+		}
+	
+		if (info.accuracy != Position.QUALITY_GOOD) {
+			return;
+		}	
+		
 		addToHistory(info);
 		var myLocation = info.position.toDegrees();
 		var time = System.getTimer() * 0.001;
 		if (LastData == null) {
 			FirstTime = time;
 			LastTime = FirstTime;
-		    System.println("first Lat,Lon:" + myLocation[0] + ", " + myLocation[1]);
+		    //System.println("first Lat,Lon:" + myLocation[0] + ", " + myLocation[1]);
 		}
 		else {
 			var _duration = time - LastTime;
@@ -79,8 +94,8 @@ class SailingDataTracker {
 				myLocation[0], myLocation[1]); 
 			LastSpeed *= 1.94384 / _duration;
 			var lastOtherSpeed = 1.94384 * info.speed;
-			System.println("Lat,Lon:" + myLocation[0] + ", " + myLocation[1]);
-			System.println(" -> bearing[" + LastBearing + "] speed[" + LastSpeed + "/" + lastOtherSpeed +"] {@" + (time - FirstTime) + "}");	
+			//System.println("Lat,Lon:" + myLocation[0] + ", " + myLocation[1]);
+			//System.println(" -> bearing[" + LastBearing + "] speed[" + LastSpeed + "/" + lastOtherSpeed +"] {@" + (time - FirstTime) + "}");	
 			HasBearing = true;
 		}
 		LastTime = time;

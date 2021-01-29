@@ -40,10 +40,32 @@ class SailInfoView extends WatchUi.View {
 		var currentCourse = courseTracker.getCurrentCourseAsAngle();
 		drawPolarSegment(dc, currentCourse-20, currentCourse+20, 0, Graphics.COLOR_WHITE);
 		//if (courseTracker.hasSuggestedCourse()) {
-			drawPolarSegment(dc, suggestedCourse-10, suggestedCourse+10, 1, Graphics.COLOR_BLUE);
+			drawPolarSegment(dc, suggestedCourse-10, suggestedCourse+10, 0, Graphics.COLOR_BLUE);
     	//}
-		var estimatedCourse = courseTracker.AngleOffWind;
-		drawPolarSegment(dc, estimatedCourse-3, estimatedCourse+3, 1, Graphics.COLOR_RED);
+    	
+    	var a = courseTracker.BasePointOfSail;
+    	var b = courseTracker.CurrentPointOfSail;
+    	//System.println("a: " + a + ", b: " + b);
+    	if (courseTracker.isReaching()) {
+    		//No clear up or down
+			if (a <= b) {
+				drawPolarSegment(dc, a-1, b+1, 1, courseTracker.isPort() ? Graphics.COLOR_LT_GRAY : Graphics.COLOR_DK_GRAY);
+			}
+			else {
+				drawPolarSegment(dc, b-1, a+1, 1, courseTracker.isPort() ? Graphics.COLOR_DK_GRAY : Graphics.COLOR_LT_GRAY);
+			}
+    	}
+    	else
+    	{
+    		//Clear good / bad if working vmg
+			if (a <= b) {
+				drawPolarSegment(dc, a-1, b+1, 1, courseTracker.wantPostiveVe() ? Graphics.COLOR_RED : Graphics.COLOR_GREEN);
+			}
+			else {
+				drawPolarSegment(dc, b-1, a+1, 1, courseTracker.wantPostiveVe() ? Graphics.COLOR_GREEN : Graphics.COLOR_RED);
+			}
+		}
+			
     }
     
 	function drawText(dc) {
@@ -53,7 +75,14 @@ class SailInfoView extends WatchUi.View {
 		var yc = height * 0.5;
 		var largeFontHeight = dc.getFontHeight(Graphics.FONT_SYSTEM_LARGE);
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(xc,yc-largeFontHeight,Graphics.FONT_SYSTEM_LARGE, dataTracker.LastSpeed.format("%.2f"), Graphics.TEXT_JUSTIFY_CENTER);
+        var speed = dataTracker.LastSpeed;
+        
+        var vmg = speed * Math.cos( Math.toRadians(courseTracker.getVMGAngle()) );
+        var yvel = yc-largeFontHeight;
+        dc.drawText(xc*0.5,yvel,Graphics.FONT_SYSTEM_LARGE, speed.format("%.2f"), Graphics.TEXT_JUSTIFY_CENTER);
+        dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(xc*1.5,yvel,Graphics.FONT_SYSTEM_LARGE, vmg.format("%.2f"), Graphics.TEXT_JUSTIFY_CENTER);
+        
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
         var mediumFontHeight = dc.getFontHeight(Graphics.FONT_MEDIUM);
         dc.drawText(xc,yc,Graphics.FONT_MEDIUM, dataTracker.LastBearing.format("%.1f"), Graphics.TEXT_JUSTIFY_CENTER);
@@ -61,30 +90,52 @@ class SailInfoView extends WatchUi.View {
 	}
 	
 	function drawStart(dc) {
-       var width = dc.getWidth();
+        System.println("SailInfoView.drawStart");
+        var width = dc.getWidth();
         var xc = width * 0.5;
         var height = dc.getHeight();
 		var yc = height * 0.5;
 		var largeFontHeight = dc.getFontHeight(Graphics.FONT_SYSTEM_LARGE);
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(xc,yc-largeFontHeight*0.5,Graphics.FONT_SYSTEM_LARGE, "START", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(xc,yc-largeFontHeight,Graphics.FONT_SYSTEM_LARGE, "START", Graphics.TEXT_JUSTIFY_CENTER);
         
         drawPolarSegment(dc, 50, 70, 0, Graphics.COLOR_GREEN);
-	}
+
+        dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(xc + width*0.25,yc,Graphics.FONT_MEDIUM, dataTracker.LastSpeed.format("%.2f"), Graphics.TEXT_JUSTIFY_CENTER);
+
+		dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(xc - width*0.25,yc,Graphics.FONT_MEDIUM, dataTracker.LastBearing.format("%.1f"), Graphics.TEXT_JUSTIFY_CENTER);
+}
+    
+    function drawWaitingGPS(dc) {
+    	System.println("SailInfoView.drawWaitingGPS");
+    	var width = dc.getWidth();
+        var xc = width * 0.5;
+        var height = dc.getHeight();
+		var yc = height * 0.5;
+		var largeFontHeight = dc.getFontHeight(Graphics.FONT_SYSTEM_LARGE);
+        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(xc,yc-largeFontHeight,Graphics.FONT_SYSTEM_LARGE, "WAITING", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(xc,yc,Graphics.FONT_SYSTEM_LARGE, "FOR GPS...", Graphics.TEXT_JUSTIFY_CENTER);
+    }
     
     // Update the view
     function onUpdate(dc) {
     //System.println("SailInfoView.onUpdate");
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
-        if (dataTracker.currentlyTracking)
-        {
+        if (dataTracker.currentlyTracking) {
         	drawCourseSelection(dc);
  	        drawText(dc);
         }
-        else
-        {
-        	drawStart(dc);
+        else {
+        	if (dataTracker.hasLocation()) {
+	        	drawStart(dc);
+    		}
+    		else {
+    			drawWaitingGPS(dc);
+    		}
         }
     }
 

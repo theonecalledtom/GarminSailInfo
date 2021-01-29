@@ -13,11 +13,11 @@ class CourseTracker
 		CourseType_MAX
 	}
 	
-	var CurrentWindEstimate = 0.0;
-	var LastWindEstimate = 0.0;
-	var LastBearing = 0.0;
-	var LastCapturedBearing = 0.0;
-	var AngleOffWind = 0.0;
+	var BasePointOfSail = 0.0;
+	var CurrentPointOfSail = 0.0;
+
+	var BaseBearing = 0.0;
+	var BaseWindEstimate = 0.0;
 	
 	var CurrentCourse = CourseType_Stbd_Up;
 	var SuggestedCourse = CourseType_Stbd_Up;
@@ -50,18 +50,78 @@ class CourseTracker
 	
 	function selectSuggestCourse()
 	{
-		if (CurrentCourse != SuggestedCourse) {
-			CurrentCourse = SuggestedCourse;
-			if (dataTracker.hasBearing()) {
-				AngleOffWind = getCourseAsAngle(CurrentCourse);
-				LastCapturedBearing = dataTracker.LastBearing;
-				CurrentWindEstimate = dataTracker.LastBearing - AngleOffWind;
-				HasWindEstimate = true;
-			}
+		CurrentCourse = SuggestedCourse;
+		if (dataTracker.hasBearing()) {
+			BasePointOfSail = getCourseAsAngle(CurrentCourse);
+			CurrentPointOfSail = BasePointOfSail;
+			BaseWindEstimate = dataTracker.LastBearing - BasePointOfSail;
+			BaseBearing = dataTracker.LastBearing;
+			HasWindEstimate = true;
 			return true;
 		}
-		else {
-			//Consider fixing up the "on the wind" idea
+		return false;
+	}
+
+	function isReaching()
+	{
+		return (CurrentCourse == CourseType_Stbd_Reach) || (CurrentCourse == CourseType_Prt_Reach);
+	}
+
+	function isUpwind()
+	{
+		return (CurrentCourse == CourseType_Stbd_Up) || (CurrentCourse == CourseType_Prt_Up);
+	}
+
+	function isDownwind()
+	{
+		return (CurrentCourse == CourseType_Stbd_Dwn) || (CurrentCourse == CourseType_Prt_Dwn);
+	}
+
+	function getVMGAngle()
+	{
+		if (isUpwind()) {
+			if (CurrentPointOfSail > 180.0) {
+				return 360.0 - CurrentPointOfSail;
+			}
+			return CurrentPointOfSail;
+		}
+		else if (isDownwind()) {
+			if (CurrentPointOfSail > 180.0) {
+				return CurrentPointOfSail - 180.0;
+			}
+			return 180.0 - CurrentPointOfSail;
+		}
+		return 0.0;
+	}
+
+	function isStarboard()
+	{
+		return (CurrentCourse == CourseType_Stbd_Up) 
+			|| (CurrentCourse == CourseType_Stbd_Reach)
+			|| (CurrentCourse == CourseType_Stbd_Dwn);
+	}
+
+	function isPort()
+	{
+		return !isStarboard();
+	}
+	
+	function wantPostiveVe()
+	{
+		switch(CurrentCourse)
+		{
+			case CourseType_Stbd_Up:
+				return true;
+			case CourseType_Stbd_Reach:
+				return true;
+			case CourseType_Stbd_Dwn:
+				return false;
+			case CourseType_Prt_Dwn:
+				return true;
+			case CourseType_Prt_Reach:
+				return false;
+			case CourseType_Prt_Up:
+				return false;
 		}
 		return false;
 	}
@@ -79,7 +139,7 @@ class CourseTracker
 			case CourseType_Prt_Dwn:
 				return "PDn";
 			case CourseType_Prt_Reach:
-				return "Pre";
+				return "PRe";
 			case CourseType_Prt_Up:
 				return "PUp";
 		}
@@ -123,11 +183,13 @@ class CourseTracker
 		//point of sail
 		if (HasWindEstimate) {
 			if (dataTracker.hasBearing()) {
-				var delta = dataTracker.LastBearing - LastCapturedBearing;
+				var delta = dataTracker.LastBearing - BaseBearing;
 				
 				//TODO: Not really whats needed, need to track lifts and downs while in upwind mode
-				LastWindEstimate = CurrentWindEstimate + delta;
+				CurrentPointOfSail = BasePointOfSail + delta;
 			}
+			
+			//Did we switch point of sail?
 		}
 		else {
 			

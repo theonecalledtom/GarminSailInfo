@@ -5,6 +5,23 @@ using Toybox.ActivityRecording;
 using Toybox.Position;
 using Toybox.Attention;
 
+
+class MainMenu2Delegate extends WatchUi.Menu2InputDelegate {
+	function initialize() {
+        Menu2InputDelegate.initialize();
+    }
+
+    function onSelect(item) {
+        System.println(item.getId());
+		WatchUi.popView(WatchUi.SLIDE_IMMEDIATE);
+		if(item.getId() == "StartRaceTimerId") {
+		//TODO: Not working yet
+			System.println(" -> pushing start timer view");
+			WatchUi.pushView(new StartTimerView(), new StartTimerDelegate(), WatchUi.SLIDE_UP);	
+		}
+    }
+}
+
 class SailInfoDelegate extends WatchUi.BehaviorDelegate {
 	var activityManager = null;                                             // set up session variable
 	var dataTracker = null;
@@ -28,7 +45,27 @@ class SailInfoDelegate extends WatchUi.BehaviorDelegate {
 	
     function onMenu() {
 	    System.println("SailInfoDelegate.onMenu");
-        WatchUi.pushView(new Rez.Menus.MainMenu(), new SailInfoMenuDelegate(), WatchUi.SLIDE_UP);
+        //WatchUi.pushView(new Rez.Menus.MainMenu(), new SailInfoMenuDelegate(), WatchUi.SLIDE_UP);
+        var menu = new WatchUi.Menu2({:title=>"Main Menu"});
+        var delegate;
+        menu.addItem(
+            new MenuItem(
+                "Start Race",
+                "Start race timer",
+                "StartRaceTimerId",
+                {}
+            )
+        );
+        menu.addItem(
+            new MenuItem(
+                "Start Sail",
+                "General sailing",
+                "itemTwoId",
+                {}
+            )
+        );
+        delegate = new MainMenu2Delegate(); // a WatchUi.Menu2InputDelegate
+        WatchUi.pushView(menu, delegate, WatchUi.SLIDE_IMMEDIATE);
         return true;
     }
 	
