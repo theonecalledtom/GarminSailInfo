@@ -1,10 +1,9 @@
 using Toybox.Math;
 
-
 class AngleUtil {
 	 	static const PI = 3.141592653589793;
         static const DegToRad = (2.0 * PI / 360.0);
-        static const RadToDeg = 1.0f / DegToRad;
+        static const RadToDeg = 1.0 / DegToRad;
 
 
         static function ShortAngle(fAngle1, fAngle2)

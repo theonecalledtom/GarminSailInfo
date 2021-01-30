@@ -26,14 +26,13 @@ class StartTimerView extends WatchUi.View {
 		var yc = height * 0.5;
 		var largeFontHeight = dc.getFontHeight(Graphics.FONT_SYSTEM_LARGE);
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        
         var TimerValue = 0.0;
         dc.drawText(xc,yc-largeFontHeight*0.5,Graphics.FONT_SYSTEM_LARGE, TimerValue.format("%.2f"), Graphics.TEXT_JUSTIFY_CENTER);
  	}
 	
      // Update the view
     function onUpdate(dc) {
-	    //System.println("SailInfoView.onUpdate");
+	    System.println("SailInfoView.onUpdate");
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
         drawText(dc);

@@ -90,7 +90,7 @@ class SailInfoView extends WatchUi.View {
 	}
 	
 	function drawStart(dc) {
-        System.println("SailInfoView.drawStart");
+        //System.println("SailInfoView.drawStart");
         var width = dc.getWidth();
         var xc = width * 0.5;
         var height = dc.getHeight();

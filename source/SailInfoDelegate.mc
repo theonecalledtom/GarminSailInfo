@@ -14,7 +14,7 @@ class MainMenu2Delegate extends WatchUi.Menu2InputDelegate {
     function onSelect(item) {
         System.println(item.getId());
 		WatchUi.popView(WatchUi.SLIDE_IMMEDIATE);
-		if(item.getId() == "StartRaceTimerId") {
+		if(item.getId().equals("StartRaceTimerId")) {
 		//TODO: Not working yet
 			System.println(" -> pushing start timer view");
 			WatchUi.pushView(new StartTimerView(), new StartTimerDelegate(), WatchUi.SLIDE_UP);	
@@ -49,7 +49,7 @@ class SailInfoDelegate extends WatchUi.BehaviorDelegate {
         var menu = new WatchUi.Menu2({:title=>"Main Menu"});
         var delegate;
         menu.addItem(
-            new MenuItem(
+            new WatchUi.MenuItem(
                 "Start Race",
                 "Start race timer",
                 "StartRaceTimerId",
@@ -57,7 +57,7 @@ class SailInfoDelegate extends WatchUi.BehaviorDelegate {
             )
         );
         menu.addItem(
-            new MenuItem(
+            new WatchUi.MenuItem(
                 "Start Sail",
                 "General sailing",
                 "itemTwoId",
