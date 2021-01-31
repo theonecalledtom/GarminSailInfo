@@ -87,7 +87,10 @@ class SailInfoView extends WatchUi.View {
         var mediumFontHeight = dc.getFontHeight(Graphics.FONT_MEDIUM);
         dc.drawText(xc,yc,Graphics.FONT_MEDIUM, dataTracker.LastBearing.format("%.1f"), Graphics.TEXT_JUSTIFY_CENTER);
         dc.drawText(xc,yc+mediumFontHeight,Graphics.FONT_MEDIUM, courseTracker.getCourseAsText(), Graphics.TEXT_JUSTIFY_CENTER);
-	}
+        
+        dc.setColor(Graphics.COLOR_BLUE, Graphics.COLOR_TRANSPARENT);  
+	    dc.drawText(xc,yc+mediumFontHeight*2.0,Graphics.FONT_MEDIUM, courseTracker.EstimatedAngleToWind.format("%.1f"), Graphics.TEXT_JUSTIFY_CENTER);
+    }
 	
 	function drawStart(dc) {
         //System.println("SailInfoView.drawStart");

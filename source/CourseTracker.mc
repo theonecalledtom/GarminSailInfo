@@ -18,11 +18,16 @@ class CourseTracker
 
 	var BaseBearing = 0.0;
 	var BaseWindEstimate = 0.0;
+	var EstimatedAngleToWind = 0.0;
 	
 	var CurrentCourse = CourseType_Stbd_Up;
 	var SuggestedCourse = CourseType_Stbd_Up;
 	var LastCourseSuggestionTime = 0.0;
 	var HasWindEstimate = false;
+
+	//TODO: Fill out from data
+	var LastPortHeading = 0.0;
+	var LastStarboardHeading = 0.0;
 	
 	var dataTracker = null;
 	
@@ -166,6 +171,23 @@ class CourseTracker
 		return 0.0;
 	}
 	
+	function getPointOfSailFromWindAngle(angle)
+	{
+		angle = AngleUtil.ContainAngleMinus180To180(angle);
+		if (angle > 125) {
+			return CourseType_Stbd_Dwn;
+		} else if (angle > 75.0f) {
+			return CourseType_Stbd_Reach;
+		} else if (angle > 0.0f) {
+			return CourseType_Stbd_Up;
+		} else if (angle > -75.0f) {
+			return CourseType_Prt_Up;
+		} else if (angle > -125.0f) {
+			return CourseType_Prt_Reach;
+		}
+		return CourseType_Prt_Dwn;
+	}
+	
 	function getSuggestedCourseAsAngle()
 	{
 		return getCourseAsAngle(SuggestedCourse);
@@ -176,7 +198,21 @@ class CourseTracker
 		return getCourseAsAngle(CurrentCourse);
 	}
 	
-		
+	function autoUpdateCurrentPointOfSail()
+	{
+		if (HasWindEstimate) {
+			if (dataTracker.hasBearing()) {
+				EstimatedAngleToWind = dataTracker.LastBearing - BaseWindEstimate;
+				var pointOfSail = getPointOfSailFromWindAngle( EstimatedAngleToWind );
+				if (pointOfSail != CurrentCourse)
+				{
+					System.println("Course change from: " + CurrentCourse + " to: " + pointOfSail);
+					CurrentCourse = pointOfSail;
+				}
+			}
+		}
+	}
+	
 	function onUpdate()
 	{
 		//Update estimate of the wind, different rules depending on
@@ -190,6 +226,7 @@ class CourseTracker
 			}
 			
 			//Did we switch point of sail?
+			autoUpdateCurrentPointOfSail();
 		}
 		else {
 			
