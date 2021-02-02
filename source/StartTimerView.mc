@@ -2,8 +2,10 @@ using Toybox.WatchUi;
 
 class StartTimerView extends WatchUi.View {
 
-    function initialize() {
+	var updateTimerData;
+    function initialize(timerDataIn) {
         View.initialize();
+        updateTimerData = timerDataIn;
     }
     
     // Load your resources here
@@ -26,7 +28,7 @@ class StartTimerView extends WatchUi.View {
 		var yc = height * 0.5;
 		var largeFontHeight = dc.getFontHeight(Graphics.FONT_SYSTEM_LARGE);
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        var TimerValue = 0.0;
+        var TimerValue = updateTimerData.TimeRemaining;
         dc.drawText(xc,yc-largeFontHeight*0.5,Graphics.FONT_SYSTEM_LARGE, TimerValue.format("%.2f"), Graphics.TEXT_JUSTIFY_CENTER);
  	}
 	

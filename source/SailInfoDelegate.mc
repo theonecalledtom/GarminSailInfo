@@ -17,7 +17,8 @@ class MainMenu2Delegate extends WatchUi.Menu2InputDelegate {
 		if(item.getId().equals("StartRaceTimerId")) {
 		//TODO: Not working yet
 			System.println(" -> pushing start timer view");
-			WatchUi.pushView(new StartTimerView(), new StartTimerDelegate(), WatchUi.SLIDE_UP);	
+			var startData = new StartTimerData();
+			WatchUi.pushView(new StartTimerView(startData), new StartTimerDelegate(startData), WatchUi.SLIDE_UP);	
 		}
     }
 }
