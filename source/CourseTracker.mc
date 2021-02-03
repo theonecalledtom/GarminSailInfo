@@ -14,7 +14,9 @@ class CourseTracker
 	}
 	
 	var BasePointOfSail = 0.0;
-	var CurrentPointOfSail = 0.0;
+	var CurrentPointOfSail_10 = null;
+	var CurrentPointOfSail_20 = null;
+	var CurrentPointOfSail_30 = null;
 
 	var BaseBearing = 0.0;
 	var BaseWindEstimate = 0.0;
@@ -56,11 +58,13 @@ class CourseTracker
 	function selectSuggestCourse()
 	{
 		CurrentCourse = SuggestedCourse;
-		if (dataTracker.hasBearing()) {
+		if (dataTracker.LastTenSeconds.HasData) {
 			BasePointOfSail = getCourseAsAngle(CurrentCourse);
-			CurrentPointOfSail = BasePointOfSail;
-			BaseWindEstimate = dataTracker.LastBearing - BasePointOfSail;
-			BaseBearing = dataTracker.LastBearing;
+			CurrentPointOfSail_10 = BasePointOfSail;
+			CurrentPointOfSail_20 = BasePointOfSail;
+			CurrentPointOfSail_30 = BasePointOfSail;
+			BaseWindEstimate = dataTracker.LastTenSeconds.Bearing - BasePointOfSail;
+			BaseBearing = dataTracker.LastTenSeconds.Bearing;
 			HasWindEstimate = true;
 			return true;
 		}
@@ -84,17 +88,21 @@ class CourseTracker
 
 	function getVMGAngle()
 	{
+		if (CurrentPointOfSail_10 == null) {
+			return 0.0;
+		}
+		
 		if (isUpwind()) {
-			if (CurrentPointOfSail > 180.0) {
-				return 360.0 - CurrentPointOfSail;
+			if (CurrentPointOfSail_10 > 180.0) {
+				return 360.0 - CurrentPointOfSail_10;
 			}
-			return CurrentPointOfSail;
+			return CurrentPointOfSail_10;
 		}
 		else if (isDownwind()) {
-			if (CurrentPointOfSail > 180.0) {
-				return CurrentPointOfSail - 180.0;
+			if (CurrentPointOfSail_10 > 180.0) {
+				return CurrentPointOfSail_10 - 180.0;
 			}
-			return 180.0 - CurrentPointOfSail;
+			return 180.0 - CurrentPointOfSail_10;
 		}
 		return 0.0;
 	}
@@ -201,8 +209,8 @@ class CourseTracker
 	function autoUpdateCurrentPointOfSail()
 	{
 		if (HasWindEstimate) {
-			if (dataTracker.hasBearing()) {
-				EstimatedAngleToWind = dataTracker.LastBearing - BaseWindEstimate;
+			if (dataTracker.LastTenSeconds.HasData) {
+				EstimatedAngleToWind = dataTracker.LastTenSeconds.Bearing - BaseWindEstimate;
 				var pointOfSail = getPointOfSailFromWindAngle( EstimatedAngleToWind );
 				if (pointOfSail != CurrentCourse)
 				{
@@ -218,15 +226,30 @@ class CourseTracker
 		//Update estimate of the wind, different rules depending on
 		//point of sail
 		if (HasWindEstimate) {
-			if (dataTracker.hasBearing()) {
-				var delta = dataTracker.LastBearing - BaseBearing;
+
+			if (dataTracker.LastTenSeconds.HasData) {
+				var delta = dataTracker.LastTenSeconds.Bearing - BaseBearing;
 				
 				//TODO: Not really whats needed, need to track lifts and downs while in upwind mode
-				CurrentPointOfSail = BasePointOfSail + delta;
+				CurrentPointOfSail_10 = BasePointOfSail + delta;
 			}
-			
+
 			//Did we switch point of sail?
 			autoUpdateCurrentPointOfSail();
+
+			if (dataTracker.LastTwentySeconds.HasData) {
+				var delta = dataTracker.LastTwentySeconds.Bearing - BaseBearing;
+				
+				//TODO: Not really whats needed, need to track lifts and downs while in upwind mode
+				CurrentPointOfSail_20 = BasePointOfSail + delta;
+			}
+
+			if (dataTracker.LastThirtySeconds.HasData) {
+				var delta = dataTracker.LastThirtySeconds.Bearing - BaseBearing;
+				
+				//TODO: Not really whats needed, need to track lifts and downs while in upwind mode
+				CurrentPointOfSail_30 = BasePointOfSail + delta;
+			}
 		}
 		else {
 			
