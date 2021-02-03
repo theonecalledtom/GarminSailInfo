@@ -1,7 +1,12 @@
-using Toybox.WatchUi;
+using Toybox.WatchUi as UI;
+using Toybox.Lang as Lang;
 
-class StartTimerView extends WatchUi.View {
+class StartTimerView extends UI.View {
 
+	const FORMAT_TIME = "$1$:$2$$3$";
+	const FORMAT_TIMER = "$1$:$2$";
+	const FORMAT_MIN_SEC = "%02d";
+	
 	var updateTimerData;
     function initialize(timerDataIn) {
         View.initialize();
@@ -20,16 +25,23 @@ class StartTimerView extends WatchUi.View {
     function onShow() {
  	    System.println("StartTimerView.onShow");
     }
+
+ 	function getTimerString(seconds) {
+		var min = seconds.toNumber() / 60;
+		var sec = seconds.toNumber() % 60;
+		
+		return Lang.format(FORMAT_TIMER, [min, sec.format(FORMAT_MIN_SEC)]);
+ 	}
     
     function drawText(dc) {
         var width = dc.getWidth();
         var xc = width * 0.5;
         var height = dc.getHeight();
 		var yc = height * 0.5;
-		var largeFontHeight = dc.getFontHeight(Graphics.FONT_SYSTEM_LARGE);
+		var largeFontHeight = dc.getFontHeight(Graphics.FONT_NUMBER_THAI_HOT);
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
         var TimerValue = updateTimerData.TimeRemaining;
-        dc.drawText(xc,yc-largeFontHeight*0.5,Graphics.FONT_SYSTEM_LARGE, TimerValue.format("%.2f"), Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(xc,yc-largeFontHeight*0.5,Graphics.FONT_NUMBER_THAI_HOT, getTimerString(TimerValue), Graphics.TEXT_JUSTIFY_CENTER);
  	}
 	
      // Update the view
