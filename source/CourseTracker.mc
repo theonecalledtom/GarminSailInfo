@@ -17,6 +17,9 @@ class CourseTracker
 	var CurrentPointOfSail_10 = null;
 	var CurrentPointOfSail_20 = null;
 	var CurrentPointOfSail_30 = null;
+	var Delta_10 = 0.0;
+	var Delta_20 = 0.0;
+	var Delta_30 = 0.0;
 
 	var BaseBearing = 0.0;
 	var BaseWindEstimate = 0.0;
@@ -61,8 +64,11 @@ class CourseTracker
 		if (dataTracker.LastTenSeconds.HasData) {
 			BasePointOfSail = getCourseAsAngle(CurrentCourse);
 			CurrentPointOfSail_10 = BasePointOfSail;
+			Delta_10 = 0.0;
 			CurrentPointOfSail_20 = BasePointOfSail;
+			Delta_20 = 0.0;
 			CurrentPointOfSail_30 = BasePointOfSail;
+			Delta_30 = 0.0;
 			BaseWindEstimate = dataTracker.LastTenSeconds.Bearing - BasePointOfSail;
 			BaseBearing = dataTracker.LastTenSeconds.Bearing;
 			HasWindEstimate = true;
@@ -232,6 +238,7 @@ class CourseTracker
 				
 				//TODO: Not really whats needed, need to track lifts and downs while in upwind mode
 				CurrentPointOfSail_10 = BasePointOfSail + delta;
+				Delta_10 = delta;
 			}
 
 			//Did we switch point of sail?
@@ -242,6 +249,7 @@ class CourseTracker
 				
 				//TODO: Not really whats needed, need to track lifts and downs while in upwind mode
 				CurrentPointOfSail_20 = BasePointOfSail + delta;
+				Delta_20 = delta;
 			}
 
 			if (dataTracker.LastThirtySeconds.HasData) {
@@ -249,6 +257,7 @@ class CourseTracker
 				
 				//TODO: Not really whats needed, need to track lifts and downs while in upwind mode
 				CurrentPointOfSail_30 = BasePointOfSail + delta;
+				Delta_30 = delta;
 			}
 		}
 		else {

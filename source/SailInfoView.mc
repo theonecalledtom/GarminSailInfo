@@ -35,30 +35,37 @@ class SailInfoView extends WatchUi.View {
         dc.drawArc(xc, yc, xc-linewidth*(0.5 + segmentLayer), Graphics.ARC_CLOCKWISE, 90-min, 90-max);
 	}
 
-	function drawCourseVariation(dc, current, segment) {
+	function drawCourseVariation(dc, current, delta, segment) {
 		if (current == null) {
 			return;
 		}
+		
 		var a = courseTracker.BasePointOfSail;
 		var b = current;
-    	if (courseTracker.isReaching()) {
-    		//No clear up or down
-			if (a <= b) {
-				drawPolarSegment(dc, a-1, b+1, segment, courseTracker.isPort() ? Graphics.COLOR_LT_GRAY : Graphics.COLOR_DK_GRAY);
-			}
-			else {
-				drawPolarSegment(dc, b-1, a+1, segment, courseTracker.isPort() ? Graphics.COLOR_DK_GRAY : Graphics.COLOR_LT_GRAY);
-			}
-    	}
-    	else
-    	{
-    		//Clear good / bad if working vmg
-			if (a <= b) {
-				drawPolarSegment(dc, a-1, b+1, segment, courseTracker.wantPostiveVe() ? Graphics.COLOR_RED : Graphics.COLOR_GREEN);
-			}
-			else {
-				drawPolarSegment(dc, b-1, a+1, segment, courseTracker.wantPostiveVe() ? Graphics.COLOR_GREEN : Graphics.COLOR_RED);
-			}
+		var badColor;
+		var goodColor;
+		
+		if (delta.abs() < 2.0)
+		{
+			badColor = Graphics.COLOR_DK_GRAY;
+			goodColor = Graphics.COLOR_LT_GRAY;
+		}
+		else if (delta.abs() < 5.0)
+		{
+			badColor = Graphics.COLOR_ORANGE;
+			goodColor = Graphics.COLOR_DK_GREEN;
+		}
+		else
+		{
+			badColor = Graphics.COLOR_RED;
+			goodColor = Graphics.COLOR_GREEN;
+		}
+		
+		if (a <= b) {
+			drawPolarSegment(dc, a-1, b+1, segment, courseTracker.wantPostiveVe() ? badColor : goodColor);
+		}
+		else {
+			drawPolarSegment(dc, b-1, a+1, segment, courseTracker.wantPostiveVe() ? goodColor : badColor);
 		}
 	}
 
@@ -66,13 +73,36 @@ class SailInfoView extends WatchUi.View {
 		var suggestedCourse = courseTracker.getSuggestedCourseAsAngle();
 		var currentCourse = courseTracker.getCurrentCourseAsAngle();
 		drawPolarSegment(dc, currentCourse-20, currentCourse+20, 0, Graphics.COLOR_WHITE);
-		//if (courseTracker.hasSuggestedCourse()) {
-			drawPolarSegment(dc, suggestedCourse-10, suggestedCourse+10, 0, Graphics.COLOR_BLUE);
-    	//}
-    	
-    	drawCourseVariation(dc, courseTracker.CurrentPointOfSail_10, 1);
-    	drawCourseVariation(dc, courseTracker.CurrentPointOfSail_20, 2);
-    	drawCourseVariation(dc, courseTracker.CurrentPointOfSail_30, 3);
+		drawPolarSegment(dc, suggestedCourse-10, suggestedCourse+10, 0, Graphics.COLOR_BLUE);
+    }
+
+	function drawCourseHistory(dc) {
+    	if (!courseTracker.isReaching()) {
+    		//Clear good / bad if working vmg
+	    	drawCourseVariation(dc, courseTracker.CurrentPointOfSail_10, courseTracker.Delta_10, 1);
+	    	drawCourseVariation(dc, courseTracker.CurrentPointOfSail_20, courseTracker.Delta_20, 2);
+	    	drawCourseVariation(dc, courseTracker.CurrentPointOfSail_30, courseTracker.Delta_30, 3);
+    	}
+	}
+    
+    function drawWindEstimate(dc) {
+    	if (courseTracker.CurrentPointOfSail_10 == null) {
+    		return;
+    	}
+    	var width = dc.getWidth();
+	    var xc = width * 0.5;
+        var height = dc.getHeight();
+        var yc = height * 0.5;
+        var radius = Math.sqrt(xc*xc + yc*yc);
+        
+        //System.println("courseTracker.CurrentPointOfSail_10:" + courseTracker.CurrentPointOfSail_10);
+        var currentAngle = courseTracker.CurrentPointOfSail_10;
+        var x = radius * Math.sin(Math.toRadians(currentAngle));
+        var y = radius * Math.cos(Math.toRadians(currentAngle));
+        
+        dc.setPenWidth(1);
+		dc.setColor(Graphics.COLOR_PINK, Graphics.COLOR_TRANSPARENT);
+        dc.drawLine(xc,yc,xc + x,yc - y);
     }
     
 	function drawText(dc) {
@@ -87,12 +117,22 @@ class SailInfoView extends WatchUi.View {
         var vmg = speed * Math.cos( Math.toRadians(courseTracker.getVMGAngle()) );
         var yvel = yc-largeFontHeight;
         dc.drawText(xc*0.5,yvel,Graphics.FONT_SYSTEM_LARGE, speed.format("%.2f"), Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(xc*0.5,yvel-largeFontHeight*0.5,Graphics.FONT_SYSTEM_TINY, "kts", Graphics.TEXT_JUSTIFY_CENTER);
+
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
         dc.drawText(xc*1.5,yvel,Graphics.FONT_SYSTEM_LARGE, vmg.format("%.2f"), Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(xc*1.5,yvel-largeFontHeight*0.5,Graphics.FONT_SYSTEM_TINY, "vmg", Graphics.TEXT_JUSTIFY_CENTER);
         
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
         var mediumFontHeight = dc.getFontHeight(Graphics.FONT_MEDIUM);
-        dc.drawText(xc,yc,Graphics.FONT_MEDIUM, dataTracker.LastTenSeconds.Bearing.format("%.1f"), Graphics.TEXT_JUSTIFY_CENTER);
+        var cogText = dataTracker.LastTenSeconds.Bearing.format("%.1f");
+        dc.drawText(xc,yc,Graphics.FONT_MEDIUM, cogText, Graphics.TEXT_JUSTIFY_CENTER);
+        
+        var cogTxtHeight = dc.getFontHeight( Graphics.FONT_MEDIUM );
+        var labelHeight = dc.getFontHeight( Graphics.FONT_SYSTEM_TINY );
+        var cogLabelTxt = "COG";
+        var cogWidth = dc.getTextWidthInPixels(cogText, Graphics.FONT_SYSTEM_TINY);
+        dc.drawText(xc+cogWidth*0.75,yc+0.75*(cogTxtHeight - labelHeight),Graphics.FONT_SYSTEM_TINY, cogLabelTxt, Graphics.TEXT_JUSTIFY_LEFT);
         dc.drawText(xc,yc+mediumFontHeight,Graphics.FONT_MEDIUM, courseTracker.getCourseAsText(), Graphics.TEXT_JUSTIFY_CENTER);
         
         dc.setColor(Graphics.COLOR_BLUE, Graphics.COLOR_TRANSPARENT);  
@@ -137,6 +177,8 @@ class SailInfoView extends WatchUi.View {
         View.onUpdate(dc);
         if (dataTracker.currentlyTracking) {
         	drawCourseSelection(dc);
+	        drawWindEstimate(dc);
+        	drawCourseHistory(dc);
  	        drawText(dc);
         }
         else {
