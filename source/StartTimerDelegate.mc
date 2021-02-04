@@ -117,7 +117,7 @@ class StartTimerDelegate extends WatchUi.BehaviorDelegate {
 		System.println("StartTimerDelegate.onKey");
 		System.println(" ->" + evt.getKey());  // e.g. KEY_MENU = 7
         System.println(" ->" + evt.getType()); // e.g. PRESS_TYPE_DOWN = 0
-        if (evt.getKey() == KEY_ESC) {
+        if (evt.getKey() == KEY_ENTER) {
 			updateTimerData.TimeRemaining -= updateTimerData.TimeRemaining % 60;
 			onTimerChange();
 		}
@@ -130,13 +130,4 @@ class StartTimerDelegate extends WatchUi.BehaviorDelegate {
  		  	onTimerChange();
  		}
 	}
-	
-	function onPosition(info) {
-		System.println("StartTimerDelegate.onPosition");
-		WatchUi.requestUpdate();
-	}
-	
-    //function onMenu() {
-    //}
-	
 }
