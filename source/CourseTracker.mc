@@ -13,6 +13,7 @@ class CourseTracker
 		CourseType_MAX
 	}
 	
+	const NUM_SETTLED_SAMPLES = 10;
 	var BasePointOfSail = 0.0;
 	var CurrentPointOfSail_10 = null;
 	var CurrentPointOfSail_20 = null;
@@ -20,30 +21,62 @@ class CourseTracker
 	var Delta_10 = 0.0;
 	var Delta_20 = 0.0;
 	var Delta_30 = 0.0;
+	
+	//TODO: Fill out from data
+	var CourseHistory = [null, null, null, null, null, null];
 
 	var BaseBearing = 0.0;
 	var BaseWindEstimate = 0.0;
 	var EstimatedAngleToWind = 0.0;
 	
-	var CurrentCourse = CourseType_Stbd_Up;
+	var CurrentCourse = null;
 	var SuggestedCourse = CourseType_Stbd_Up;
 	var LastCourseSuggestionTime = 0.0;
 	var HasWindEstimate = false;
-
-	//TODO: Fill out from data
-	var LastPortHeading = 0.0;
-	var LastStarboardHeading = 0.0;
 	
 	var dataTracker = null;
 	
 	function initialize(dataTrackerIn)
 	{
 		dataTracker = dataTrackerIn;
+		
+		for (var i=0 ; i<CourseType_MAX ; i++) {
+			CourseHistory[i] = new [NUM_SETTLED_SAMPLES];
+		}
 	}
 	
-	function hasSuggestedCourse()
-	{
+	function recordDirection(direction) {
+		if (CurrentCourse != null) {
+			for (var i=NUM_SETTLED_SAMPLES-1 ; i>0 ; i--) {
+				CourseHistory[CurrentCourse][i] = CourseHistory[CurrentCourse][i-1];
+			}
+			CourseHistory[CurrentCourse][0] = direction;
+		}
+	}
+		
+	function hasSuggestedCourse() {
 		return CurrentCourse != SuggestedCourse;
+	}
+	
+	function isOnSettledCourse(maxDelta) {
+		if (CurrentCourse != null) {
+			if (CourseHistory[CurrentCourse][0] != null) {
+				var min = CourseHistory[CurrentCourse][0];
+				var max = AngleUtil.Anchor(CourseHistory[CurrentCourse][0], min);
+				for (var i=1 ; i<NUM_SETTLED_SAMPLES ; i++) {
+					if (CourseHistory[CurrentCourse][i] == null) {
+						return false;
+					}
+					var test = AngleUtil.Anchor(CourseHistory[CurrentCourse][i], min);
+					min = min < test ? min : test;
+					max = max > test ? max : test;
+				}
+				
+				System.println("min: " + min + ", max: " + max + ", allowed: " + maxDelta);
+				return (max - min) < maxDelta;
+			}
+		}
+		return false;
 	}
 	
 	function changeSuggestedCourse(dir)
@@ -58,9 +91,8 @@ class CourseTracker
 		LastCourseSuggestionTime = System.getTimer() * 0.001;
 	}
 	
-	function selectSuggestCourse()
+	function updateBasePointOfSail()
 	{
-		CurrentCourse = SuggestedCourse;
 		if (dataTracker.LastTenSeconds.HasData) {
 			BasePointOfSail = getCourseAsAngle(CurrentCourse);
 			CurrentPointOfSail_10 = BasePointOfSail;
@@ -77,6 +109,13 @@ class CourseTracker
 		return false;
 	}
 
+	function selectSuggestCourse()
+	{
+		CurrentCourse = SuggestedCourse;
+		
+		return updateBasePointOfSail();
+	}
+	
 	function isReaching()
 	{
 		return (CurrentCourse == CourseType_Stbd_Reach) || (CurrentCourse == CourseType_Prt_Reach);
@@ -147,22 +186,25 @@ class CourseTracker
 
 	function getCourseAsText()
 	{
-		switch(CurrentCourse)
+		if (CurrentCourse != null)
 		{
-			case CourseType_Stbd_Up:
-				return "SUp";
-			case CourseType_Stbd_Reach:
-				return "SRe";
-			case CourseType_Stbd_Dwn:
-				return "SDn";
-			case CourseType_Prt_Dwn:
-				return "PDn";
-			case CourseType_Prt_Reach:
-				return "PRe";
-			case CourseType_Prt_Up:
-				return "PUp";
+			switch(CurrentCourse)
+			{
+				case CourseType_Stbd_Up:
+					return "SUp";
+				case CourseType_Stbd_Reach:
+					return "SRe";
+				case CourseType_Stbd_Dwn:
+					return "SDn";
+				case CourseType_Prt_Dwn:
+					return "PDn";
+				case CourseType_Prt_Reach:
+					return "PRe";
+				case CourseType_Prt_Up:
+					return "PUp";
+			}
 		}
-		return "Unknown";
+		return "Select Crs";
 	}
 
 	function getCourseAsAngle(course)
@@ -202,14 +244,16 @@ class CourseTracker
 		return CourseType_Prt_Dwn;
 	}
 	
-	function getSuggestedCourseAsAngle()
-	{
+	function getSuggestedCourseAsAngle() {
 		return getCourseAsAngle(SuggestedCourse);
 	}
 	
-	function getCurrentCourseAsAngle()
-	{
+	function getCurrentCourseAsAngle() {
 		return getCourseAsAngle(CurrentCourse);
+	}
+	
+	function hasCurrentCourse() {
+		return CurrentCourse != null;
 	}
 	
 	function autoUpdateCurrentPointOfSail()
@@ -218,10 +262,13 @@ class CourseTracker
 			if (dataTracker.LastTenSeconds.HasData) {
 				EstimatedAngleToWind = dataTracker.LastTenSeconds.Bearing - BaseWindEstimate;
 				var pointOfSail = getPointOfSailFromWindAngle( EstimatedAngleToWind );
-				if (pointOfSail != CurrentCourse)
-				{
+				if (pointOfSail != CurrentCourse) {
 					System.println("Course change from: " + CurrentCourse + " to: " + pointOfSail);
 					CurrentCourse = pointOfSail;
+					
+					if (isUpwind()) {
+						updateBasePointOfSail();
+					}
 				}
 			}
 		}
@@ -259,6 +306,8 @@ class CourseTracker
 				CurrentPointOfSail_30 = BasePointOfSail + delta;
 				Delta_30 = delta;
 			}
+			
+			recordDirection(CurrentPointOfSail_10);
 		}
 		else {
 			
