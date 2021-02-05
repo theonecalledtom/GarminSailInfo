@@ -7,6 +7,7 @@ class StartTimerData
 {
 	const BASE_TIME = 60 * 5;
 	var TimeRemaining = BASE_TIME;
+	var IsPaused = false;
 }
 
 class StartTimerDelegate extends WatchUi.BehaviorDelegate {
@@ -29,10 +30,10 @@ class StartTimerDelegate extends WatchUi.BehaviorDelegate {
         System.println("StartTimerDelegate.initialize");
         
         updateTimerData = timerData;
+    	updateTimerData.IsPaused = true;
         
         updateTimer = new Timer.Timer();
-   	 	updateTimer.start(method(:timerCallback), 1000, true);
-    
+    	
     	timeOfStart = System.getTimer();
     	
     	if(Attention has :VibeProfile && vibes == false) {
@@ -54,6 +55,17 @@ class StartTimerDelegate extends WatchUi.BehaviorDelegate {
 				Attention.TONE_ALARM // STATE_STARTED
 			];
 		}
+    }
+    
+    function toggleTimer() {
+    	updateTimerData.IsPaused = !updateTimerData.IsPaused;
+    	if (!updateTimerData.IsPaused) {
+	   	 	updateTimer.start(method(:timerCallback), 1000, true);
+    	}
+    	else {
+    		updateTimer.stop();
+    	}
+    	WatchUi.requestUpdate();
     }
 
 	function notify(state) {
@@ -109,7 +121,7 @@ class StartTimerDelegate extends WatchUi.BehaviorDelegate {
     }
     
     function timerCallback() {
-    	timerUpdate();
+	  	timerUpdate();
 	}
     
     function onKey(evt)
@@ -118,16 +130,24 @@ class StartTimerDelegate extends WatchUi.BehaviorDelegate {
 		System.println(" ->" + evt.getKey());  // e.g. KEY_MENU = 7
         System.println(" ->" + evt.getType()); // e.g. PRESS_TYPE_DOWN = 0
         if (evt.getKey() == KEY_ENTER) {
+        	toggleTimer();
+			return true;
+		}
+        else if (evt.getKey() == KEY_ESC) {
 			updateTimerData.TimeRemaining -= updateTimerData.TimeRemaining % 60;
 			onTimerChange();
+			return true;
 		}
 		else if (evt.getKey() == KEY_UP) {
 			updateTimerData.TimeRemaining += 60;
    			onTimerChange();
+			return true;
  		}
 		else if (evt.getKey() == KEY_DOWN) {
 			updateTimerData.TimeRemaining -= 60;
  		  	onTimerChange();
+			return true;
  		}
+		return false;
 	}
 }

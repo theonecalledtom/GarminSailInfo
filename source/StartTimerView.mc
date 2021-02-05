@@ -39,7 +39,12 @@ class StartTimerView extends UI.View {
         var height = dc.getHeight();
 		var yc = height * 0.5;
 		var largeFontHeight = dc.getFontHeight(Graphics.FONT_NUMBER_THAI_HOT);
-        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+		if (updateTimerData.IsPaused) {
+	        dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
+		}
+		else {
+	        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+	    }
         var TimerValue = updateTimerData.TimeRemaining;
         dc.drawText(xc,yc-largeFontHeight*0.5,Graphics.FONT_NUMBER_THAI_HOT, getTimerString(TimerValue), Graphics.TEXT_JUSTIFY_CENTER);
  	}
