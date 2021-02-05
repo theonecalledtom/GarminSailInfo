@@ -9,11 +9,11 @@ class AngleUtil {
         static function ShortAngle(fAngle1, fAngle2)
         {
             var fDelta = fAngle2 - fAngle1;
-            while (fDelta > 180.0f) {
-            	fDelta -= 360.0f;
+            while (fDelta > 180.0) {
+            	fDelta -= 360.0;
             }
-            while (fDelta < -180.0f) {
-            	fDelta += 360.0f;
+            while (fDelta < -180.0) {
+            	fDelta += 360.0;
             }
             return fDelta;
         }
@@ -25,33 +25,33 @@ class AngleUtil {
 
         static function Anchor(fValue, fAnchor)
         {
-            while (fValue - fAnchor > 180.0f) {
-            	fValue -= 360.0f;
+            while (fValue - fAnchor > 180.0) {
+            	fValue -= 360.0;
             }
-            while (fValue - fAnchor < -180.0f) {
-            	fValue += 360.0f;
+            while (fValue - fAnchor < -180.0) {
+            	fValue += 360.0;
             }
             return fValue;
         }
 
         static function ContainAngle0To360(fAngle)
         {
-            while (fAngle > 360.0f) {
-            	fAngle -= 360.0f;
+            while (fAngle > 360.0) {
+            	fAngle -= 360.0;
             }
-            while (fAngle < 0.0f) {
-            	fAngle += 360.0f;
+            while (fAngle < 0.0) {
+            	fAngle += 360.0;
             }
             return fAngle;
         }
 
         static function ContainAngleMinus180To180(fAngle)
         {
-            while (fAngle > 180.0f) {
-            	fAngle -= 360.0f;
+            while (fAngle > 180.0) {
+            	fAngle -= 360.0;
             }
-            while (fAngle < -180.0f) {
-            	fAngle += 360.0f;
+            while (fAngle < -180.0) {
+            	fAngle += 360.0;
             }
             return fAngle;
         }
