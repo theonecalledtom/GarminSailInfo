@@ -121,6 +121,11 @@ class CourseTracker
 		return (CurrentCourse == CourseType_Stbd_Reach) || (CurrentCourse == CourseType_Prt_Reach);
 	}
 
+	function isCourseUpwind(course)
+	{
+		return (course == CourseType_Stbd_Up) || (course == CourseType_Prt_Up);
+	}
+
 	function isUpwind()
 	{
 		return (CurrentCourse == CourseType_Stbd_Up) || (CurrentCourse == CourseType_Prt_Up);
@@ -184,25 +189,31 @@ class CourseTracker
 		return false;
 	}
 
+	function getACourseAsText(Course)
+	{
+		switch(Course)
+		{
+			case CourseType_Stbd_Up:
+				return "SUp";
+			case CourseType_Stbd_Reach:
+				return "SRe";
+			case CourseType_Stbd_Dwn:
+				return "SDn";
+			case CourseType_Prt_Dwn:
+				return "PDn";
+			case CourseType_Prt_Reach:
+				return "PRe";
+			case CourseType_Prt_Up:
+				return "PUp";
+		}
+		return "Unknown";
+	}
+
 	function getCourseAsText()
 	{
 		if (CurrentCourse != null)
 		{
-			switch(CurrentCourse)
-			{
-				case CourseType_Stbd_Up:
-					return "SUp";
-				case CourseType_Stbd_Reach:
-					return "SRe";
-				case CourseType_Stbd_Dwn:
-					return "SDn";
-				case CourseType_Prt_Dwn:
-					return "PDn";
-				case CourseType_Prt_Reach:
-					return "PRe";
-				case CourseType_Prt_Up:
-					return "PUp";
-			}
+			return getACourseAsText(CurrentCourse);
 		}
 		return "Select Crs";
 	}
@@ -263,7 +274,13 @@ class CourseTracker
 				EstimatedAngleToWind = dataTracker.LastTenSeconds.Bearing - BaseWindEstimate;
 				var pointOfSail = getPointOfSailFromWindAngle( EstimatedAngleToWind );
 				if (pointOfSail != CurrentCourse) {
-					System.println("Course change from: " + CurrentCourse + " to: " + pointOfSail);
+				
+					if (isUpwind() && isCourseUpwind(pointOfSail)) {
+						System.println("Tacking from: " + getACourseAsText(CurrentCourse) + " to: " + getACourseAsText(pointOfSail));
+					}
+					else {
+						System.println("Course change from: " + getACourseAsText(CurrentCourse) + " to: " + getACourseAsText(pointOfSail));
+					}
 					CurrentCourse = pointOfSail;
 					
 					if (isUpwind()) {
