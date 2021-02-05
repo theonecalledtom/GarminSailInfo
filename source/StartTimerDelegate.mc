@@ -76,12 +76,14 @@ class StartTimerDelegate extends WatchUi.BehaviorDelegate {
     }
 
 	function notify(state) {
-		if(vibes != false && vibes[state] != false) {
-			Attention.vibrate(vibes[state]);
-		}
-
-		if(tones != false && tones[state] != false) {
-			Attention.playTone(tones[state]);
+		if (!updateTimerData.IsPaused) {
+			if(vibes != false && vibes[state] != false) {
+				Attention.vibrate(vibes[state]);
+			}
+	
+			if(tones != false && tones[state] != false) {
+				Attention.playTone(tones[state]);
+			}
 		}
 	}
 	
