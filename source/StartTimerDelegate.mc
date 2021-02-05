@@ -67,6 +67,13 @@ class StartTimerDelegate extends WatchUi.BehaviorDelegate {
     	}
     	WatchUi.requestUpdate();
     }
+    
+    function resyncTimer() {
+    	if (!updateTimerData.IsPaused) {
+    		updateTimer.stop();
+	   	 	updateTimer.start(method(:timerCallback), 1000, true);
+    	}
+    }
 
 	function notify(state) {
 		if(vibes != false && vibes[state] != false) {
@@ -135,6 +142,7 @@ class StartTimerDelegate extends WatchUi.BehaviorDelegate {
 		}
         else if (evt.getKey() == KEY_ESC) {
 			updateTimerData.TimeRemaining -= updateTimerData.TimeRemaining % 60;
+			resyncTimer();
 			onTimerChange();
 			return true;
 		}
