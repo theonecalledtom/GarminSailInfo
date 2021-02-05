@@ -60,7 +60,14 @@ class SailInfoView extends WatchUi.View {
 			badColor = Graphics.COLOR_RED;
 			goodColor = Graphics.COLOR_GREEN;
 		}
-		
+				
+        System.println("s: " + segment + ", a: " + a + ", b: " + b);
+        a = AngleUtil.Anchor(a, b);
+		if (a < 0.0 || b < 0.0)
+		{
+			a += 360.0;
+			b += 360.0;
+		}
 		if (a <= b) {
 			drawPolarSegment(dc, a-1, b+1, segment, courseTracker.wantPostiveVe() ? badColor : goodColor);
 		}
@@ -71,17 +78,19 @@ class SailInfoView extends WatchUi.View {
 
 	function drawCourseSelection(dc) {
 		var suggestedCourse = courseTracker.getSuggestedCourseAsAngle();
-		var currentCourse = courseTracker.getCurrentCourseAsAngle();
-		drawPolarSegment(dc, currentCourse-20, currentCourse+20, 0, Graphics.COLOR_WHITE);
+		if (courseTracker.hasCurrentCourse()) {
+			var currentCourse = courseTracker.getCurrentCourseAsAngle();
+			drawPolarSegment(dc, currentCourse-20, currentCourse+20, 0, Graphics.COLOR_WHITE);
+		}
 		drawPolarSegment(dc, suggestedCourse-10, suggestedCourse+10, 0, Graphics.COLOR_BLUE);
     }
 
 	function drawCourseHistory(dc) {
-    	if (!courseTracker.isReaching()) {
+    	if (courseTracker.isUpwind()) {
     		//Clear good / bad if working vmg
-	    	drawCourseVariation(dc, courseTracker.CurrentPointOfSail_10, courseTracker.Delta_10, 1);
-	    	drawCourseVariation(dc, courseTracker.CurrentPointOfSail_20, courseTracker.Delta_20, 2);
-	    	drawCourseVariation(dc, courseTracker.CurrentPointOfSail_30, courseTracker.Delta_30, 3);
+	    	drawCourseVariation(dc, courseTracker.CurrentPointOfSail_10, courseTracker.Delta_10, 1.1);
+	    	//drawCourseVariation(dc, courseTracker.CurrentPointOfSail_20, courseTracker.Delta_20, 2);
+	    	drawCourseVariation(dc, courseTracker.CurrentPointOfSail_30, courseTracker.Delta_30, 2.2);
     	}
 	}
     
@@ -100,8 +109,13 @@ class SailInfoView extends WatchUi.View {
         var x = radius * Math.sin(Math.toRadians(currentAngle));
         var y = radius * Math.cos(Math.toRadians(currentAngle));
         
-        dc.setPenWidth(1);
-		dc.setColor(Graphics.COLOR_PINK, Graphics.COLOR_TRANSPARENT);
+        if (courseTracker.isOnSettledCourse(10.0)) {
+			dc.setColor(Graphics.COLOR_DK_BLUE, Graphics.COLOR_TRANSPARENT);
+            dc.setPenWidth(5);
+        } else {
+			dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
+	        dc.setPenWidth(3);
+		}
         dc.drawLine(xc,yc,xc + x,yc - y);
     }
     
