@@ -7,6 +7,7 @@ class CourseTracker
 		CourseType_Stbd_Up,
 		CourseType_Stbd_Reach,
 		CourseType_Stbd_Dwn,
+		CourseType_DDW,
 		CourseType_Prt_Dwn,
 		CourseType_Prt_Reach,
 		CourseType_Prt_Up,
@@ -23,10 +24,12 @@ class CourseTracker
 	var Delta_30 = 0.0;
 	
 	//TODO: Fill out from data
-	var CourseHistory = [null, null, null, null, null, null];
+	var CourseHistory;
+	var CourseHistoryTime;
 
 	var BaseBearing = 0.0;
 	var BaseWindEstimate = 0.0;
+	var EstimatedWind = 0.0;
 	var EstimatedAngleToWind = 0.0;
 	
 	var CurrentCourse = null;
@@ -40,8 +43,11 @@ class CourseTracker
 	{
 		dataTracker = dataTrackerIn;
 		
+		CourseHistory = new [CourseType_MAX];
+		CourseHistoryTime = new [CourseType_MAX];
 		for (var i=0 ; i<CourseType_MAX ; i++) {
 			CourseHistory[i] = new [NUM_SETTLED_SAMPLES];
+			CourseHistoryTime[i] = new [NUM_SETTLED_SAMPLES];
 		}
 	}
 	
@@ -49,8 +55,10 @@ class CourseTracker
 		if (CurrentCourse != null) {
 			for (var i=NUM_SETTLED_SAMPLES-1 ; i>0 ; i--) {
 				CourseHistory[CurrentCourse][i] = CourseHistory[CurrentCourse][i-1];
+				CourseHistoryTime[CurrentCourse][i] = CourseHistoryTime[CurrentCourse][i-1];
 			}
 			CourseHistory[CurrentCourse][0] = direction;
+			CourseHistoryTime[CurrentCourse][0] = System.getTimer() * 0.001;
 		}
 	}
 		
@@ -58,22 +66,29 @@ class CourseTracker
 		return CurrentCourse != SuggestedCourse;
 	}
 	
-	function isOnSettledCourse(maxDelta) {
+	function isOnSettledCourse(maxDelta, maxTime) {
 		if (CurrentCourse != null) {
 			if (CourseHistory[CurrentCourse][0] != null) {
-				var min = CourseHistory[CurrentCourse][0];
-				var max = AngleUtil.Anchor(CourseHistory[CurrentCourse][0], min);
+				var timeCutoff = System.getTimer() * 0.001;
+				var currentDir = dataTracker.LastTenSeconds.Bearing;
 				for (var i=1 ; i<NUM_SETTLED_SAMPLES ; i++) {
 					if (CourseHistory[CurrentCourse][i] == null) {
 						return false;
 					}
-					var test = AngleUtil.Anchor(CourseHistory[CurrentCourse][i], min);
-					min = min < test ? min : test;
-					max = max > test ? max : test;
+					if (timeCutoff - CourseHistoryTime[CurrentCourse][i] > maxTime){
+						return true;
+					}
+					var test = AngleUtil.Anchor(CourseHistory[CurrentCourse][i], currentDir);
+					if (test - currentDir > maxDelta) {
+						System.println("Not settled (too high: " + test + " vs " + currentDir + ")");
+						return false;
+					}
+					else if (currentDir - test > maxDelta) {
+						System.println("Not settled (too low: " + test + " vs " + currentDir + ")");
+						return false;
+					}
 				}
-				
-				System.println("min: " + min + ", max: " + max + ", allowed: " + maxDelta);
-				return (max - min) < maxDelta;
+				return true;
 			}
 		}
 		return false;
@@ -102,6 +117,7 @@ class CourseTracker
 			CurrentPointOfSail_30 = BasePointOfSail;
 			Delta_30 = 0.0;
 			BaseWindEstimate = dataTracker.LastTenSeconds.Bearing - BasePointOfSail;
+			EstimatedWind = BaseWindEstimate; 
 			BaseBearing = dataTracker.LastTenSeconds.Bearing;
 			HasWindEstimate = true;
 			return true;
@@ -133,7 +149,9 @@ class CourseTracker
 
 	function isDownwind()
 	{
-		return (CurrentCourse == CourseType_Stbd_Dwn) || (CurrentCourse == CourseType_Prt_Dwn);
+		return (CurrentCourse == CourseType_Stbd_Dwn) 
+			|| (CurrentCourse == CourseType_Prt_Dwn)
+			|| (CurrentCourse == CourseType_DDW);
 	}
 
 	function getVMGAngle()
@@ -185,6 +203,9 @@ class CourseTracker
 				return false;
 			case CourseType_Prt_Up:
 				return false;
+			case CourseType_DDW:
+				//TODO: This is wrong though!
+				return false;
 		}
 		return false;
 	}
@@ -199,6 +220,8 @@ class CourseTracker
 				return "SRe";
 			case CourseType_Stbd_Dwn:
 				return "SDn";
+			case CourseType_DDW:
+				return "DDW";
 			case CourseType_Prt_Dwn:
 				return "PDn";
 			case CourseType_Prt_Reach:
@@ -228,6 +251,8 @@ class CourseTracker
 				return 90.0;
 			case CourseType_Stbd_Dwn:
 				return 135.0;
+			case CourseType_DDW:
+				return 180.0;
 			case CourseType_Prt_Dwn:
 				return 225.0;
 			case CourseType_Prt_Reach:
@@ -241,18 +266,22 @@ class CourseTracker
 	function getPointOfSailFromWindAngle(angle)
 	{
 		angle = AngleUtil.ContainAngleMinus180To180(angle);
-		if (angle > 125) {
+		if (angle > 165) {
+			return CourseType_DDW;
+		} else if (angle > 125) {
 			return CourseType_Stbd_Dwn;
-		} else if (angle > 75.0f) {
+		} else if (angle > 65.0f) {
 			return CourseType_Stbd_Reach;
 		} else if (angle > 0.0f) {
 			return CourseType_Stbd_Up;
-		} else if (angle > -75.0f) {
+		} else if (angle > -65.0f) {
 			return CourseType_Prt_Up;
 		} else if (angle > -125.0f) {
 			return CourseType_Prt_Reach;
+		} else if (angle > -165.0) {
+			return CourseType_Prt_Dwn;
 		}
-		return CourseType_Prt_Dwn;
+		return CourseType_DDW;
 	}
 	
 	function getSuggestedCourseAsAngle() {
@@ -271,7 +300,7 @@ class CourseTracker
 	{
 		if (HasWindEstimate) {
 			if (dataTracker.LastTenSeconds.HasData) {
-				EstimatedAngleToWind = dataTracker.LastTenSeconds.Bearing - BaseWindEstimate;
+				EstimatedAngleToWind = dataTracker.LastTenSeconds.Bearing - EstimatedWind;
 				var pointOfSail = getPointOfSailFromWindAngle( EstimatedAngleToWind );
 				if (pointOfSail != CurrentCourse) {
 				
@@ -283,10 +312,26 @@ class CourseTracker
 					}
 					CurrentCourse = pointOfSail;
 					
-					if (isUpwind()) {
-						updateBasePointOfSail();
-					}
+					//TMS: 	Want to be uch more careful about this or we lose lift and header info
+					//		at least with the current model.
+					//if (isUpwind()) {
+					//	updateBasePointOfSail();
+					//}
 				}
+			}
+		}
+	}
+	
+	function autoUpdateBaseWindEstimate()
+	{
+		//Currently only tracking wind changes upwind. Will manually sync wind direction when off the wind
+		//and accept it's rudimentary at best
+		if (isUpwind()) {
+			//Been with 5 degrees for 10 seconds?
+			if (isOnSettledCourse(5.0, 10.0)) {
+				var delta = dataTracker.LastTenSeconds.Bearing - BaseBearing;
+				
+				EstimatedWind = BaseWindEstimate + delta;
 			}
 		}
 	}
@@ -308,6 +353,9 @@ class CourseTracker
 			//Did we switch point of sail?
 			autoUpdateCurrentPointOfSail();
 
+			//Can we make a guess at what the wind did
+			//autoUpdateBaseWindEstimate();
+
 			if (dataTracker.LastTwentySeconds.HasData) {
 				var delta = dataTracker.LastTwentySeconds.Bearing - BaseBearing;
 				
@@ -324,7 +372,7 @@ class CourseTracker
 				Delta_30 = delta;
 			}
 			
-			recordDirection(CurrentPointOfSail_10);
+			recordDirection(dataTracker.LastTenSeconds.Bearing);
 		}
 		else {
 			

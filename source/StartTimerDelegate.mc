@@ -20,8 +20,6 @@ class StartTimerDelegate extends WatchUi.BehaviorDelegate {
 	
 	var updateTimerData;
 	var updateTimer;
-	var timeOfStart = 0.0;
-	
 	hidden var vibes = false;
 	hidden var tones = false;
 
@@ -33,8 +31,6 @@ class StartTimerDelegate extends WatchUi.BehaviorDelegate {
     	updateTimerData.IsPaused = true;
         
         updateTimer = new Timer.Timer();
-    	
-    	timeOfStart = System.getTimer();
     	
     	if(Attention has :VibeProfile && vibes == false) {
 			vibes = [
@@ -135,9 +131,6 @@ class StartTimerDelegate extends WatchUi.BehaviorDelegate {
     
     function onKey(evt)
 	{
-		System.println("StartTimerDelegate.onKey");
-		System.println(" ->" + evt.getKey());  // e.g. KEY_MENU = 7
-        System.println(" ->" + evt.getType()); // e.g. PRESS_TYPE_DOWN = 0
         if (evt.getKey() == KEY_ENTER) {
         	toggleTimer();
 			return true;

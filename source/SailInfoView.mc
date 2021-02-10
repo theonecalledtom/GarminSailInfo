@@ -94,7 +94,7 @@ class SailInfoView extends WatchUi.View {
     	}
 	}
     
-    function drawWindEstimate(dc) {
+    function drawAngleMarker(dc, angle, scale) {
     	if (courseTracker.CurrentPointOfSail_10 == null) {
     		return;
     	}
@@ -102,21 +102,36 @@ class SailInfoView extends WatchUi.View {
 	    var xc = width * 0.5;
         var height = dc.getHeight();
         var yc = height * 0.5;
-        var radius = Math.sqrt(xc*xc + yc*yc);
+        var radius = scale * (xc > yc ? xc : yc);
         
         //System.println("courseTracker.CurrentPointOfSail_10:" + courseTracker.CurrentPointOfSail_10);
-        var currentAngle = courseTracker.CurrentPointOfSail_10;
+        var currentAngle = angle;
         var x = radius * Math.sin(Math.toRadians(currentAngle));
         var y = radius * Math.cos(Math.toRadians(currentAngle));
         
-        if (courseTracker.isOnSettledCourse(10.0)) {
-			dc.setColor(Graphics.COLOR_DK_BLUE, Graphics.COLOR_TRANSPARENT);
+        dc.drawLine(xc,yc,xc + x,yc - y);
+    }
+    
+    function drawWindEstimate(dc) {
+    	if (courseTracker.CurrentPointOfSail_10 == null) {
+    		return;
+    	}
+    	
+        if (courseTracker.isOnSettledCourse(5.0, 10.0)) {
+			dc.setColor(Graphics.COLOR_DK_BLUE, Graphics.COLOR_TRANSPARENT); //COLOR_DK_BLUE
             dc.setPenWidth(5);
         } else {
-			dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
+			dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
 	        dc.setPenWidth(3);
 		}
-        dc.drawLine(xc,yc,xc + x,yc - y);
+
+    	drawAngleMarker(dc, dataTracker.LastTenSeconds.Bearing - courseTracker.EstimatedWind, 1.0);
+
+		//dc.setColor(Graphics.COLOR_DK_GREEN, Graphics.COLOR_TRANSPARENT);
+    	//drawAngleMarker(dc, courseTracker.EstimatedWind, 0.75);
+
+		//dc.setColor(Graphics.COLOR_DK_RED, Graphics.COLOR_TRANSPARENT);
+    	//drawAngleMarker(dc, dataTracker.LastTenSeconds.Bearing, 0.5);
     }
     
 	function drawText(dc) {
@@ -130,27 +145,28 @@ class SailInfoView extends WatchUi.View {
         
         var vmg = speed * Math.cos( Math.toRadians(courseTracker.getVMGAngle()) );
         var yvel = yc-largeFontHeight;
-        dc.drawText(xc*0.5,yvel,Graphics.FONT_SYSTEM_LARGE, speed.format("%.2f"), Graphics.TEXT_JUSTIFY_CENTER);
-        dc.drawText(xc*0.5,yvel-largeFontHeight*0.5,Graphics.FONT_SYSTEM_TINY, "kts", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(xc*0.65,yvel,Graphics.FONT_SYSTEM_LARGE, speed.format("%.2f"), Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(xc*0.65,yvel-largeFontHeight*0.5,Graphics.FONT_SYSTEM_TINY, "kts", Graphics.TEXT_JUSTIFY_CENTER);
 
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(xc*1.5,yvel,Graphics.FONT_SYSTEM_LARGE, vmg.format("%.2f"), Graphics.TEXT_JUSTIFY_CENTER);
-        dc.drawText(xc*1.5,yvel-largeFontHeight*0.5,Graphics.FONT_SYSTEM_TINY, "vmg", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(xc*1.35,yvel,Graphics.FONT_SYSTEM_LARGE, vmg.format("%.2f"), Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(xc*1.35,yvel-largeFontHeight*0.5,Graphics.FONT_SYSTEM_TINY, "vmg", Graphics.TEXT_JUSTIFY_CENTER);
         
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
         var mediumFontHeight = dc.getFontHeight(Graphics.FONT_MEDIUM);
-        var cogText = dataTracker.LastTenSeconds.Bearing.format("%.1f");
+        var cogText = "COG: " + dataTracker.LastTenSeconds.Bearing.format("%.0f");
         dc.drawText(xc,yc,Graphics.FONT_MEDIUM, cogText, Graphics.TEXT_JUSTIFY_CENTER);
         
-        var cogTxtHeight = dc.getFontHeight( Graphics.FONT_MEDIUM );
+        //var cogTxtHeight = dc.getFontHeight( Graphics.FONT_MEDIUM );
         var labelHeight = dc.getFontHeight( Graphics.FONT_SYSTEM_TINY );
-        var cogLabelTxt = "COG";
-        var cogWidth = dc.getTextWidthInPixels(cogText, Graphics.FONT_SYSTEM_TINY);
-        dc.drawText(xc+cogWidth*0.75,yc+0.75*(cogTxtHeight - labelHeight),Graphics.FONT_SYSTEM_TINY, cogLabelTxt, Graphics.TEXT_JUSTIFY_LEFT);
+        //var cogLabelTxt = "COG";
+        //var cogWidth = dc.getTextWidthInPixels(cogText, Graphics.FONT_SYSTEM_TINY);
+        //dc.drawText(xc+cogWidth*0.75,yc+0.75*(cogTxtHeight - labelHeight),Graphics.FONT_SYSTEM_TINY, cogLabelTxt, Graphics.TEXT_JUSTIFY_LEFT);
+        dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);  
         dc.drawText(xc,yc+mediumFontHeight,Graphics.FONT_MEDIUM, courseTracker.getCourseAsText(), Graphics.TEXT_JUSTIFY_CENTER);
         
-        dc.setColor(Graphics.COLOR_BLUE, Graphics.COLOR_TRANSPARENT);  
-	    dc.drawText(xc,yc+mediumFontHeight*2.0,Graphics.FONT_MEDIUM, courseTracker.EstimatedAngleToWind.format("%.1f"), Graphics.TEXT_JUSTIFY_CENTER);
+        //dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_TRANSPARENT);  
+	    //dc.drawText(xc,yc+mediumFontHeight*2.0,Graphics.FONT_MEDIUM, courseTracker.EstimatedWind.format("%.0f"), Graphics.TEXT_JUSTIFY_CENTER);
     }
 	
 	function drawStart(dc) {
