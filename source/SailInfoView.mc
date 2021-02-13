@@ -117,15 +117,14 @@ class SailInfoView extends WatchUi.View {
     		return;
     	}
     	
-        if (courseTracker.isOnSettledCourse(5.0, 10.0)) {
-			dc.setColor(Graphics.COLOR_DK_BLUE, Graphics.COLOR_TRANSPARENT); //COLOR_DK_BLUE
-            dc.setPenWidth(5);
-        } else {
-			dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
-	        dc.setPenWidth(3);
-		}
-
+		dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
+        dc.setPenWidth(3);
     	drawAngleMarker(dc, dataTracker.LastTenSeconds.Bearing - courseTracker.EstimatedWind, 1.0);
+
+    	var settledTime = courseTracker.getTimeOnSettledCourse(5.0);
+		dc.setColor(Graphics.COLOR_DK_BLUE, Graphics.COLOR_TRANSPARENT); //COLOR_DK_BLUE
+        dc.setPenWidth(5);
+    	drawAngleMarker(dc, dataTracker.LastTenSeconds.Bearing - courseTracker.EstimatedWind, settledTime / 5.0);
 
 		//dc.setColor(Graphics.COLOR_DK_GREEN, Graphics.COLOR_TRANSPARENT);
     	//drawAngleMarker(dc, courseTracker.EstimatedWind, 0.75);
