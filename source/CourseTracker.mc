@@ -39,9 +39,33 @@ class CourseTracker
 	
 	var dataTracker = null;
 	
+	//Sample count, maxTime
+	var trackerDefs = [
+		[10,10.0],
+		[30,30.0],
+		[60,60.0]
+	];
+	
+	var PointOfSailsTrackers = new [CourseType_MAX];
+	
 	function initialize(dataTrackerIn)
 	{
 		dataTracker = dataTrackerIn;
+		
+		//TODO:
+		//For each point of sail:
+		//	1) [x] while settled maintain a 10s, 30s and 60s DataHistory objects (see trackerDefs)
+		//  2) [ ] display amount of "settled" requirement on the wind angle display
+		//  3) [ ] use these to track headers and lifts
+		//	4) [ ] [maybe] when we tack or gybe, reset the histories
+		for (var i=0 ; i<CourseType_MAX ; i++)
+		{
+			PointOfSailsTrackers[i] = new [3];
+			for (var iTracker=0 ; iTracker<3 ; iTracker++)
+			{
+				PointOfSailsTrackers[i][iTracker] = new DataHistory(trackerDefs[iTracker][0], trackerDefs[iTracker][1]);
+			}
+		}		
 		
 		CourseHistory = new [CourseType_MAX];
 		CourseHistoryTime = new [CourseType_MAX];
@@ -51,14 +75,27 @@ class CourseTracker
 		}
 	}
 	
+	function getTimeOnSettledCourse(maxDeviation) {
+		if (CurrentCourse != null) {
+			return PointOfSailsTrackers[CurrentCourse][2].getTimeOnSettledCourse(maxDeviation);
+		} 
+		return 0.0;
+	}
+	
 	function recordDirection(direction) {
 		if (CurrentCourse != null) {
 			for (var i=NUM_SETTLED_SAMPLES-1 ; i>0 ; i--) {
 				CourseHistory[CurrentCourse][i] = CourseHistory[CurrentCourse][i-1];
 				CourseHistoryTime[CurrentCourse][i] = CourseHistoryTime[CurrentCourse][i-1];
 			}
+			
+			var currenttime = System.getTimer() * 0.001;
 			CourseHistory[CurrentCourse][0] = direction;
-			CourseHistoryTime[CurrentCourse][0] = System.getTimer() * 0.001;
+			CourseHistoryTime[CurrentCourse][0] = currenttime;
+			
+			PointOfSailsTrackers[CurrentCourse][0].addToHistory(direction,currenttime); 
+			PointOfSailsTrackers[CurrentCourse][1].addToHistory(direction,currenttime); 
+			PointOfSailsTrackers[CurrentCourse][2].addToHistory(direction,currenttime); 
 		}
 	}
 		

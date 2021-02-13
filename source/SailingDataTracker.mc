@@ -2,6 +2,110 @@ using Toybox.System;
 using Toybox.Position;
 using Toybox.Time;
 
+
+class CourseHistoryItem
+{
+	var Time;
+	var Bearing;
+	function isValid() {
+		return Time != null;
+	}
+}
+
+class CourseHistory
+{
+	hidden var courseDataSample;
+	hidden var sampleCount;
+	hidden var timeToTrack;
+	
+	var Bearing = 0.0;
+	var Speed = 0.0;
+	var HasData = false;
+	
+	function initialize(sampleCountIn, timeToTrackIn) {
+		sampleCount = sampleCountIn;
+		timeToTrack = timeToTrackIn;
+		courseDataSample = new [sampleCount];
+		for (var i=0 ; i<sampleCount ; i++)
+		{
+			courseDataSample[i] = new CourseHistoryItem();
+		}
+	}
+	
+	function isSettled(maxBearingRange, maxTime) {
+		return getSettledCourse(maxBearingRange, maxTime) != null;
+	}
+
+	function getTimeOnSettledCourse(maxBearingRange) {
+		if (courseDataSample[0].isValid()) {
+			var anchor = courseDataSample[0].Bearing;
+			var basetime = courseDataSample[0].Time;
+			var min = anchor;
+			var max = anchor;
+			var maxtime = 0.0;
+			for (var i=1 ; i<sampleCount ; i++) {
+				if (!courseDataSample[i].isValid()) {
+					return null;
+				}
+				var check = AngleUtil.Anchor(courseDataSample[i].Bearing, anchor);
+
+				min = check < min ? check : min;
+				max = check > max ? check : max;
+				
+				if (max - min > maxBearingRange) {
+					return maxtime;
+				}
+				
+				maxtime = courseDataSample[i].Time - basetime;
+			}
+			
+			return maxtime;
+		}				
+		return 0.0;
+	}
+
+	function getSettledCourse(maxBearingRange, maxTime) {
+		if (courseDataSample[0].isValid()) {
+			var anchor = courseDataSample[0].Bearing;
+			var basetime = courseDataSample[0].Time;
+			var min = anchor;
+			var max = anchor;
+			var total = anchor;
+			var count = 1;
+			for (var i=1 ; i<sampleCount ; i++) {
+				if (!courseDataSample[i].isValid()) {
+					return null;
+				}
+				var check = AngleUtil.Anchor(courseDataSample[i].Bearing, anchor);
+
+				min = check < min ? check : min;
+				max = check > max ? check : max;
+				
+				if (max - min > maxBearingRange) {
+					return null;
+				}
+				count ++;
+				total += check;
+				
+				if (courseDataSample[i].Time - basetime > maxTime) {
+					return total / count;
+				}
+			} 
+			return total / count;
+		}
+		return null;
+	}
+
+	function addToHistory(bearing, time){
+		//TODO: Looping history
+		for (var iHistory = sampleCount-1 ; iHistory > 0 ; iHistory--) {
+			courseDataSample[iHistory] = courseDataSample[iHistory-1];	
+		}
+		courseDataSample[0].Bearing = bearing;
+		courseDataSample[0].Time = time;
+	}
+}
+
 class DataHistory
 {
 	hidden var historicalData;
@@ -12,8 +116,7 @@ class DataHistory
 	var Speed = 0.0;
 	var HasData = false;
 	
-	function initialize(sampleCountIn, timeToTrackIn)
-	{
+	function initialize(sampleCountIn, timeToTrackIn) {
 		sampleCount = sampleCountIn;
 		timeToTrack = timeToTrackIn;
 		historicalData = new [sampleCount];
@@ -29,6 +132,7 @@ class DataHistory
 		for (var iHistory = sampleCount-1 ; iHistory > 0 ; iHistory--) {
 			historicalData[iHistory][0] = historicalData[iHistory-1][0];	
 			historicalData[iHistory][1] = historicalData[iHistory-1][1];	
+			historicalData[iHistory][2] = historicalData[iHistory-1][2];	
 		}
 		historicalData[0][0] = info;
 		historicalData[0][1] = time;
@@ -65,12 +169,14 @@ class DataHistory
 			Speed = _dist * 1.94384 / _duration;
 
 			HasData = true;
+			historicalData[0][2] = Bearing;
 		}
 	}
 }
 
 class SailingDataTracker {
 	
+	//TODO: Deprecate!
 	var LastTenSeconds = null;
 	var LastTwentySeconds = null;
 	var LastThirtySeconds = null;
