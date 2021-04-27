@@ -63,7 +63,7 @@ class LocationMath {
 		
  		static const R = 6371.0 * 1000.0;    // m
  
- 		static function BearingBetweenCoords(lat1, long1, lat2, long2)
+ 		static function BearingBetweenCoords2(lat1, long1, lat2, long2)
  		{
 	 		var dLon = (long2 - long1);
 

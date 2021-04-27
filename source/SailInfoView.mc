@@ -76,6 +76,46 @@ class SailInfoView extends WatchUi.View {
 		}
 	}
 
+	function drawCourseDelta(dc, base, delta, segment) {
+		if (base == null) {
+			return;
+		}
+		
+		var a = base;
+		var b = base + delta;
+		var badColor;
+		var goodColor;
+		
+		if (delta.abs() < 2.0)
+		{
+			badColor = Graphics.COLOR_DK_GRAY;
+			goodColor = Graphics.COLOR_LT_GRAY;
+		}
+		else if (delta.abs() < 5.0)
+		{
+			badColor = Graphics.COLOR_ORANGE;
+			goodColor = Graphics.COLOR_DK_GREEN;
+		}
+		else
+		{
+			badColor = Graphics.COLOR_RED;
+			goodColor = Graphics.COLOR_GREEN;
+		}
+				
+        System.println("s: " + segment + ", a: " + a + ", b: " + b);
+        a = AngleUtil.Anchor(a, b);
+		if (a < 0.0 || b < 0.0)
+		{
+			a += 360.0;
+			b += 360.0;
+		}
+		if (a <= b) {
+			drawPolarSegment(dc, a-1, b+1, segment, courseTracker.wantPostiveVe() ? badColor : goodColor);
+		}
+		else {
+			drawPolarSegment(dc, b-1, a+1, segment, courseTracker.wantPostiveVe() ? goodColor : badColor);
+		}
+	}
 	function drawCourseSelection(dc) {
 		var suggestedCourse = courseTracker.getSuggestedCourseAsAngle();
 		if (courseTracker.hasCurrentCourse()) {
@@ -88,9 +128,31 @@ class SailInfoView extends WatchUi.View {
 	function drawCourseHistory(dc) {
     	if (courseTracker.isUpwind()) {
     		//Clear good / bad if working vmg
-	    	drawCourseVariation(dc, courseTracker.CurrentPointOfSail_10, courseTracker.Delta_10, 1.1);
+	    	//drawCourseVariation(dc, courseTracker.CurrentPointOfSail_10, courseTracker.Delta_10, 1.1);
 	    	//drawCourseVariation(dc, courseTracker.CurrentPointOfSail_20, courseTracker.Delta_20, 2);
-	    	drawCourseVariation(dc, courseTracker.CurrentPointOfSail_30, courseTracker.Delta_30, 2.2);
+	    	//drawCourseVariation(dc, courseTracker.CurrentPointOfSail_30, courseTracker.Delta_30, 2.2);
+
+			//TMS: Just draw boat nose variation at the top
+			var shortTimeCourseDelta = courseTracker.getCurrentCourseShortTermDelta();
+			if (shortTimeCourseDelta != null)
+			{
+				System.println("SHORT TIME Delta: " + shortTimeCourseDelta);
+	    		drawCourseDelta(dc, 0.0, shortTimeCourseDelta, 1.1);
+	    	}
+
+			var medTimeCourseDelta = courseTracker.getCurrentCourseMedDelta();
+			if (medTimeCourseDelta != null)
+			{
+				System.println("MEDIUM TIME Delta: " + medTimeCourseDelta);
+	    		drawCourseDelta(dc, 0.0, medTimeCourseDelta, 2.2);
+	    	}
+	    	
+	    	var longTimeCourseDelta = courseTracker.getCurrentCourseLongDelta();
+	    	if (longTimeCourseDelta != null)
+	    	{
+				System.println("LONG TIME Delta: " + longTimeCourseDelta);
+	    		drawCourseDelta(dc, 0.0, longTimeCourseDelta, 3.3);
+	    	}
     	}
 	}
     
@@ -117,14 +179,15 @@ class SailInfoView extends WatchUi.View {
     		return;
     	}
     	
+    	var angleToWind = courseTracker.EstimatedWind - dataTracker.LastTenSeconds.Bearing;
 		dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
         dc.setPenWidth(3);
-    	drawAngleMarker(dc, dataTracker.LastTenSeconds.Bearing - courseTracker.EstimatedWind, 1.0);
+    	drawAngleMarker(dc, angleToWind, 1.0);
 
     	var settledTime = courseTracker.getTimeOnSettledCourse(5.0);
-		dc.setColor(Graphics.COLOR_DK_BLUE, Graphics.COLOR_TRANSPARENT); //COLOR_DK_BLUE
+		dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_TRANSPARENT); //COLOR_DK_BLUE
         dc.setPenWidth(5);
-    	drawAngleMarker(dc, dataTracker.LastTenSeconds.Bearing - courseTracker.EstimatedWind, settledTime / 5.0);
+    	drawAngleMarker(dc, angleToWind, settledTime / 15.0);
 
 		//dc.setColor(Graphics.COLOR_DK_GREEN, Graphics.COLOR_TRANSPARENT);
     	//drawAngleMarker(dc, courseTracker.EstimatedWind, 0.75);

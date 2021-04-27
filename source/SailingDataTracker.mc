@@ -2,109 +2,133 @@ using Toybox.System;
 using Toybox.Position;
 using Toybox.Time;
 
-
-class CourseHistoryItem
+module Course
 {
-	var Time;
-	var Bearing;
-	function isValid() {
-		return Time != null;
-	}
-}
 
-class CourseHistory
-{
-	hidden var courseDataSample;
-	hidden var sampleCount;
-	hidden var timeToTrack;
-	
-	var Bearing = 0.0;
-	var Speed = 0.0;
-	var HasData = false;
-	
-	function initialize(sampleCountIn, timeToTrackIn) {
-		sampleCount = sampleCountIn;
-		timeToTrack = timeToTrackIn;
-		courseDataSample = new [sampleCount];
-		for (var i=0 ; i<sampleCount ; i++)
-		{
-			courseDataSample[i] = new CourseHistoryItem();
+	class CourseHistoryItem
+	{
+		var TimeOfRecord;
+		var Bearing;
+		function initialize(bearingIn, timeIn) {
+			TimeOfRecord = timeIn;
+			Bearing = bearingIn;
 		}
 	}
 	
-	function isSettled(maxBearingRange, maxTime) {
-		return getSettledCourse(maxBearingRange, maxTime) != null;
-	}
-
-	function getTimeOnSettledCourse(maxBearingRange) {
-		if (courseDataSample[0].isValid()) {
-			var anchor = courseDataSample[0].Bearing;
-			var basetime = courseDataSample[0].Time;
-			var min = anchor;
-			var max = anchor;
-			var maxtime = 0.0;
-			for (var i=1 ; i<sampleCount ; i++) {
-				if (!courseDataSample[i].isValid()) {
-					return null;
+	class CourseHistory
+	{
+		hidden var courseDataSample;
+		hidden var sampleCount;
+		hidden var timeToTrack;
+		
+		var Bearing = 0.0;
+		var Speed = 0.0;
+		var HasData = false;
+		
+		function initialize(sampleCountIn, timeToTrackIn) {
+			sampleCount = sampleCountIn;
+			timeToTrack = timeToTrackIn;
+			courseDataSample = new [sampleCount];
+		}
+		
+		function isSettled(maxBearingRange, maxTime) {
+			return getSettledCourse(maxBearingRange, maxTime) != null;
+		}
+	
+		function getTimeOnSettledCourse(maxBearingRange) {
+			if (courseDataSample[0] != null) {
+				var anchor = courseDataSample[0].Bearing;
+				var basetime = courseDataSample[0].TimeOfRecord;
+				var min = anchor;
+				var max = anchor;
+				var maxtime = 0.0;
+				for (var i=1 ; i<sampleCount ; i++) {
+					if (courseDataSample[i] == null) {
+						return maxtime;
+					}
+					var check = AngleUtil.Anchor(courseDataSample[i].Bearing, anchor);
+	
+					min = check < min ? check : min;
+					max = check > max ? check : max;
+					
+					if (max - min > maxBearingRange) {
+						return maxtime;
+					}
+					
+					maxtime = basetime - courseDataSample[i].TimeOfRecord;
 				}
-				var check = AngleUtil.Anchor(courseDataSample[i].Bearing, anchor);
-
-				min = check < min ? check : min;
-				max = check > max ? check : max;
 				
-				if (max - min > maxBearingRange) {
-					return maxtime;
-				}
+				return maxtime;
+			}				
+			return 0.0;
+		}
+	
+		function getAverageCourse() {
+			if (courseDataSample[0] != null) {
+				var anchor = courseDataSample[0].Bearing;
+				var basetime = courseDataSample[0].TimeOfRecord;
+				var total = anchor;
+				var count = 1;
+				for (var i=1 ; i<sampleCount ; i++) {
+					if (courseDataSample[i] == null) {
+						//No more samples
+						break;
+					}
+					var check = AngleUtil.Anchor(courseDataSample[i].Bearing, anchor);
+						
+					count ++;
+					total += check;
+				} 
 				
-				maxtime = courseDataSample[i].Time - basetime;
+				return total / count;
 			}
-			
-			return maxtime;
-		}				
-		return 0.0;
-	}
-
-	function getSettledCourse(maxBearingRange, maxTime) {
-		if (courseDataSample[0].isValid()) {
-			var anchor = courseDataSample[0].Bearing;
-			var basetime = courseDataSample[0].Time;
-			var min = anchor;
-			var max = anchor;
-			var total = anchor;
-			var count = 1;
-			for (var i=1 ; i<sampleCount ; i++) {
-				if (!courseDataSample[i].isValid()) {
-					return null;
-				}
-				var check = AngleUtil.Anchor(courseDataSample[i].Bearing, anchor);
-
-				min = check < min ? check : min;
-				max = check > max ? check : max;
-				
-				if (max - min > maxBearingRange) {
-					return null;
-				}
-				count ++;
-				total += check;
-				
-				if (courseDataSample[i].Time - basetime > maxTime) {
-					return total / count;
-				}
-			} 
-			return total / count;
+			return null;
 		}
-		return null;
-	}
-
-	function addToHistory(bearing, time){
-		//TODO: Looping history
-		for (var iHistory = sampleCount-1 ; iHistory > 0 ; iHistory--) {
-			courseDataSample[iHistory] = courseDataSample[iHistory-1];	
+	
+		function getSettledCourse(maxBearingRange, maxTime) {
+			if (courseDataSample[0] != null) {
+				var anchor = courseDataSample[0].Bearing;
+				var basetime = courseDataSample[0].TimeOfRecord;
+				var min = anchor;
+				var max = anchor;
+				var total = anchor;
+				var count = 1;
+				for (var i=1 ; i<sampleCount ; i++) {
+					if (courseDataSample[i] == null) {
+						//Not settled, don't return a value
+						return null;
+					}
+					var check = AngleUtil.Anchor(courseDataSample[i].Bearing, anchor);
+	
+					min = check < min ? check : min;
+					max = check > max ? check : max;
+					
+					if (max - min > maxBearingRange) {
+						return null;
+					}
+					count ++;
+					total += check;
+					
+					if (courseDataSample[i].TimeOfRecord - basetime > maxTime) {
+						return total / count;
+					}
+				} 
+				
+				//Perhaps settled but not for long enough
+				return null;//total / count;
+			}
+			return null;
 		}
-		courseDataSample[0].Bearing = bearing;
-		courseDataSample[0].Time = time;
+	
+		function addToHistory(bearing, time){
+			//TODO: Looping history
+			for (var iHistory = sampleCount-1 ; iHistory > 0 ; iHistory--) {
+				courseDataSample[iHistory] = courseDataSample[iHistory-1];	
+			}
+			courseDataSample[0] = new CourseHistoryItem(bearing, time);
+		}
 	}
-}
+}	//Course
 
 class DataHistory
 {
@@ -160,11 +184,12 @@ class DataHistory
 		var itrs = (iData-1);
 		//System.println("Itrs:" + itrs + ", Dur:" + _duration + ", Dst:" + _dist + ", Spd:" + lastOtherSpeed);
 					
+		Bearing = AngleUtil.ContainAngle0To360(info.heading * AngleUtil.RadToDeg);
 		if ((_dist > 0.1) && (_duration > 0.0))
 		{
-			Bearing = LocationMath.BearingBetweenCoords(
-				lastLocation[0], lastLocation[1],
-				myLocation[0], myLocation[1]); 
+			//LocationMath.BearingBetweenCoords(
+			//	lastLocation[0], lastLocation[1],
+			//	myLocation[0], myLocation[1]); 
 			
 			Speed = _dist * 1.94384 / _duration;
 

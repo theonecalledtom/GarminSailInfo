@@ -1,4 +1,5 @@
 using Toybox.System;
+using Course;
 
 class CourseTracker
 {
@@ -16,6 +17,7 @@ class CourseTracker
 	
 	const NUM_SETTLED_SAMPLES = 10;
 	var BasePointOfSail = 0.0;
+	var LastDirection = null;
 	var CurrentPointOfSail_10 = null;
 	var CurrentPointOfSail_20 = null;
 	var CurrentPointOfSail_30 = null;
@@ -41,10 +43,11 @@ class CourseTracker
 	
 	//Sample count, maxTime
 	var trackerDefs = [
-		[10,10.0],
-		[30,30.0],
+		[5,5.0],
+		[20,20.0],
 		[60,60.0]
 	];
+		
 	
 	var PointOfSailsTrackers = new [CourseType_MAX];
 	
@@ -52,18 +55,24 @@ class CourseTracker
 	{
 		dataTracker = dataTrackerIn;
 		
+		//Basic design
+		// 1) track course, monitor for consistent course
+		// 2) track settled course in different quadrants
+		
+
 		//TODO:
 		//For each point of sail:
 		//	1) [x] while settled maintain a 10s, 30s and 60s DataHistory objects (see trackerDefs)
 		//  2) [ ] display amount of "settled" requirement on the wind angle display
 		//  3) [ ] use these to track headers and lifts
 		//	4) [ ] [maybe] when we tack or gybe, reset the histories
+		var test = new Course.CourseHistory(10, 10.0);
 		for (var i=0 ; i<CourseType_MAX ; i++)
 		{
 			PointOfSailsTrackers[i] = new [3];
 			for (var iTracker=0 ; iTracker<3 ; iTracker++)
 			{
-				PointOfSailsTrackers[i][iTracker] = new DataHistory(trackerDefs[iTracker][0], trackerDefs[iTracker][1]);
+				PointOfSailsTrackers[i][iTracker] = new Course.CourseHistory(trackerDefs[iTracker][0], trackerDefs[iTracker][1]);
 			}
 		}		
 		
@@ -73,6 +82,54 @@ class CourseTracker
 			CourseHistory[i] = new [NUM_SETTLED_SAMPLES];
 			CourseHistoryTime[i] = new [NUM_SETTLED_SAMPLES];
 		}
+	}
+	
+
+	function getCurrentCourseShortTermDelta() {
+		if (CurrentCourse != null) {
+			if (LastDirection != null)
+			{
+				var priorCourseA = PointOfSailsTrackers[CurrentCourse][0].getAverageCourse();
+				if (priorCourseA != null)
+				{
+					var priorCourse = AngleUtil.Anchor(priorCourseA, LastDirection);
+					return LastDirection - priorCourse;
+				}
+			}
+		} 
+		return null;
+	}
+	
+	function getCurrentCourseMedDelta() {
+		if (CurrentCourse != null) {
+			var baseCourse = PointOfSailsTrackers[CurrentCourse][0].getAverageCourse();
+			if (baseCourse != null)
+			{
+				var priorCourseA = PointOfSailsTrackers[CurrentCourse][1].getAverageCourse();
+				if (priorCourseA != null)
+				{
+					var priorCourse = AngleUtil.Anchor(priorCourseA, baseCourse);
+					return baseCourse - priorCourse;
+				}
+			}
+		} 
+		return null;
+	}
+
+	function getCurrentCourseLongDelta() {
+		if (CurrentCourse != null) {
+			var baseCourse = PointOfSailsTrackers[CurrentCourse][0].getAverageCourse();
+			if (baseCourse != null)
+			{
+				var priorCourseA = PointOfSailsTrackers[CurrentCourse][2].getAverageCourse();
+				if (priorCourseA != null)
+				{
+					var priorCourse = AngleUtil.Anchor(priorCourseA, baseCourse);
+					return baseCourse - priorCourse;
+				}
+			}
+		} 
+		return null;
 	}
 	
 	function getTimeOnSettledCourse(maxDeviation) {
@@ -90,6 +147,7 @@ class CourseTracker
 			}
 			
 			var currenttime = System.getTimer() * 0.001;
+			LastDirection = direction;
 			CourseHistory[CurrentCourse][0] = direction;
 			CourseHistoryTime[CurrentCourse][0] = currenttime;
 			
@@ -153,7 +211,7 @@ class CourseTracker
 			Delta_20 = 0.0;
 			CurrentPointOfSail_30 = BasePointOfSail;
 			Delta_30 = 0.0;
-			BaseWindEstimate = dataTracker.LastTenSeconds.Bearing - BasePointOfSail;
+			BaseWindEstimate = dataTracker.LastTenSeconds.Bearing + BasePointOfSail;
 			EstimatedWind = BaseWindEstimate; 
 			BaseBearing = dataTracker.LastTenSeconds.Bearing;
 			HasWindEstimate = true;
@@ -300,6 +358,28 @@ class CourseTracker
 		return 0.0;
 	}
 	
+	function getCourseAsRelativeAngle(course)
+	{
+		switch(course)
+		{
+			case CourseType_Stbd_Up:
+				return 45.0;
+			case CourseType_Stbd_Reach:
+				return 90.0;
+			case CourseType_Stbd_Dwn:
+				return 135.0;
+			case CourseType_DDW:
+				return 180.0;
+			case CourseType_Prt_Dwn:
+				return -135.0;
+			case CourseType_Prt_Reach:
+				return 90.0;
+			case CourseType_Prt_Up:
+				return -45.0;
+		}
+		return 0.0;
+	}
+	
 	function getPointOfSailFromWindAngle(angle)
 	{
 		angle = AngleUtil.ContainAngleMinus180To180(angle);
@@ -337,7 +417,7 @@ class CourseTracker
 	{
 		if (HasWindEstimate) {
 			if (dataTracker.LastTenSeconds.HasData) {
-				EstimatedAngleToWind = dataTracker.LastTenSeconds.Bearing - EstimatedWind;
+				EstimatedAngleToWind = EstimatedWind - dataTracker.LastTenSeconds.Bearing;
 				var pointOfSail = getPointOfSailFromWindAngle( EstimatedAngleToWind );
 				if (pointOfSail != CurrentCourse) {
 				
@@ -349,7 +429,7 @@ class CourseTracker
 					}
 					CurrentCourse = pointOfSail;
 					
-					//TMS: 	Want to be uch more careful about this or we lose lift and header info
+					//TMS: 	Want to be careful about this or we lose lift and header info
 					//		at least with the current model.
 					//if (isUpwind()) {
 					//	updateBasePointOfSail();
@@ -373,6 +453,7 @@ class CourseTracker
 		}
 	}
 	
+		
 	function onUpdate()
 	{
 		//Update estimate of the wind, different rules depending on
